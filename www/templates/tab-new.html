@@ -1,0 +1,106 @@
+<ion-view view-title="New Working order">
+  <ion-content class="padding">
+   
+
+
+  <div class="inputi">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Operation</span>
+      <input type="text" placeholder="Operation">
+    </label>
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Crop</span>
+      <input type="text" placeholder="Crop">
+    </label>
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Input</span>
+      <input type="text" placeholder="Email">
+    </label>
+  </div>
+
+
+
+
+  <div class="selekti">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Lightsaber
+    </div>
+    <select>
+      <option selected>Blue</option>
+      <option >Green</option>
+      <option>Red</option>
+    </select>
+  </label>
+
+</div>
+
+
+
+  <onezone-datepicker datepicker-object="onezoneDatepicker">
+    <button class="button button-block button-outline button-positive show-onezone-datepicker">
+        Date: {{onezoneDatepicker.date | date:'dd MMMM yyyy'}} 
+    </button>
+</onezone-datepicker>
+
+
+  <button type="submit" class="button button-block button-balanced">
+    Submit
+</button>
+
+</form>
+
+
+          <!-- <form name="itemEdit" novalidate>
+            <ion-header-bar class="bar-positive fix-buttons">
+              <a class="button" ng-click="closeModal()">Cancel</a>
+              <h1 class="title">Form</h1>
+            </ion-header-bar>
+            <ion-content has-bouncing="true">
+              <div class="row" ng-class="{'no-padding-top': !data.editItem}">
+                <div class="col">
+                  <label class="item item-input large">
+                    <input type="text" placeholder="Title">
+                  </label>
+                </div>
+              </div>
+              <div class="editable-image horizontal-image">
+                <div class="add"><i class="icon ion-upload"></i>
+                  <div class="instructions">Tap to upload photo</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label class="item item-input large">
+                    <input type="text" placeholder="Price">
+                  </label>
+                </div>
+              </div>
+              <div class="row description-row">
+                <div class="col">
+                  <label class="item item-input text">
+                    <textarea placeholder="Description" rows="5" ng-model="item.description" ng-Required="true" name="description" lose-focus-on-return></textarea>
+                  </label>
+                </div>
+              </div>
+
+              <div class="row charity-row">
+                <div class="col col-10 vert-center">
+                  <div class="charity large"></div>
+                </div>
+              </div>
+
+
+            </ion-content>
+          </form> -->
+     
+
+
+            </ion-content>
+          </form>
+        </ion-modal-view>
+  </script> 
+    </div>
+  </ion-content>
+</ion-view>

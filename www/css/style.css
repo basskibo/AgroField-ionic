@@ -1,0 +1,19 @@
+/* Empty. Add your own CSS if you like */
+.input-label{
+	color:green;
+	text-decoration: bold;
+
+}
+
+
+#map {
+  width: 100%;
+  height: 80%;
+}
+
+.scroll {
+  height: 80%;
+}
+
+
+

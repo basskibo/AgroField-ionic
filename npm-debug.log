@@ -1,0 +1,81 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'https://github.com/backand/backand-ionic-starter' ]
+2 info using npm@2.14.12
+3 info using node@v4.3.2
+4 verbose install initial load of F:\Projects\AgroField\package.json
+5 warn package.json agrofield@1.1.1 No repository field.
+6 warn package.json agrofield@1.1.1 No README data
+7 warn package.json agrofield@1.1.1 No license field.
+8 verbose installManyTop reading scoped package data from F:\Projects\AgroField\node_modules\pg-promise\package.json
+9 verbose readDependencies loading dependencies from F:\Projects\AgroField\package.json
+10 silly cache add args [ 'https://github.com/backand/backand-ionic-starter', null ]
+11 verbose cache add spec https://github.com/backand/backand-ionic-starter
+12 silly cache add parsed spec Result {
+12 silly cache add   raw: 'https://github.com/backand/backand-ionic-starter',
+12 silly cache add   scope: null,
+12 silly cache add   name: null,
+12 silly cache add   rawSpec: 'https://github.com/backand/backand-ionic-starter',
+12 silly cache add   spec: 'git+https://github.com/backand/backand-ionic-starter.git',
+12 silly cache add   type: 'hosted',
+12 silly cache add   hosted:
+12 silly cache add    { type: 'github',
+12 silly cache add      ssh: 'git@github.com:backand/backand-ionic-starter.git',
+12 silly cache add      sshUrl: 'git+ssh://git@github.com/backand/backand-ionic-starter.git',
+12 silly cache add      httpsUrl: 'git+https://github.com/backand/backand-ionic-starter.git',
+12 silly cache add      gitUrl: 'git://github.com/backand/backand-ionic-starter.git',
+12 silly cache add      shortcut: 'github:backand/backand-ionic-starter',
+12 silly cache add      directUrl: 'https://raw.githubusercontent.com/backand/backand-ionic-starter/master/package.json' } }
+13 verbose addRemoteGit caching https://github.com/backand/backand-ionic-starter
+14 verbose addRemoteGit git+https://github.com/backand/backand-ionic-starter.git is a repository hosted by github
+15 silly tryClone cloning git+https://github.com/backand/backand-ionic-starter.git via git+https://github.com/backand/backand-ionic-starter.git
+16 verbose tryClone https-github-com-backand-backand-ionic-starter-git-0f412b75 not in flight; caching
+17 info git [ 'clone',
+17 info git   '--template=C:\\Users\\Bojan\\AppData\\Roaming\\npm-cache\\_git-remotes\\_templates',
+17 info git   '--mirror',
+17 info git   'https://github.com/backand/backand-ionic-starter.git',
+17 info git   'C:\\Users\\Bojan\\AppData\\Roaming\\npm-cache\\_git-remotes\\https-github-com-backand-backand-ionic-starter-git-0f412b75' ]
+18 verbose mirrorRemote git+https://github.com/backand/backand-ionic-starter.git git clone https://github.com/backand/backand-ionic-starter.git
+19 verbose setPermissions git+https://github.com/backand/backand-ionic-starter.git skipping chownr on Windows
+20 verbose resolveHead git+https://github.com/backand/backand-ionic-starter.git original treeish: master
+21 info git [ 'rev-list', '-n1', 'master' ]
+22 silly resolveHead git+https://github.com/backand/backand-ionic-starter.git resolved treeish: 3529585ffc30cccc5755d5ad51b053f8b719df5f
+23 verbose resolveHead git+https://github.com/backand/backand-ionic-starter.git resolved Git URL: git+https://github.com/backand/backand-ionic-starter.git#3529585ffc30cccc5755d5ad51b053f8b719df5f
+24 silly resolveHead Git working directory: C:\Users\Bojan\AppData\Local\Temp\npm-2528-37240525\git-cache-bd787bc1206a\3529585ffc30cccc5755d5ad51b053f8b719df5f
+25 info git [ 'clone',
+25 info git   'C:\\Users\\Bojan\\AppData\\Roaming\\npm-cache\\_git-remotes\\https-github-com-backand-backand-ionic-starter-git-0f412b75',
+25 info git   'C:\\Users\\Bojan\\AppData\\Local\\Temp\\npm-2528-37240525\\git-cache-bd787bc1206a\\3529585ffc30cccc5755d5ad51b053f8b719df5f' ]
+26 verbose cloneResolved git+https://github.com/backand/backand-ionic-starter.git clone Cloning into 'C:\Users\Bojan\AppData\Local\Temp\npm-2528-37240525\git-cache-bd787bc1206a\3529585ffc30cccc5755d5ad51b053f8b719df5f'...
+26 verbose cloneResolved done.
+26 verbose cloneResolved Checking out files:  33% (44/131)   Checking out files:  34% (45/131)   Checking out files:  35% (46/131)   Checking out files:  36% (48/131)   Checking out files:  37% (49/131)   Checking out files:  38% (50/131)   Checking out files:  39% (52/131)   Checking out files:  40% (53/131)   Checking out files:  41% (54/131)   Checking out files:  42% (56/131)   Checking out files:  43% (57/131)   Checking out files:  44% (58/131)   Checking out files:  45% (59/131)   Checking out files:  46% (61/131)   Checking out files:  47% (62/131)   Checking out files:  48% (63/131)   Checking out files:  49% (65/131)   Checking out files:  50% (66/131)   Checking out files:  51% (67/131)   Checking out files:  52% (69/131)   Checking out files:  53% (70/131)   Checking out files:  54% (71/131)   Checking out files:  55% (73/131)   Checking out files:  56% (74/131)   Checking out files:  57% (75/131)   Checking out files:  58% (76/131)   Checking out files:  59% (78/131)   Checking out files:  60% (79/131)   Checking out files:  61% (80/131)   Checking out files:  62% (82/131)   Checking out files:  63% (83/131)   Checking out files:  64% (84/131)   Checking out files:  65% (86/131)   Checking out files:  66% (87/131)   Checking out files:  67% (88/131)   Checking out files:  68% (90/131)   Checking out files:  69% (91/131)   Checking out files:  70% (92/131)   Checking out files:  71% (94/131)   Checking out files:  72% (95/131)   Checking out files:  73% (96/131)   Checking out files:  74% (97/131)   Checking out files:  75% (99/131)   Checking out files:  76% (100/131)   Checking out files:  77% (101/131)   Checking out files:  78% (103/131)   Checking out files:  79% (104/131)   Checking out files:  80% (105/131)   Checking out files:  81% (107/131)   Checking out files:  82% (108/131)   Checking out files:  83% (109/131)   Checking out files:  84% (111/131)   Checking out files:  85% (112/131)   Checking out files:  86% (113/131)   Checking out files:  87% (114/131)   Checking out files:  88% (116/131)   Checking out files:  89% (117/131)   Checking out files:  90% (118/131)   Checking out files:  91% (120/131)   Checking out files:  92% (121/131)   Checking out files:  93% (122/131)   Checking out files:  94% (124/131)   Checking out files:  95% (125/131)   Checking out files:  96% (126/131)   Checking out files:  97% (128/131)   Checking out files:  98% (129/131)   Checking out files:  99% (130/131)   Checking out files: 100% (131/131)   Checking out files: 100% (131/131), done.
+27 info git [ 'checkout', '3529585ffc30cccc5755d5ad51b053f8b719df5f' ]
+28 verbose checkoutTreeish git+https://github.com/backand/backand-ionic-starter.git checkout Note: checking out '3529585ffc30cccc5755d5ad51b053f8b719df5f'.
+28 verbose checkoutTreeish
+28 verbose checkoutTreeish You are in 'detached HEAD' state. You can look around, make experimental
+28 verbose checkoutTreeish changes and commit them, and you can discard any commits you make in this
+28 verbose checkoutTreeish state without impacting any branches by performing another checkout.
+28 verbose checkoutTreeish
+28 verbose checkoutTreeish If you want to create a new branch to retain commits you create, you may
+28 verbose checkoutTreeish do so (now or later) by using -b with the checkout command again. Example:
+28 verbose checkoutTreeish
+28 verbose checkoutTreeish   git checkout -b <new-branch-name>
+28 verbose checkoutTreeish
+28 verbose checkoutTreeish HEAD is now at 3529585... Update app.js
+29 error addLocal Could not install C:\Users\Bojan\AppData\Local\Temp\npm-2528-37240525\git-cache-bd787bc1206a\3529585ffc30cccc5755d5ad51b053f8b719df5f
+30 verbose stack Error: EISDIR: illegal operation on a directory, read
+30 verbose stack     at Error (native)
+31 verbose cwd F:\Projects\AgroField
+32 error Windows_NT 6.3.9600
+33 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "https://github.com/backand/backand-ionic-starter"
+34 error node v4.3.2
+35 error npm  v2.14.12
+36 error code EISDIR
+37 error errno -4068
+38 error syscall read
+39 error eisdir EISDIR: illegal operation on a directory, read
+39 error eisdir This is most likely not a problem with npm itself
+39 error eisdir and is related to npm not being able to find a package.json in
+39 error eisdir a package you are trying to install.
+40 verbose exit [ -4068, true ]
