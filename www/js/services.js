@@ -50,6 +50,9 @@ angular.module('starter.services', [])
         }
       }
       return null;
+    },
+    edit:function(){
+      return login.html;
     }
   };
 })
