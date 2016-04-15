@@ -6,6 +6,8 @@
   },
   "dependencies": {
     "ionic-datepicker": "^1.1.0",
-    "onezone-datepicker": "*"
+    "onezone-datepicker": "*",
+    "moment-timezone": "~0.2.5",
+    "suncalc": "~1.6.0"
   }
 }

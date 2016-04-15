@@ -6,35 +6,50 @@ angular.module('starter.services', [])
   // Some fake testing data
   var orders = [{
     id: 0,
-    name: 'Operation 1',
-    lastText: 'This is some description.',
-    crop:'somethin1'
-  }, {
-    id: 1,
-    name: 'Operation 2',
-    lastText: 'This is some description.',
-    crop:'any'
-  },{
-    id: 2,
-    name: 'Operation 3',
-    lastText: 'This is some description.',
-    crop:'thing'
-  },{
-    id: 3,
-    name: 'Operation sag',
-    lastText: 'This is some description.',
-    crop:'just'
-  },{
-    id: 4,
-    name: 'Operation swag',
-    lastText: 'This is some description.',
-    crop:'somethin1'
-  },{
-    id: 43,
-    name: 'New op',
-    lastText: 'This is some crazy op.',
-    crop:'just'
-  }];
+    operacija: 'Setva uskorednim sejalicama',
+    kultura: 'Semenska tvrda psenica',
+    input:'Seme',
+    cena:'30000',
+    vreme:'14/7/2016'
+  },
+  {
+     id: 1,
+     operacija: 'Setva uskorednim sejalicama',
+     kultura: 'Semenska tvrda psenica',
+     input:'Seme',
+     cena:'90000',
+
+     vreme:'15/10/2015'
+   },
+   {
+     id: 2,
+     operacija: 'Razrivanje zemljišta čizel plugom',
+     kultura: 'Merkantilni usev šećerne repe',
+     input:'Gorivo',
+     cena:"42000",
+     vreme:'14/4/2016'
+   },
+   {
+     id: 3,
+     operacija: 'Izvoz i rasturanje osoke',
+     kultura: 'Merkantilni ozimi stočni ječam',
+     input:'Osoka',
+     vreme:'11/9/2015'
+   },
+   {
+     id: 4,
+     operacija: 'Međuredno kultiviranje',
+     kultura: 'Malina',
+     input:'Gorivo',
+     vreme:'14/7/2016'
+   },
+   {
+     id: 5,
+     operacija: 'Tarupiranje posle žetve',
+     kultura: 'Merkantilna tvrda pšenica – jara',
+     input:'Gorivo',
+     vreme:'21/8/2016'
+   }];
 
   return {
     all: function() {

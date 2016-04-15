@@ -1,52 +1,43 @@
-<ion-view view-title="New Working order">
+<ion-view view-title="Novi radni nalog">
   <ion-content class="padding">
-   
+
 
 
   <div class="inputi">
     <label class="item item-input item-floating-label">
-      <span class="input-label">Operation</span>
-      <input type="text" placeholder="Operation">
+      <span class="input-label">Operacija</span>
+      <input type="text" placeholder="Operacija">
     </label>
     <label class="item item-input item-floating-label">
-      <span class="input-label">Crop</span>
-      <input type="text" placeholder="Crop">
+      <span class="input-label">Kultura</span>
+      <input type="text" placeholder="Kultura">
     </label>
     <label class="item item-input item-floating-label">
       <span class="input-label">Input</span>
-      <input type="text" placeholder="Email">
+      <input type="text" placeholder="Input">
+    </label>
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Cena</span>
+      <input type="text" placeholder="Cena">
     </label>
   </div>
 
 
 
 
-  <div class="selekti">
 
-  <label class="item item-input item-select">
-    <div class="input-label">
-      Lightsaber
-    </div>
-    <select>
-      <option selected>Blue</option>
-      <option >Green</option>
-      <option>Red</option>
-    </select>
-  </label>
-
-</div>
 
 
 
   <onezone-datepicker datepicker-object="onezoneDatepicker">
     <button class="button button-block button-outline button-positive show-onezone-datepicker">
-        Date: {{onezoneDatepicker.date | date:'dd MMMM yyyy'}} 
+        Datum: {{onezoneDatepicker.date | date:'dd MMMM yyyy'}}
     </button>
 </onezone-datepicker>
 
 
   <button type="submit" class="button button-block button-balanced">
-    Submit
+    Sačuvaj
 </button>
 
 </form>
@@ -94,13 +85,13 @@
 
             </ion-content>
           </form> -->
-     
+
 
 
             </ion-content>
           </form>
         </ion-modal-view>
-  </script> 
+  </script>
     </div>
   </ion-content>
 </ion-view>

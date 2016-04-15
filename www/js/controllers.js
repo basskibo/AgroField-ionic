@@ -6,11 +6,11 @@ angular.module('starter.controllers', ['ionic', 'onezone-datepicker'])
 
 
 $scope.onezoneDatepicker = {
-    date: new Date(), // MANDATORY                     
-    mondayFirst: false,                
+    date: new Date(), // MANDATORY
+    mondayFirst: false,
     months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-    daysOfTheWeek: ['Sun', 'Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat'],     
-    startDate: new Date(),             
+    daysOfTheWeek: ['Ned', 'Pon', 'Uto', 'Sre', 'Čet', 'Pet', 'Sub'],     
+    startDate: new Date(),
     disablePastDays: false,
     disableSwipe: false,
     disableWeekend: false,
@@ -54,19 +54,23 @@ $scope.onezoneDatepicker = {
   $scope.order = WorkingOrders.get($stateParams.orderId);
 })
 
-// .controller('LoginCtrl', function($scope, $stateParams, WorkingOrders) {
-//   $scope.orders = WorkingOrders.get($stateParams.orderId);
-
-// })
 
 
 
-.controller('LoginCtrl', function($scope, $state,WorkingOrders) {
-  
+.controller('LoginCtrl', function($scope, $state,$http,WorkingOrders) {
+
   $scope.signIn = function(user) {
-    $state.go('tab.orders');
-  };
+     $state.go('tab.orders');
+    console.log(user.farm);
+    console.log(user.username);
+    console.log(user.password);
+   };
   
+  // $http.post('localhost:8000/login',{params:{farm:'MMOA'  , username:'admin' , password:"1243!"}}).success(function(response){
+  //   console.log('nesto');
+   
+  // })
+
 })
 
 
@@ -81,65 +85,98 @@ $scope.onezoneDatepicker = {
     enableMaps : true
 
   };
- 
+
 })
 
+.controller('WeatherSearchCtrl',function ($scope, $http){
+
+  $scope.model = {term: ''};
+
+  $scope.search = function () {
+    $http.get('https://maps.googleapis.com/maps/api/geocode/json', {params: {address: $scope.model.term}}).success(function (response) {
+      $scope.results = response.results;
+    });
+  };
 
 
-.controller('MapCtrl', function($scope, $ionicLoading, $compile) {
-      function initialize() {
-        var myLatlng = new google.maps.LatLng(43.07493,-89.381388);
-        
-        var mapOptions = {
-          center: myLatlng,
-          zoom: 16,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("map"),
-            mapOptions);
-        
-        //Marker + infowindow + angularjs compiled ng-click
-        var contentString = "<div><a ng-click='clickTest()'>Click me!</a></div>";
-        var compiled = $compile(contentString)($scope);
+})
 
-        var infowindow = new google.maps.InfoWindow({
-          content: compiled[0]
-        });
+.controller('SettingsController', function ($scope, Settings, Locations) {
+  $scope.settings = Settings;
+  $scope.locations = Locations.data;
+  $scope.canDelete = false;
 
-        var marker = new google.maps.Marker({
-          position: myLatlng,
-          map: map,
-          title: 'Uluru (Ayers Rock)'
-        });
+  $scope.remove = function (index) {
+    Locations.toggle(Locations.data[index]);
+  };
+})
 
-        google.maps.event.addListener(marker, 'click', function() {
-          infowindow.open(map,marker);
-        });
+//kontroler za prognozu
+.controller('WeatherController', function ($scope, $http, $stateParams, $ionicActionSheet, $ionicModal, Locations, Settings) {
+  $scope.params = $stateParams;
+  $scope.settings = Settings;
+  console.log('ispred apija');
+  $http.get('/api/forecast/' + $stateParams.lat + ',' + $stateParams.lng, {params: {units: Settings.units}}).success(function (forecast) {
+    $scope.forecast = forecast;
+  });
 
-        $scope.map = map;
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-      
-      $scope.centerOnMe = function() {
-        if(!$scope.map) {
-          return;
+  var barHeight = document.getElementsByTagName('ion-header-bar')[0].clientHeight;
+  $scope.getWidth = function () {
+    return window.innerWidth + 'px';
+  };
+  $scope.getTotalHeight = function () {
+    return parseInt(parseInt($scope.getHeight()) * 3) + 'px';
+  };
+  $scope.getHeight = function () {
+    return parseInt(window.innerHeight - barHeight) + 'px';
+  };
+
+  $scope.showOptions = function () {
+    var sheet = $ionicActionSheet.show({
+      buttons: [
+        {text: 'Add to Favorite'},
+        {text: 'Set as Primary'},
+        {text: 'Sunrise Sunset Chart'}
+      ],
+      cancelText: 'Cancel',
+      buttonClicked: function (index) {
+        if (index === 0) {
+          Locations.toggle($stateParams);
         }
+        if (index === 1) {
+          Locations.primary($stateParams);
+        }
+        if (index === 2) {
+          $scope.showModal();
+        }
+        return true;
+      }
+    });
+  };
 
-        $scope.loading = $ionicLoading.show({
-          content: 'Getting current location...',
-          showBackdrop: false
-        });
-
-        navigator.geolocation.getCurrentPosition(function(pos) {
-          $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-          $scope.loading.hide();
-        }, function(error) {
-          alert('Unable to get location: ' + error.message);
-        });
-      };
-      
-      $scope.clickTest = function() {
-        alert('Example of infowindow with ng-click');
-      };
-
-})
+  $scope.showModal = function () {
+    if ($scope.modal) {
+      $scope.modal.show();
+    } else {
+      $ionicModal.fromTemplateUrl('templates/modal-chart.html', {
+        scope: $scope
+      }).then(function (modal) {
+        $scope.modal = modal;
+        var days = [];
+        var day = Date.now();
+        for (var i = 0; i < 365; i++) {
+          day += 1000 * 60 * 60 * 24;
+          days.push(SunCalc.getTimes(day, $scope.params.lat, $scope.params.lng));
+        }
+        $scope.chart = days;
+        $scope.modal.show();
+      });
+    }
+  };
+  $scope.hideModal = function () {
+    $scope.modal.hide();
+  };
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+});

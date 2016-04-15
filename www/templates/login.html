@@ -4,27 +4,30 @@
 
 </head>
 <body id="loginImg">
-<ion-view view-title="Please Sign-in">
+<ion-view view-title="Prijavite se">
   <ion-content>
-
 
   <div class="login">
     <label class="item item-input item-floating-label">
+      <span class="input-label">Organization</span>
+      <input type="text" ng-model='user.farm' placeholder="Organization" name="farm">
+    </label>
+    <label class="item item-input item-floating-label">
       <span class="input-label">Username</span>
-      <input type="text" placeholder="Username" name="username">
+      <input type="text" placeholder="Username" ng-model='user.username'  name="username">
     </label>
     <label class="item item-input item-floating-label">
       <span class="input-label">Password</span>
-      <input type="password" placeholder="Password" name="password">
+      <input type="password" placeholder="Password" ng-model='user.password' name="password">
     </label>
 
   </div>
           <div class="padding">
             <button class="button button-block button-balanced" ng-click="signIn(user)">
-              Sign-In
+              Prijavi se
             </button>
             <p class="text-center">
-              <a href="#/forgot-password">Forgot password</a>
+              <a href="#/forgot-password">Zaboravili ste lozinku?</a>
             </p>
           </div>
   </ion-content>

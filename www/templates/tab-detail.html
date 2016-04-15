@@ -6,11 +6,13 @@
 -->
 <ion-view view-title="{{order.name}}">
   <ion-content class="padding">
-    <p>
-     Message: {{order.lastText}}
-    </p>
-    <p>
-     Crop: {{order.crop}}
-    </p>
+    <h2 ><b>Operacija: </b>{{order.operacija}}</h2>
+    <p ><b>Kultura:</b> {{order.kultura}}</p>
+    <p><b>Input: </b>{{order.input}}</p>
+    <p><b>Ukupna cena: </b>{{order.cena}}</p>
+
+    <p ><b>Vreme:</b> {{order.vreme}}</p>
+    <button class="button icon-left ion-navigate button-positive">Prikaži na mapi</button>
+
   </ion-content>
 </ion-view>

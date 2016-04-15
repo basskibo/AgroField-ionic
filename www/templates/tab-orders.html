@@ -1,4 +1,4 @@
-<ion-view view-title="Working orders List">
+<ion-view view-title="Lista radnih naloga">
   <ion-content>
     <ion-list>
 
@@ -15,9 +15,9 @@
     <!-- lista -->
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="order in orders" type="item-text-wrap" href="#/tab/orders/{{order.id}}">
 
-        <h2 >{{order.name}}</h2>
-        <p >About: {{order.lastText}}</p>
-        <p>Crop: {{order.crop}}</p>
+        <h2 ><b>Operacija: </b>{{order.operacija}}</h2>
+        <p ><b>Vreme:</b> {{order.kultura}}</p>
+
         <i class="icon ion-chevron-right ion-ios-arrow-left"></i>
 
         <ion-option-button class="button-assertive" ng-click="remove(order)" style="width: 164px; height: 100px">Delete</ion-option-button>
