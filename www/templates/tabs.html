@@ -9,11 +9,11 @@ navigation history that also transitions its views in and out.
 
 
   <!-- Chats Tab -->
-  <ion-tab title="Radni nalozi" icon-off="ion-ios-list-outline" icon-on="ion-ios-list" href="#/tab/orders">
+  <ion-tab title="{{'orderLabel' |translate }}}" icon-off="ion-ios-list-outline" icon-on="ion-ios-list" href="#/tab/orders">
     <ion-nav-view name="tab-orders"></ion-nav-view>
   </ion-tab>
 
-    <ion-tab title="Novi radni nalog" icon-off="ion-plus-round" icon-on="ion-plus-round" href="#/tab/newWorkingOrder">
+    <ion-tab title="{{'newOrderLabel' | translate}}" icon-off="ion-plus-round" icon-on="ion-plus-round" href="#/tab/newWorkingOrder">
     <ion-nav-view name="tab-newWorkingOrder"></ion-nav-view>
   </ion-tab>
 
@@ -25,13 +25,13 @@ navigation history that also transitions its views in and out.
  -->
 
   <!-- Account Tab -->
-  <ion-tab title="Podešavanja" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+  <ion-tab title="{{'settingsLabel' | translate }}" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
     <ion-nav-view name="tab-account"></ion-nav-view>
   </ion-tab>
 
 
 
-  <ion-tab title="Odjavi se" icon="ion-log-out" href="#/login"> </ion-tab>
+  <ion-tab title="{{'logOutLabel' | translate}}" icon="ion-log-out" href="#/login"> </ion-tab>
 
 
 </ion-tabs>

@@ -5,20 +5,20 @@
 
   <div class="inputi">
     <label class="item item-input item-floating-label">
-      <span class="input-label">Operacija</span>
-      <input type="text" placeholder="Operacija">
+      <span class="input-label">{{'operationLabel' | translate }}</span>
+      <input type="text" placeholder="{{'operationLabel' | translate }}">
     </label>
     <label class="item item-input item-floating-label">
-      <span class="input-label">Kultura</span>
-      <input type="text" placeholder="Kultura">
+      <span class="input-label">{{'cultureLabel' | translate}}</span>
+      <input type="text" placeholder="{{'cultureLabel' | translate}}">
     </label>
     <label class="item item-input item-floating-label">
-      <span class="input-label">Input</span>
-      <input type="text" placeholder="Input">
+      <span class="input-label">{{'inputLabel' | translate}}</span>
+      <input type="text" placeholder="{{'inputLabel' | translate}}">
     </label>
     <label class="item item-input item-floating-label">
-      <span class="input-label">Cena</span>
-      <input type="text" placeholder="Cena">
+      <span class="input-label">{{'priceLabel' | translate}}</span>
+      <input type="text" placeholder="{{'priceLabel' | translate}}">
     </label>
   </div>
 
@@ -31,13 +31,13 @@
 
   <onezone-datepicker datepicker-object="onezoneDatepicker">
     <button class="button button-block button-outline button-positive show-onezone-datepicker">
-        Datum: {{onezoneDatepicker.date | date:'dd MMMM yyyy'}}
+        {{'dateLabel' | translate}}: {{onezoneDatepicker.date | date:'dd MMMM yyyy'}}
     </button>
 </onezone-datepicker>
 
 
   <button type="submit" class="button button-block button-balanced">
-    Sačuvaj
+    {{'saveLabel' | translate}}
 </button>
 
 </form>

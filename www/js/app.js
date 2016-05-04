@@ -34,8 +34,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     organisationLabel:'Organisation',
     passwordLabel: 'Password',
     loginBtn : 'Login',
-    forgotpasswordLabel: 'Forgot your password?'
-
+    forgotpasswordLabel: 'Forgot your password?',
+    operationLabel: 'Operation',
+    inputLabel: 'Input',
+    cultureLabel: 'Culture',
+    priceLabel: 'Price',
+    dateLabel: 'Date',
+    saveLabel: 'Save',
+    orderLabel: 'Word Order',
+    newOrderLabel: 'New work order',
+    settingsLabel: 'Settings',
+    logOutLabel: 'Log Out',
+    listOfOrdersLabel: 'List of work orders',
+    searchOrdersLabel: 'Search orders',
+    timeLabel: 'Time',
   });
   $translateProvider.translations('rs',{
     loginTitle:'Prijavi se',
@@ -43,8 +55,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     organisationLabel: 'Organizacija',
     passwordLabel:'Lozinka',
     loginBtn: 'Prijavi se',
-    forgotpasswordLabel: 'Zaboravili ste sifru?'
-
+    forgotpasswordLabel: 'Zaboravili ste sifru?',
+    operationLabel: 'Operation',
+    inputLabel: 'Input',
+    cultureLabel: 'Kultura',
+    priceLabel: 'Cena',
+    dateLabel: 'Datum',
+    saveLabel: 'Sačuvaj',
+    orderLabel: 'Radni Nalog',
+    newOrderLabel: 'Novi radni nalog',
+    settingsLabel: 'Podešavanja',
+    logOutLabel:'Odjavi se',
+    listOfOrdersLabel:'Lista radnih naloga',
+    searchOrdersLabel: 'Pretraži naloge',
+    timeLabel:'Vreme',
   });
   $translateProvider.preferredLanguage('en');
   $translateProvider.fallbackLanguage('en');
