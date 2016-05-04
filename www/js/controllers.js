@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ionic', 'onezone-datepicker'])
+angular.module('starter.controllers', ['ionic', 'onezone-datepicker','pascalprecht.translate'])
 
 
 
@@ -79,31 +79,6 @@ $scope.onezoneDatepicker = {
   }
 })
 
-  // $scope.signIn = function(user) {
-  //   if(user.farm == "MMOA"&& user.username == "admin" && user.password== '1243!' ){
-
-  //    $state.go('tab.orders');
-  //  }
-  //  else{
-  //   // An alert dialog
-  //   $scope.showAlert = function() {
-  //     var alertPopup = $ionicPopup.alert({
-  //    title: 'Wrong password',
-  //    template: 'It might taste good'
-  //  });
-
-  //  alertPopup.then(function(res) {
-  //    console.log('Thank you for not eating my delicious ice cream cone');
-  //  });
-  //         $state.go('login');
-
-  //  }
-    
-  //   console.log(user.farm);
-  //   console.log(user.username);
-  //   console.log(user.password);
-  //  };
-  
   // $http.post('localhost:8000/login',{params:{farm:'MMOA'  , username:'admin' , password:"1243!"}}).success(function(response){
   //   console.log('nesto');
    
@@ -113,17 +88,44 @@ $scope.onezoneDatepicker = {
 
 
 
-.controller('ForgotPassCtrl',function($scope){
+.controller('ForgotPassCtrl',function($scope,$translate){
 	console.log("Forgoten password...")
 })
 
 
-.controller('AccountCtrl', function($scope) {
+.controller('SettingsCtrl', function($scope,$ionicPopup,$translate) {
   $scope.settings = {
     enableFriends: true,
     enableMaps : true
+  };
+
+  $scope.changeLanguage = function (langKey,$translateProvider) {
+    //$translateProvider.preferredLanguage(langKey);
+    // var currentLang = $translate.proposedLanguage() || $translate.use();
+    // console.log(currentLang);
+    // $translate.uses(langKey);
+    $translate.use(langKey); 
+       //console.log(f);
+    var lng = $translate.use();
+    console.log(lng);
 
   };
+  $scope.notificationOn = function(){
+     var alertPopup = $ionicPopup.alert({
+              title:'Language',
+              template:'Language set to English'
+      });
+    //$translateProvider.preferredLanguage('rs');
+
+  };
+  // $scope.notificationOff = function(){
+  //    var alertPopup = $ionicPopup.alert({
+  //             title:'Language',
+  //             template:'Language set to Serbian'
+  //           });
+  //   //$translateProvider.preferredLanguage('rs');
+
+  // };
 
 })
 

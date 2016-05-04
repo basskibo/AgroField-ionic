@@ -189,7 +189,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     views: {
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+        controller: 'SettingsCtrl'
       }
     }
   });
