@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','pascalprecht.translate'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -27,7 +27,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 
   
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider,$translateProvider) {
+  $translateProvider.translations('en',{
+    loginTitle : 'Login',
+    usernameLabel : 'Username',
+    organisationLabel:'Organisation',
+    passwordLabel: 'Password',
+    loginBtn : 'Login',
+    forgotpasswordLabel: 'Forgot your password?'
+
+  });
+  $translateProvider.translations('rs',{
+    loginTitle:'Prijavi se',
+    usernameLabel:'Korisnicko ime',
+    organisationLabel: 'Organizacija',
+    passwordLabel:'Lozinka',
+    loginBtn: 'Prijavi se',
+    forgotpasswordLabel: 'Zaboravili ste sifru?'
+
+  });
+  $translateProvider.preferredLanguage('en');
+  $translateProvider.fallbackLanguage('en');
+
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -59,6 +80,39 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 
 
+ .state('app', {
+    url: '/app',
+    abstract: true,
+    templateUrl: 'templates/menu.html',
+    controller: 'AppCtrl'
+  })
+
+  .state('app.newOrder', {
+    url: '/newOrder',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/tab-new.html'
+      }
+    }
+  })
+
+  .state('app.browse', {
+      url: '/browse',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/tab-orders.html'
+        }
+      }
+    })
+    .state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/tab-account.html',
+          controller: 'PlaylistsCtrl'
+        }
+      }
+    })
   // Each tab has its own nav history stack:
 
   .state('tab.newWorkingOrder', {
@@ -71,21 +125,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-   .state('tab.weather-search', {
-    url: '/weather-search',
-    views: {
-      'tab-weather-search': {
-        templateUrl: 'templates/weather-search.html',
-        controller: 'WeatherSearchCtrl'
-      }
-    }
-  })
+  //  .state('tab.weather-search', {
+  //   url: '/weather-search',
+  //   views: {
+  //     'tab-weather-search': {
+  //       templateUrl: 'templates/weather-search.html',
+  //       controller: 'WeatherSearchCtrl'
+  //     }
+  //   }
+  // })
 
-  .state('weather', {
-      url: '/weather/:city/:lat/:lng',
-      controller: 'WeatherController',
-      templateUrl: 'templates/weather.html'
-    })
+  // .state('weather', {
+  //     url: '/weather/:city/:lat/:lng',
+  //     controller: 'WeatherController',
+  //     templateUrl: 'templates/weather.html'
+  //   })
 
   .state('tab.orders', {
       url: '/orders',

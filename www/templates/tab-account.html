@@ -1,6 +1,6 @@
 <ion-view view-title="Settings">
   <ion-content>
-    <ion-list>
+<!--     <ion-list>
       <ion-item class="item-divider">Units</ion-item>
       <ion-radio ng-model="settings.units" ng-value="'si'">Metric (Celsius)</ion-radio>
       <ion-radio ng-model="settings.units" ng-value="'us'">Imperial (Fahrenheit)</ion-radio>
@@ -16,6 +16,18 @@
         {{location.city}}
       </ion-item>
     </ion-list>
-    <p class="padding">Weather data powered by <a href="https://developer.forecast.io/docs/v2">Forecast.io</a></p>
+    <p class="padding">Weather data powered by <a href="https://developer.forecast.io/docs/v2">Forecast.io</a></p> -->
+    <ion-list>
+      <ion-item class="item-toggle" ng-click="openNotifications()">
+     <i class="icon ion-android-notifications-none"></i>
+     Notifications
+     <label class="toggle toggle-assertive">
+        <input type="checkbox" ng-click="alert('notification on');$event.stopPropagation()">
+          <div class="track">
+              <div class="handle"></div>
+          </div>
+     </label>
+</ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
