@@ -48,6 +48,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     listOfOrdersLabel: 'List of work orders',
     searchOrdersLabel: 'Search orders',
     timeLabel: 'Time',
+    notificationsLabel: 'Notifications',
+    showOnMapLabel:'Show on map',
+    nameLabel: 'Name',
+    enterNameLabel: 'Enter name',
+    descriptionLabel: 'Description',
+    enterDescriptionLabel: 'Enter description',
+    createLabel: 'Create',
+    cancelLabel:'Cancel',
+    needHelpLabel: 'Need help?',
+    addItemLabel: 'Add Item',
+    createItemLabel:'Create Item',
+    editingLabel: 'Editing',
   });
   $translateProvider.translations('rs',{
     loginTitle:'Prijavi se',
@@ -69,6 +81,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     listOfOrdersLabel:'Lista radnih naloga',
     searchOrdersLabel: 'Pretraži naloge',
     timeLabel:'Vreme',
+    notificationsLabel: 'Obaveštenja',
+    showOnMapLabel:'Prikaži na mapi',
+    nameLabel:'Naziv',
+    enterNameLabel: 'Unesi naziv',   
+    descriptionLabel: 'Opis',
+    enterDescriptionLabel: 'Unesi opis',
+    createLabel: 'Dodaj',
+    cancelLabel: 'Odustani',
+    needHelpLabel: 'Pomoc?',
+    addItemLabel: 'Dodaj stavku',
+    createItemLabel:'Kreiraj stavku',
+    editingLabel: 'Izmena',
   });
   $translateProvider.preferredLanguage('en');
   $translateProvider.fallbackLanguage('en');
