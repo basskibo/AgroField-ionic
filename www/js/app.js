@@ -69,7 +69,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     passwordLabel:'Lozinka',
     loginBtn: 'Prijavi se',
     forgotpasswordLabel: 'Zaboravili ste sifru?',
-    operationLabel: 'Operation',
+    operationLabel: 'Operacija',
     inputLabel: 'Input',
     cultureLabel: 'Kultura',
     priceLabel: 'Cena',
