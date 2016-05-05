@@ -1,5 +1,6 @@
 <ion-view view-title="{{'listOfOrdersLabel' | translate}}">
   <ion-content>
+
     <ion-list>
 
     <!-- search -->
@@ -9,12 +10,20 @@
           <i class="icon ion-ios-search placeholder-icon"></i>
           <input type="text" placeholder="{{'searchOrdersLabel' | translate }}" ng-model="searchOrders">
         </label>
-        Sort by:
-           <select ng-model="sortiranje"> 
-      <option value="operacija" selected="selected">Name</option>
-      <option value="-vreme">Time</option>
-    </select>
+
       </div>
+
+<label class = "item item-input item-select">
+   <div class = "input-label">
+      Sort by : 
+   </div>
+  
+   <select class="form-control" ng-model="sortiranje">
+        <option value="operacija" selected="selected">Name</option>
+        <option value="-vreme">Time</option>
+   </select>
+</label>
+
 
 
     <!-- lista -->
