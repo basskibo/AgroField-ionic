@@ -49,6 +49,34 @@ angular.module('starter.services', [])
      kultura: 'Merkantilna tvrda pšenica – jara',
      input:'Gorivo',
      vreme:'21/8/2016'
+   },
+    {
+     id: 6,
+     operacija: 'Tarupiranje posle žetve',
+     kultura: 'Merkantilna tvrda pšenica – jara',
+     input:'Gorivo',
+     vreme:'21/8/2016'
+   },
+    {
+     id: 7,
+     operacija: 'Tarupiranje posle žetve',
+     kultura: 'Merkantilna tvrda pšenica – jara',
+     input:'Gorivo',
+     vreme:'21/8/2016'
+   },
+    {
+     id: 8,
+     operacija: 'Tarupiranje posle žetve',
+     kultura: 'Merkantilna tvrda pšenica – jara',
+     input:'Gorivo',
+     vreme:'21/8/2016'
+   },
+    {
+     id: 9,
+     operacija: 'Tarupiranje posle žetve',
+     kultura: 'Merkantilna tvrda pšenica – jara',
+     input:'Gorivo',
+     vreme:'21/8/2016'
    }];
 
   return {
