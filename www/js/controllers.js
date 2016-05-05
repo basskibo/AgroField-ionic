@@ -1,6 +1,18 @@
-angular.module('starter.controllers', ['ionic', 'onezone-datepicker','pascalprecht.translate'])
+angular.module('starter.controllers', ['ionic', 'onezone-datepicker','pascalprecht.translate','starter.services'])
 
 
+.controller('DocumentCtrl', function($scope, Document) {
+    $scope.documents = [];
+    $scope.document = null;
+    // Get all the documents
+    Document.all().then(function(documents){
+        $scope.documents = documents;
+    });
+    // Get one document, example with id = 2
+    Document.getById(2).then(function(document) {
+        $scope.document = document;
+    });
+})
 
 .controller('DashCtrl', function($scope, $ionicModal) {
 

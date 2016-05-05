@@ -7,10 +7,14 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','pascalprecht.translate'])
 
-.run(function($ionicPlatform) {
+
+
+.run(function($ionicPlatform,DB) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+    DB.init();
+
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
@@ -60,7 +64,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     addItemLabel: 'Add Item',
     createItemLabel:'Create Item',
     editingLabel: 'Editing',
-    newOrder:'New working order'
+    newOrder:'New working order',
+    newReportLabel:'New report',
+    reportLabel: 'Reports'
   });
   $translateProvider.translations('rs',{
     loginTitle:'Prijavi se',
@@ -94,7 +100,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     addItemLabel: 'Dodaj stavku',
     createItemLabel:'Kreiraj stavku',
     editingLabel: 'Izmena',
-    newOrder: 'Novi radni nalog'
+    newOrder: 'Novi radni nalog',
+    newReportLabel:'Nova beleška',
+    reportLabel: 'Beleška'
   });
   $translateProvider.preferredLanguage('en');
   $translateProvider.fallbackLanguage('en');
@@ -175,6 +183,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     }
   })
 
+   .state('tab.newReport', {
+    url: '/newReport',
+    views: {
+      'tab-newReport': {
+        templateUrl: 'templates/tab-new-report.html',
+        controller: 'DashCtrl'
+      }
+    }
+  })
+
   //  .state('tab.weather-search', {
   //   url: '/weather-search',
   //   views: {
@@ -196,6 +214,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
       views: {
         'tab-orders': {
           templateUrl: 'templates/tab-orders.html',
+          controller: 'ChatsCtrl'
+        }
+      }
+    })
+
+   .state('tab.reports', {
+      url: '/reports',
+      views: {
+        'tab-reports': {
+          templateUrl: 'templates/tab-report.html',
           controller: 'ChatsCtrl'
         }
       }

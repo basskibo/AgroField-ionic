@@ -9,7 +9,7 @@ navigation history that also transitions its views in and out.
 
 
   <!-- Chats Tab -->
-  <ion-tab title="{{'orderLabel' |translate }}}" icon-off="ion-ios-list-outline" icon-on="ion-ios-list" href="#/tab/orders">
+  <ion-tab title="{{'orderLabel' |translate }}" icon-off="ion-ios-list-outline" icon-on="ion-ios-list" href="#/tab/orders">
     <ion-nav-view name="tab-orders"></ion-nav-view>
   </ion-tab>
 
@@ -17,6 +17,14 @@ navigation history that also transitions its views in and out.
     <ion-nav-view name="tab-newWorkingOrder"></ion-nav-view>
   </ion-tab>
 
+ <!-- Chats Tab -->
+  <ion-tab title="{{'reportLabel' |translate }}" icon-off="ion-ios-list-outline" icon-on="ion-ios-list" href="#/tab/reports">
+    <ion-nav-view name="tab-reports"></ion-nav-view>
+  </ion-tab>
+
+    <ion-tab title="{{'newReportLabel' | translate}}" icon-off="ion-plus-round" icon-on="ion-plus-round" href="#/tab/newReport">
+    <ion-nav-view name="tab-newReport"></ion-nav-view>
+  </ion-tab>
 <!-- 
   <ion-tab title="Prognoza" icon-off="ion-ios-cloud-outline" icon-on="ion-ios-partlysunny" href="#/tab/weather-search">
     <ion-nav-view name="tab-weather-search"></ion-nav-view>
