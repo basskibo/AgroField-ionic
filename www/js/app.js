@@ -60,6 +60,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     addItemLabel: 'Add Item',
     createItemLabel:'Create Item',
     editingLabel: 'Editing',
+    newOrder:'New working order'
   });
   $translateProvider.translations('rs',{
     loginTitle:'Prijavi se',
@@ -93,6 +94,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     addItemLabel: 'Dodaj stavku',
     createItemLabel:'Kreiraj stavku',
     editingLabel: 'Izmena',
+    newOrder: 'Novi radni nalog'
   });
   $translateProvider.preferredLanguage('en');
   $translateProvider.fallbackLanguage('en');
@@ -139,7 +141,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     url: '/newOrder',
     views: {
       'menuContent': {
-        templateUrl: 'templates/tab-new.html'
+        templateUrl: 'templates/tab-new-order.html'
       }
     }
   })
@@ -156,7 +158,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
       url: '/playlists',
       views: {
         'menuContent': {
-          templateUrl: 'templates/tab-account.html',
+          templateUrl: 'templates/tab-settings.html',
           controller: 'PlaylistsCtrl'
         }
       }
@@ -167,7 +169,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     url: '/newWorkingOrder',
     views: {
       'tab-newWorkingOrder': {
-        templateUrl: 'templates/tab-new.html',
+        templateUrl: 'templates/tab-new-order.html',
         controller: 'DashCtrl'
       }
     }
@@ -212,7 +214,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     url: '/account',
     views: {
       'tab-account': {
-        templateUrl: 'templates/tab-account.html',
+        templateUrl: 'templates/tab-settings.html',
         controller: 'SettingsCtrl'
       }
     }

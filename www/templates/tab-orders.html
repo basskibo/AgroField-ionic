@@ -7,13 +7,13 @@
       <div class="list list-inset">
         <label class="item item-input">
           <i class="icon ion-ios-search placeholder-icon"></i>
-          <input type="text" placeholder="{{'searchOrdersLabel' | translate }}">
+          <input type="text" placeholder="{{'searchOrdersLabel' | translate }}" ng-model="searchOrders">
         </label>
       </div>
 
 
     <!-- lista -->
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="order in orders" type="item-text-wrap" href="#/tab/orders/{{order.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="order in orders | filter:searchOrders" type="item-text-wrap" href="#/tab/orders/{{order.id}}">
 
         <h2 ><b>{{'operationLabel' | translate}}: </b>{{order.operacija}}</h2>
         <p ><b>{{'timeLabel' | translate}}:</b> {{order.kultura}}</p>

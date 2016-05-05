@@ -6255,7 +6255,6 @@ button.item.item-button-right {
 .item-avatar .item-content,
 .item-avatar-left,
 .item-avatar-left .item-content {
-  padding-left: 72px;
   min-height: 72px; }
   .item-avatar > img:first-child,
   .item-avatar .item-image,

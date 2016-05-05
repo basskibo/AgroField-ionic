@@ -105,27 +105,28 @@ $scope.onezoneDatepicker = {
     // console.log(currentLang);
     // $translate.uses(langKey);
     $translate.use(langKey); 
-       //console.log(f);
+    if(langKey == 'rs'){
+      text = 'Jezik promenjen na srpski';
+    }
+ 
+
     var lng = $translate.use();
+    var title ;
     console.log(lng);
-
-  };
-  $scope.notificationOn = function(){
-     var alertPopup = $ionicPopup.alert({
-              title:'Language',
-              template:'Language set to English'
+    if(lng == 'rs'){
+      lng = "Jezik promenjen na Srpski";
+      title = "Jezik";
+    }else{
+      lng= "Language changed to English";
+      title = 'Language';
+    }
+   var alertPopup = $ionicPopup.alert({
+              title:title,
+              template:lng
       });
-    //$translateProvider.preferredLanguage('rs');
-
   };
-  // $scope.notificationOff = function(){
-  //    var alertPopup = $ionicPopup.alert({
-  //             title:'Language',
-  //             template:'Language set to Serbian'
-  //           });
-  //   //$translateProvider.preferredLanguage('rs');
 
-  // };
+
 
 })
 
