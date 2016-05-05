@@ -38,7 +38,7 @@ $scope.onezoneDatepicker = {
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-  $scope.sortiranje = "operacija";
+  $scope.sortiranje = "-vreme";
   $scope.orders = WorkingOrders.all();
   $scope.remove = function(order) {
 
