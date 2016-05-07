@@ -3,19 +3,30 @@
     <ion-list>
 
     <!-- search -->
-    <div class="bar bar-header item-input-inset">
-      <label class="item-input-wrapper">
-        <i class="icon ion-ios-search placeholder-icon"></i>
-        <input name="search" type="search" placeholder="Search">
-      </label>
-      <button class="button button-balanced">
-        Find
-      </button>
-    </div>
-    <!-- lista -->
-      <ion-item class="item-remove-animate item-avatar item-icon-right"
-        ng-repeat="report in beleska" type="item-text-wrap" href="#/tab/beleska/{{report.id}}">
+ 
+      <div class="list list-inset">
+        <label class="item item-input">
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input type="text" placeholder="{{'searchOrdersLabel' | translate }}" ng-model="searchReports">
+        </label>
 
+      </div>
+
+<label class = "item item-input item-select">
+   <div class = "input-label">
+      Sort by : 
+   </div>
+  
+   <select class="form-control" ng-model="sortiranje">
+        <option value="operacija" selected="selected">Name</option>
+        <option value="-vreme">Time</option>
+   </select>
+</label>
+    <!-- lista -->
+ <!--      <ion-item class="item-remove-animate item-avatar item-icon-right"
+        ng-repeat="report in beleska" type="item-text-wrap" href="#/tab/beleska/{{report.id}}">
+ -->
+   <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="report in beleska | filter:searchReports | orderBy:sortiranje" type="item-text-wrap" href="#/tab/beleska/{{report.id}}">
         <p>Date of visit: {{report.datum}}</p>
         <p>Region: {{report.katOpst}}</p>
         <p>Plot: {{report.parcela}}</p>

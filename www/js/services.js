@@ -79,7 +79,32 @@ angular.module('starter.services', ['starter.config'])
      vreme:'21/8/2016'
    }];
 
-     var beleska = [{
+
+
+  return {
+    all: function() {
+      return orders;
+    },
+    remove: function(order) {
+      orders.splice(orders.indexOf(order), 1);
+    },
+    get: function(orderId) {
+      for (var i = 0; i < orders.length; i++) {
+        if (orders[i].id === parseInt(orderId)) {
+          return orders[i];
+        }
+      }
+      return null;
+    },
+    edit:function(){
+      return login.html;
+    }
+  };
+})
+
+
+.factory('Reports', function() {
+     var reports = [{
     id: 0,
     datum: 'Operation 1',
     katOpst: 'This is some description.',
@@ -113,44 +138,27 @@ angular.module('starter.services', ['starter.config'])
     },
  ];
 
+
   return {
-    all: function() {
-      return orders;
+     all: function() {
+      return reports;
     },
-    remove: function(order) {
-      orders.splice(orders.indexOf(order), 1);
+    remove: function(report) {
+      reports.splice(reports.indexOf(report), 1);
     },
-    get: function(orderId) {
-      for (var i = 0; i < orders.length; i++) {
-        if (orders[i].id === parseInt(orderId)) {
-          return orders[i];
+    get: function(reportId) {
+      for (var i = 0; i < reports.length; i++) {
+        if (reports[i].id === parseInt(reportId)) {
+          return reports[i];
         }
       }
       return null;
     },
     edit:function(){
       return login.html;
-    },
-     allR: function() {
-      return beleska;
-    },
-    removeR: function(beleska) {
-      orders.splice(orders.indexOf(beleska), 1);
-    },
-    getR: function(beleskaId) {
-      for (var i = 0; i < beleska.length; i++) {
-        if (beleska[i].id === parseInt(beleskaId)) {
-          return beleska[i];
-        }
-      }
-      return null;
-    },
-    editR:function(){
-      return login.html;
     }
   };
 })
-
 
 .config(['$ionicConfigProvider', function($ionicConfigProvider) {
 

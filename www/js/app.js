@@ -193,21 +193,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     }
   })
 
-  //  .state('tab.weather-search', {
-  //   url: '/weather-search',
-  //   views: {
-  //     'tab-weather-search': {
-  //       templateUrl: 'templates/weather-search.html',
-  //       controller: 'WeatherSearchCtrl'
-  //     }
-  //   }
-  // })
+   .state('tab.weather-search', {
+    url: '/weather-search',
+    views: {
+      'tab-weather-search': {
+        templateUrl: 'templates/weather-search.html',
+        controller: 'WeatherSearchCtrl'
+      }
+    }
+  })
 
-  // .state('weather', {
-  //     url: '/weather/:city/:lat/:lng',
-  //     controller: 'WeatherController',
-  //     templateUrl: 'templates/weather.html'
-  //   })
+  .state('weather', {
+      url: '/weather/:city/:lat/:lng',
+      controller: 'WeatherController',
+      templateUrl: 'templates/weather.html'
+    })
 
   .state('tab.orders', {
       url: '/orders',
@@ -224,7 +224,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
       views: {
         'tab-reports': {
           templateUrl: 'templates/tab-report.html',
-          controller: 'ChatsCtrl'
+          controller: 'ReportsCtrl'
         }
       }
     })
