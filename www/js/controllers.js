@@ -145,7 +145,39 @@ $scope.onezoneDatepicker = {
 })
 
 
-.controller('ChatsCtrl', function($scope, WorkingOrders) {
+.controller('EditOrderCtrl', function($scope, $ionicModal,$http,$state,$http,WorkingOrders,$ionicHistory,$window  ) {
+    console.log("za edit : " + $scope.zaEdit);
+
+
+
+  $scope.onezoneDatepicker = {
+    date: new Date(), // MANDATORY
+    mondayFirst: false,
+    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    daysOfTheWeek: ['Ned', 'Pon', 'Uto', 'Sre', 'Čet', 'Pet', 'Sub'],     
+    startDate: new Date(),
+    disablePastDays: false,
+    disableSwipe: false,
+    disableWeekend: false,
+    showDatepicker: false,
+    showTodayButton: true,
+    calendarMode: false,
+    hideCancelButton: false,
+    hideSetButton: false,
+    // disableDaysOfWeek: [0,6] ,
+    disableDaysOfWeek:false,
+    hideSetButton:true,
+    callback: function(value){
+        // your code
+    }
+};
+
+  console.log('Edit');
+
+
+})
+
+.controller('ChatsCtrl', function($scope, WorkingOrders,$stateParams,$state) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -153,6 +185,7 @@ $scope.onezoneDatepicker = {
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+  $scope.zaEdit = [];
 
   $scope.sortiranje = "-vreme";
   $scope.orders = WorkingOrders.all();
@@ -161,6 +194,20 @@ $scope.onezoneDatepicker = {
 	WorkingOrders.remove(order);
 
   };
+  $scope.edit = function(order){
+    $scope.order = WorkingOrders.get($stateParams.orderId);
+    console.log("o: " + order);
+    console.log("operacija: " +order.operacija);
+
+    $scope.zaEdit.push({
+
+      operacija: order.operacija,
+      vreme : order.vreme
+    })
+    console.log($scope.zaEdit[0]);
+
+    $state.go('app.editOrder',$scope.zaEdit[0]);
+  }
 })
 
 .controller('ReportsCtrl', function($scope, Reports) {

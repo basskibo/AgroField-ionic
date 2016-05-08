@@ -91,7 +91,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     "cel" : "Metric (Celsius)",
     "far" : "Imperial (Fahrenheit)",
     "favorit" : "Favorites",
-    "podesavanja":"Settings"
+    "podesavanja":"Settings",
+    "editOrder" : "Edit Working Order"
+
 
 
   });
@@ -154,7 +156,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     "cel" : "Celzijus",
     "far" : "Farenhajt",
     "favorit" : "Favorit",
-    "podesavanja" : "Podešavanja"
+    "podesavanja" : "Podešavanja",
+    "editOrder" : "Izmena radnog naloga"
 
 
 
@@ -211,6 +214,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
       'menuContent': {
         templateUrl: 'templates/tab-new-order.html',
         controller: 'DashCtrl'
+
+      }
+    }
+  })
+
+  .state('app.editOrder', {
+    url: '/editOrder',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/tab-new-order-edit.html',
+        controller: 'EditOrderCtrl'
 
       }
     }
@@ -417,7 +431,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
   // });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/app/orders');
 
 })
 

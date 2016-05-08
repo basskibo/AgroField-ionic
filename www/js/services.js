@@ -84,6 +84,7 @@ angular.module('starter.services', ['starter.config'])
   return {
     all: function() {
       return orders;
+      
     },
     remove: function(order) {
       orders.splice(orders.indexOf(order), 1);
@@ -96,8 +97,13 @@ angular.module('starter.services', ['starter.config'])
       }
       return null;
     },
-    edit:function(){
-      return login.html;
+    edit:function(orderId){
+        for (var i = 0; i < orders.length; i++) {
+        if (orders[i].id === parseInt(orderId)) {
+          return orders[i];
+        }
+      }
+      return null;
     }
   };
 })
