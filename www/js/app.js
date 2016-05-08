@@ -45,12 +45,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     priceLabel: 'Price',
     dateLabel: 'Date',
     saveLabel: 'Save',
-    orderLabel: 'Word Order',
+    orderLabel: 'Working Orders',
+    orderAll: 'All Orders',
     newOrderLabel: 'New work order',
     settingsLabel: 'Settings',
     logOutLabel: 'Log Out',
     listOfOrdersLabel: 'List of work orders',
     searchOrdersLabel: 'Search orders',
+    searchOrders1Label: 'Search reports',
+
     timeLabel: 'Time',
     notificationsLabel: 'Notifications',
     showOnMapLabel:'Show on map',
@@ -66,7 +69,31 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     editingLabel: 'Editing',
     newOrder:'New working order',
     newReportLabel:'New report',
-    reportLabel: 'Reports'
+    reportLabel: 'Reports',
+    reportAll: 'All Reports',
+    "prognoza": "Weather forecast",
+
+    "katOpst": "Cadastral region",
+    "vrstaAktivnosti" : "Type of activity",
+    "parcela" : "Parcel",
+    "opis" : "Description",
+    "listaR" : "Field report List",
+    "sortby" : "Sort by",
+    "vreme" : "Time",
+    "naziv" : "Name",
+    "menu" : "Menu",
+    "tipAktivnosti" : "Type of activity",
+    "datumPosete" : "Date of visit",
+    "en" : "English",
+    "rs" : "Serbian",
+    "lang" : "Choose language",
+    "mera" : "Unit",
+    "cel" : "Metric (Celsius)",
+    "far" : "Imperial (Fahrenheit)",
+    "favorit" : "Favorites",
+    "podesavanja":"Settings"
+
+
   });
   $translateProvider.translations('rs',{
     loginTitle:'Prijavi se',
@@ -81,12 +108,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     priceLabel: 'Cena',
     dateLabel: 'Datum',
     saveLabel: 'Sačuvaj',
-    orderLabel: 'Radni Nalog',
+    orderLabel: 'Radni Nalozi',
+    orderAll: 'Svi nalozi',
+
     newOrderLabel: 'Novi radni nalog',
     settingsLabel: 'Podešavanja',
     logOutLabel:'Odjavi se',
     listOfOrdersLabel:'Lista radnih naloga',
     searchOrdersLabel: 'Pretraži naloge',
+    searchOrders1Label: 'Pretraži beleške',
+
     timeLabel:'Vreme',
     notificationsLabel: 'Obaveštenja',
     showOnMapLabel:'Prikaži na mapi',
@@ -102,7 +133,34 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     editingLabel: 'Izmena',
     newOrder: 'Novi radni nalog',
     newReportLabel:'Nova beleška',
-    reportLabel: 'Beleška'
+    reportLabel: 'Beleška',
+    reportAll: 'Sve beleške',
+    "prognoza": "Vremenska Prognoza",
+    "katOpst" : "Katastarska opstina",
+    "vrstaAktivnosti": "Vrsta aktivnosti",
+    "parcela" : "Parcela",
+    "opis" : "Opis",
+    "listaR" : "Lista terenskih beleški",
+    "sortby" : "Sortiraj po",
+    "vreme" : "Vremenu",
+    "naziv" : "Nazivu",
+    "menu" : "Meni",
+    "tipAktivnosti" : "Tip aktivnosti",
+    "datumPosete" : "Datum posete",
+    "en" : "Engleski",
+    "rs" : "Srpski",
+    "lang" : "Izaberite jezik",
+    "mera" : "Jedinična mera",
+    "cel" : "Celzijus",
+    "far" : "Farenhajt",
+    "favorit" : "Favorit",
+    "podesavanja" : "Podešavanja"
+
+
+
+
+
+
   });
   $translateProvider.preferredLanguage('en');
   $translateProvider.fallbackLanguage('en');
@@ -120,6 +178,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
  .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html',
+      cache: false,
+
       controller: 'LoginCtrl'
     })
 
@@ -149,19 +209,179 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     url: '/newOrder',
     views: {
       'menuContent': {
-        templateUrl: 'templates/tab-new-order.html'
+        templateUrl: 'templates/tab-new-order.html',
+        controller: 'DashCtrl'
+
       }
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
+  // .state('tab.newWorkingOrder', {
+  //   url: '/newWorkingOrder',
+  //   views: {
+  //     'tab-newWorkingOrder': {
+  //       templateUrl: 'templates/tab-new-order.html',
+  //       controller: 'DashCtrl'
+  //     }
+  //   }
+  // })
+
+
+ .state('app.weather-search', {
+      url: '/weather-search',
       views: {
         'menuContent': {
-          templateUrl: 'templates/tab-orders.html'
+          templateUrl: 'templates/weather-search.html',
+          controller: 'WeatherSearchCtrl'
         }
       }
     })
+  //  .state('tab.weather-search', {
+  //   url: '/weather-search',
+  //   views: {
+  //     'tab-weather-search': {
+  //       templateUrl: 'templates/weather-search.html',
+  //       controller: 'WeatherSearchCtrl'
+  //     }
+  //   }
+  // })
+
+    .state('app.weather', {
+      url: '/weather/:city/:lat/:lng',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/weather.html',
+          controller: 'WeatherController'
+        }
+      }
+    })
+  // .state('weather', {
+  //     url: '/weather/:city/:lat/:lng',
+  //     controller: 'WeatherController',
+  //     templateUrl: 'templates/weather.html'
+  //   })
+  .state('app.orders', {
+      url: '/orders',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/tab-orders.html',
+          controller: 'ChatsCtrl'
+
+        }
+      }
+    })
+
+
+  // .state('tab.orders', {
+  //     url: '/orders',
+  //     views: {
+  //       'tab-orders': {
+  //         templateUrl: 'templates/tab-orders.html',
+  //         controller: 'ChatsCtrl'
+  //       }
+  //     }
+  //   })
+
+
+    .state('app.reports', {
+      url: '/reports',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/tab-report.html',
+          controller: 'ReportsCtrl'
+        }
+      }
+    })
+   // .state('tab.reports', {
+   //    url: '/reports',
+   //    views: {
+   //      'tab-reports': {
+   //        templateUrl: 'templates/tab-report.html',
+   //        controller: 'ReportsCtrl'
+   //      }
+   //    }
+   //  })
+
+    .state('app.newReport', {
+      url: '/newReport',
+      views: {
+        'menuContent': {
+          cache: false,
+
+          templateUrl: 'templates/tab-new-report.html',
+          controller: 'NewReportCtrl'
+        }
+      }
+    })
+  //  .state('tab.newReport', {
+  //   url: '/newReport',
+  //   views: {
+  //     'tab-newReport': {
+  //       templateUrl: 'templates/tab-new-report.html',
+  //       controller: 'DashCtrl'
+  //     }
+  //   }
+  // })
+
+
+    .state('app.report-detail', {
+      url: '/reports/:reportId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/tab-detailR.html',
+          controller: 'ReportDetailCtrl'
+        }
+      }
+    })
+    // .state('tab.report-detail', {
+    //   url: '/reports/:reportId',
+    //   views: {
+    //     'tab-reports': {
+    //       templateUrl: 'templates/tab-detailR.html',
+    //       controller: 'ReportDetailCtrl'
+    //     }
+    //   }
+    // })
+
+
+  .state('app.order-detail', {
+      url: '/orders/:orderId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/tab-detail.html',
+          controller: 'ChatDetailCtrl'
+        }
+      }
+    })
+    // .state('tab.order-detail', {
+    //   url: '/orders/:orderId',
+    //   views: {
+    //     'tab-orders': {
+    //       templateUrl: 'templates/tab-detail.html',
+    //       controller: 'ChatDetailCtrl'
+    //     }
+    //   }
+    // })
+   .state('app.settings', {
+        url: '/settings',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/tab-settings.html',
+            controller: 'SettingsCtrl'
+          }
+        }
+      })
+
+  //     .state('tab.account', {
+  //   url: '/account',
+  //   views: {
+  //     'tab-account': {
+  //       templateUrl: 'templates/tab-settings.html',
+  //       controller: 'SettingsCtrl'
+  //     }
+  //   }
+  // });
+   ///////////////////////////////////////////////
     .state('app.playlists', {
       url: '/playlists',
       views: {
@@ -170,86 +390,34 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
           controller: 'PlaylistsCtrl'
         }
       }
-    })
+    });
   // Each tab has its own nav history stack:
 
-  .state('tab.newWorkingOrder', {
-    url: '/newWorkingOrder',
-    views: {
-      'tab-newWorkingOrder': {
-        templateUrl: 'templates/tab-new-order.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
 
-   .state('tab.newReport', {
-    url: '/newReport',
-    views: {
-      'tab-newReport': {
-        templateUrl: 'templates/tab-new-report.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
 
-   .state('tab.weather-search', {
-    url: '/weather-search',
-    views: {
-      'tab-weather-search': {
-        templateUrl: 'templates/weather-search.html',
-        controller: 'WeatherSearchCtrl'
-      }
-    }
-  })
+  //  .state('tab.weather-search', {
+  //   url: '/weather-search',
+  //   views: {
+  //     'tab-weather-search': {
+  //       templateUrl: 'templates/weather-search.html',
+  //       controller: 'WeatherSearchCtrl'
+  //     }
+  //   }
+  // });
+ 
 
-  .state('weather', {
-      url: '/weather/:city/:lat/:lng',
-      controller: 'WeatherController',
-      templateUrl: 'templates/weather.html'
-    })
-
-  .state('tab.orders', {
-      url: '/orders',
-      views: {
-        'tab-orders': {
-          templateUrl: 'templates/tab-orders.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-
-   .state('tab.reports', {
-      url: '/reports',
-      views: {
-        'tab-reports': {
-          templateUrl: 'templates/tab-report.html',
-          controller: 'ReportsCtrl'
-        }
-      }
-    })
-    .state('tab.order-detail', {
-      url: '/orders/:orderId',
-      views: {
-        'tab-orders': {
-          templateUrl: 'templates/tab-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-settings.html',
-        controller: 'SettingsCtrl'
-      }
-    }
-  });
+  // .state('tab.account', {
+  //   url: '/account',
+  //   views: {
+  //     'tab-account': {
+  //       templateUrl: 'templates/tab-settings.html',
+  //       controller: 'SettingsCtrl'
+  //     }
+  //   }
+  // });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/orders');
+  $urlRouterProvider.otherwise('/login');
 
 })
 
@@ -271,6 +439,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
 
 .controller('LeftMenuController', function ($scope, Locations) {
   $scope.locations = Locations.data;
+
+
+
+
+
 })
 
 .filter('timezone', function () {

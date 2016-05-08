@@ -105,16 +105,16 @@ angular.module('starter.services', ['starter.config'])
 
 .factory('Reports', function() {
      var reports = [{
-    id: 0,
-    datum: 'Operation 1',
-    katOpst: 'This is some description.',
-    parcela:'somethin1',
-    vrstaAktivnosti:'somethin1',
-    opis:'somethin jrdhtfg1'
+      id: 0,
+      datum: '11/2/2016',
+      katOpst: 'This is some description.',
+      parcela:'somethin1',
+      vrstaAktivnosti:'somethin1',
+      opis:'somethin jrdhtfg1'
     },
     {
       id: 1,
-      datum: 'Operation 2',
+      datum: '21/3/2013',
       katOpst: 'This is some description.',
       parcela:'somethin2',
       vrstaAktivnosti:'sethin1',
@@ -122,7 +122,7 @@ angular.module('starter.services', ['starter.config'])
     },
     {
       id: 2,
-      datum: 'Operation 3',
+      datum: '22/5/2014',
       katOpst: 'This is some description.',
       parcela:'somethin3',
       vrstaAktivnosti:'sthin1',
@@ -130,7 +130,7 @@ angular.module('starter.services', ['starter.config'])
     },
     {
       id: 3,
-      datum: 'Operation 4',
+      datum: '27/2/2015',
       katOpst: 'This is some description.',
       parcela:'somethin4',
       vrstaAktivnosti:'somethi',
@@ -187,12 +187,12 @@ angular.module('starter.services', ['starter.config'])
             console.log(queryi);
             self.query(queryi);
             self.query(query);
-            console.log('Table ' + table.name + ' initialized');
+            //console.log('Table ' + table.name + ' initialized');
            self.all = function() {
                 return DB.query('SELECT * FROM orders')
                 .then(function(result){
                     return DB.fetchAll(result);
-                    console.log(result);
+                    //console.log(result);
         });
                 all();
     };
@@ -238,7 +238,7 @@ angular.module('starter.services', ['starter.config'])
         return DB.query('SELECT * FROM orders')
         .then(function(result){
             return DB.fetchAll(result);
-            console.log(result);
+            //console.log(result);
         });
     };
     

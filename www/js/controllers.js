@@ -1,20 +1,101 @@
 angular.module('starter.controllers', ['ionic', 'onezone-datepicker','pascalprecht.translate','starter.services'])
 
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$http) {
 
-.controller('DocumentCtrl', function($scope, Document) {
-    $scope.documents = [];
-    $scope.document = null;
-    // Get all the documents
-    Document.all().then(function(documents){
-        $scope.documents = documents;
-    });
-    // Get one document, example with id = 2
-    Document.getById(2).then(function(document) {
-        $scope.document = document;
-    });
+
+
+    // $http.get('/json/orders.json').success(function(data) {
+    //     $scope.orders=data.orders;
+    // });
+  // With the new view caching in Ionic, Controllers are only called
+  // when they are recreated or on app start, instead of every page change.
+  // To listen for when this page is active (for example, to refresh data),
+  // listen for the $ionicView.enter event:
+  //$scope.$on('$ionicView.enter', function(e) {
+  //});
+
+  // // Form data for the login modal
+  // $scope.loginData = {};
+
+  // // Create the login modal that we will use later
+  // $ionicModal.fromTemplateUrl('templates/login.html', {
+  //   scope: $scope
+  // }).then(function(modal) {
+  //   $scope.modal = modal;
+  // });
+
+  // // Triggered in the login modal to close it
+  // $scope.closeLogin = function() {
+  //   $scope.modal.hide();
+  // };
+
+  // // Open the login modal
+  // $scope.login = function() {
+  //   $scope.modal.show();
+  // };
+
+  
 })
 
-.controller('DashCtrl', function($scope, $ionicModal) {
+
+// .controller('DocumentCtrl', function($scope, Document) {
+//     $scope.documents = [];
+//     $scope.document = null;
+//     // Get all the documents
+//     Document.all().then(function(documents){
+//         $scope.documents = documents;
+//     });
+//     // Get one document, example with id = 2
+//     Document.getById(2).then(function(document) {
+//         $scope.document = document;
+//     });
+// })
+
+.controller('DashCtrl', function($scope, $ionicModal,$http,$state,$http,WorkingOrders) {
+
+
+$scope.onezoneDatepicker = {
+    date: new Date(), // MANDATORY
+    mondayFirst: false,
+    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    daysOfTheWeek: ['Ned', 'Pon', 'Uto', 'Sre', 'Čet', 'Pet', 'Sub'],     
+    startDate: new Date(),
+    disablePastDays: false,
+    disableSwipe: false,
+    disableWeekend: false,
+    showDatepicker: false,
+    showTodayButton: true,
+    calendarMode: false,
+    hideCancelButton: false,
+    hideSetButton: false,
+    // disableDaysOfWeek: [0,6] ,
+    disableDaysOfWeek:false,
+    hideSetButton:true,
+    callback: function(value){
+        // your code
+    }
+};
+
+    $scope.createOrder = function(order){
+      $scope.orders = WorkingOrders.all();
+
+      console.log(order.operacija + " "+ order.kultura + " " + order.cena + " "+order.input ); 
+    $scope.orders.push({
+      operacija: order.operacija,
+      kultura: order.kultura,
+      cena: order.cena,
+      input: order.input,
+      vreme : "14/15/2014"
+
+    })
+       
+    $state.go('app.orders');
+
+}
+
+})
+
+.controller('NewReportCtrl', function($scope, $ionicModal,$http,$state,$http,Reports,$ionicHistory,$window  ) {
 
 
 $scope.onezoneDatepicker = {
@@ -40,7 +121,29 @@ $scope.onezoneDatepicker = {
 };
 
 
+
+    $scope.createReport = function(report){
+      $scope.reports = Reports.all();
+
+    $scope.reports.push({
+      vrstaAktivnosti: report.vrstaAktivnosti,
+      katOpst: report.katOpst,
+      parcela: report.parcela,
+      opis: report.opis,
+      datum : "14/15/2014"
+
+    })
+       
+     //$ionicHistory.clearHistory();
+    //$window.location.reload(false);
+
+
+    $state.go('app.reports');
+
+}
+
 })
+
 
 .controller('ChatsCtrl', function($scope, WorkingOrders) {
   // With the new view caching in Ionic, Controllers are only called
@@ -69,8 +172,8 @@ $scope.onezoneDatepicker = {
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-  $scope.sortiranje = "-vreme";
-  $scope.beleska = Reports.all();
+  $scope.sortiranje = "-datum";
+  $scope.reports = Reports.all();
   $scope.remove = function(report) {
 
   Reports.remove(report);
@@ -83,6 +186,9 @@ $scope.onezoneDatepicker = {
   $scope.order = WorkingOrders.get($stateParams.orderId);
 })
 
+.controller('ReportDetailCtrl', function($scope, $stateParams, Reports) {
+  $scope.report = Reports.get($stateParams.reportId);
+})
 
 
 
@@ -93,7 +199,7 @@ $scope.onezoneDatepicker = {
               title:'Welcome ' + user.username,
               template:'You are now logged in'
            });
-           $state.go('tab.orders');
+           $state.go('app.orders');
 
         }else{
             var alertPopup = $ionicPopup.alert({

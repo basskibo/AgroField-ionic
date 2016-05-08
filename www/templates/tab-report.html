@@ -1,4 +1,4 @@
-<ion-view view-title="Field report List">
+<ion-view view-title="{{'listaR' | translate}}" hide-back-button="true">
   <ion-content>
     <ion-list>
 
@@ -7,30 +7,31 @@
       <div class="list list-inset">
         <label class="item item-input">
           <i class="icon ion-ios-search placeholder-icon"></i>
-          <input type="text" placeholder="{{'searchOrdersLabel' | translate }}" ng-model="searchReports">
+          <input type="text" placeholder="{{'searchOrders1Label' | translate }}" ng-model="searchReports">
         </label>
 
       </div>
 
 <label class = "item item-input item-select">
    <div class = "input-label">
-      Sort by : 
+      {{'sortby' | translate}} : 
    </div>
   
    <select class="form-control" ng-model="sortiranje">
-        <option value="operacija" selected="selected">Name</option>
-        <option value="-vreme">Time</option>
+        <option value="vrstaAktivnosti" selected="selected">{{"naziv" | translate}}</option>
+        <option value="-datum">{{'vreme' | translate}}</option>
    </select>
 </label>
     <!-- lista -->
  <!--      <ion-item class="item-remove-animate item-avatar item-icon-right"
         ng-repeat="report in beleska" type="item-text-wrap" href="#/tab/beleska/{{report.id}}">
  -->
-   <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="report in beleska | filter:searchReports | orderBy:sortiranje" type="item-text-wrap" href="#/tab/beleska/{{report.id}}">
-        <p>Date of visit: {{report.datum}}</p>
-        <p>Region: {{report.katOpst}}</p>
+   <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="report in reports | filter:searchReports | orderBy:sortiranje" type="item-text-wrap" href="#/app/reports/{{report.id}}">
+        <p><b>{{'tipAktivnosti' | translate}} : </b>{{report.vrstaAktivnosti}}</p>
+        <p><b>{{'datumPosete' | translate}} :</b> {{report.datum}}</p>
+       <!--  <p>Region: {{report.katOpst}}</p>
         <p>Plot: {{report.parcela}}</p>
-        <p>Type of activity: {{report.vrstaAktivnosti}}</p>
+        <p><b>Type of activity: <b>{{report.vrstaAktivnosti}}</p> -->
 
         <i class="icon ion-chevron-right ion-ios-arrow-left"></i>
 

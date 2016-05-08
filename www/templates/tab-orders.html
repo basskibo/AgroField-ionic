@@ -1,4 +1,4 @@
-<ion-view view-title="{{'listOfOrdersLabel' | translate}}">
+<ion-view view-title="{{'listOfOrdersLabel' | translate}}" hide-back-button="true">
   <ion-content>
 
     <ion-list>
@@ -15,19 +15,19 @@
 
 <label class = "item item-input item-select">
    <div class = "input-label">
-      Sort by : 
+      {{'sortby' | translate}} : 
    </div>
   
    <select class="form-control" ng-model="sortiranje">
-        <option value="operacija" selected="selected">Name</option>
-        <option value="-vreme">Time</option>
+        <option value="operacija" selected="selected">{{"naziv" | translate}}</option>
+        <option value="-vreme">{{'vreme' | translate}}</option>
    </select>
 </label>
 
 
 
     <!-- lista -->
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="order in orders | filter:searchOrders | orderBy:sortiranje" type="item-text-wrap" href="#/tab/orders/{{order.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="order in orders | filter:searchOrders | orderBy:sortiranje" type="item-text-wrap" href="#/app/orders/{{order.id}}">
 
         <h2 ><b>{{'operationLabel' | translate}}: </b>{{order.operacija}}</h2>
         <p ><b>{{'timeLabel' | translate}}:</b> {{order.vreme}}</p>

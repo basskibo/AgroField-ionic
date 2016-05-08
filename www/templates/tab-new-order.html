@@ -1,4 +1,4 @@
-<ion-view view-title="{{'newOrder' | translate}}">
+<ion-view view-title="{{'newOrder' | translate}}" >
   <ion-content class="padding">
 
 
@@ -6,37 +6,36 @@
   <div class="inputi">
     <label class="item item-input item-floating-label">
       <span class="input-label">{{'operationLabel' | translate }}</span>
-      <input type="text" placeholder="{{'operationLabel' | translate }}">
+      <input type="text" placeholder="{{'operationLabel' | translate }}" ng-model="order.operacija">
     </label>
     <label class="item item-input item-floating-label">
       <span class="input-label">{{'cultureLabel' | translate}}</span>
-      <input type="text" placeholder="{{'cultureLabel' | translate}}">
+      <input type="text" placeholder="{{'cultureLabel' | translate}}"  ng-model="order.kultura">
     </label>
     <label class="item item-input item-floating-label">
       <span class="input-label">{{'inputLabel' | translate}}</span>
-      <input type="text" placeholder="{{'inputLabel' | translate}}">
+      <input type="text" placeholder="{{'inputLabel' | translate}}"  ng-model="order.input">
     </label>
     <label class="item item-input item-floating-label">
       <span class="input-label">{{'priceLabel' | translate}}</span>
-      <input type="text" placeholder="{{'priceLabel' | translate}}">
+      <input type="text" placeholder="{{'priceLabel' | translate}}"  ng-model="order.cena">
     </label>
   </div>
+ 
 
-
-
-
+    
 
 
 
 
   <onezone-datepicker datepicker-object="onezoneDatepicker">
-    <button class="button button-block button-outline button-positive show-onezone-datepicker">
+    <button class="button button-block button-outline button-positive show-onezone-datepicker" ng-model="order.vreme">
         {{'dateLabel' | translate}}: {{onezoneDatepicker.date | date:'dd MMMM yyyy'}}
     </button>
 </onezone-datepicker>
 
 
-  <button type="submit" class="button button-block button-balanced">
+  <button type="submit" class="button button-block button-balanced" ng-click="createOrder(order)">
     {{'saveLabel' | translate}}
 </button>
 

@@ -1,0 +1,54 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">{{'menu' | translate}}</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        
+         <div class="item item-divider">
+           <i class="ion-ios-list"></i> {{'orderLabel' |translate }} 
+
+        <ion-item menu-close href="#/app/orders">
+          {{'orderAll' |translate }}
+        </ion-item>
+        <ion-item menu-close href="#/app/newOrder">
+          {{'newOrderLabel' | translate}}
+        </ion-item>
+        </div>
+        <div class="item item-divider">
+              <i class="ion-document-text"></i>
+          {{'reportLabel' |translate }}
+        <ion-item menu-close href="#/app/reports">
+          {{'reportAll' |translate }}
+        </ion-item>
+        <ion-item menu-close href="#/app/newReport">
+          {{'newReportLabel' | translate}}
+        </ion-item>
+        </div>
+        <ion-item menu-close href="#/app/weather-search">
+         {{'prognoza' | translate }}
+        </ion-item>
+         <ion-item menu-close href="#/app/settings">
+          {{'settingsLabel' | translate }}
+        </ion-item>
+        <ion-item menu-close href="#/login">
+          {{'logOutLabel' | translate}}
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

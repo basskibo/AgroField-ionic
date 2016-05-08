@@ -4,15 +4,15 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="{{order.name}}">
+<ion-view view-title="{{order.operacija}}">
   <ion-content class="padding">
-    <h2 ><b>Operacija: </b>{{order.operacija}}</h2>
-    <p ><b>Kultura:</b> {{order.kultura}}</p>
-    <p><b>Input: </b>{{order.input}}</p>
-    <p><b>Ukupna cena: </b>{{order.cena}}</p>
+    <h5 ><b>Operacija: </b>{{order.operacija}}</h5>
+    <h5 ><b>Kultura:</b> {{order.kultura}}</h5>
+    <h5><b>Input: </b>{{order.input}}</h5>
+    <h5><b>Ukupna cena: </b>{{order.cena}}</h5>
 
-    <p ><b>Vreme:</b> {{order.vreme}}</p>
-    <button class="button icon-left ion-navigate button-positive">{{"showOnMapLabel" | translate}}</button>
+    <h5 ><b>Vreme:</b> {{order.vreme}}</h5>
+    <!-- <button class="button icon-left ion-navigate button-positive">{{"showOnMapLabel" | translate}}</button> -->
 
   </ion-content>
 </ion-view>

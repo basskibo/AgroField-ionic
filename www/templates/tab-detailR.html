@@ -1,0 +1,18 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{report.vrstaAktivnosti}}">
+  <ion-content class="padding">
+    <h5><b>{{"vrstaAktivnosti" | translate}}: </b>{{report.vrstaAktivnosti}}</h5>
+    <h5 ><b>{{"timeLabel" | translate}}:</b> {{report.datum}}</h5>
+
+    <h5 ><b>{{"katOpst" | translate}}:</b> {{report.katOpst}}</h5>
+    <h5><b>{{"parcela" | translate}}: </b>{{report.parcela}}</h5>
+    <h5><b>{{"opis" | translate}}: </b>{{report.opis}}</h5>
+
+
+  </ion-content>
+</ion-view>
