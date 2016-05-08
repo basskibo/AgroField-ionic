@@ -9,29 +9,37 @@ navigation history that also transitions its views in and out.
 
 
   <!-- Chats Tab -->
-  <ion-tab title="Radni nalozi" icon-off="ion-ios-list-outline" icon-on="ion-ios-list" href="#/tab/orders">
+  <ion-tab title="{{'orderLabel' |translate }}" icon-off="ion-ios-list-outline" icon-on="ion-ios-list" href="#/tab/orders">
     <ion-nav-view name="tab-orders"></ion-nav-view>
   </ion-tab>
 
-    <ion-tab title="Novi radni nalog" icon-off="ion-plus-round" icon-on="ion-plus-round" href="#/tab/newWorkingOrder">
+    <ion-tab title="{{'newOrderLabel' | translate}}" icon-off="ion-plus-round" icon-on="ion-plus-round" href="#/tab/newWorkingOrder">
     <ion-nav-view name="tab-newWorkingOrder"></ion-nav-view>
   </ion-tab>
 
+ <!-- Chats Tab -->
+  <ion-tab title="{{'reportLabel' |translate }}" icon-off="ion-clipboard" icon-on="ion-document-text" href="#/tab/reports">
+    <ion-nav-view name="tab-reports"></ion-nav-view>
+  </ion-tab>
+<!-- 
+    <ion-tab title="{{'newReportLabel' | translate}}" icon-off="ion-plus-round" icon-on="ion-plus-round" href="#/tab/newReport">
+    <ion-nav-view name="tab-newReport"></ion-nav-view>
+  </ion-tab> -->
 
-  <ion-tab title="Prognoza" icon-off="ion-ios-cloud-outline" icon-on="ion-ios-partlysunny" href="#/tab/weather-search">
+  <ion-tab title="{{'prognoza' | translate }}" icon-off="ion-ios-cloud-outline" icon-on="ion-ios-partlysunny" href="#/tab/weather-search">
     <ion-nav-view name="tab-weather-search"></ion-nav-view>
   </ion-tab>
 
 
 
   <!-- Account Tab -->
-  <ion-tab title="Podešavanja" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+  <ion-tab title="{{'settingsLabel' | translate }}" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
     <ion-nav-view name="tab-account"></ion-nav-view>
   </ion-tab>
 
 
 
-  <ion-tab title="Odjavi se" icon="ion-log-out" href="#/login"> </ion-tab>
+  <ion-tab title="{{'logOutLabel' | translate}}" icon="ion-log-out" href="#/login"> </ion-tab>
 
 
 </ion-tabs>

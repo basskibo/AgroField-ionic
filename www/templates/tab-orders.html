@@ -1,22 +1,36 @@
-<ion-view view-title="Lista radnih naloga">
+<ion-view view-title="{{'listOfOrdersLabel' | translate}}" hide-back-button="true">
   <ion-content>
+
     <ion-list>
 
     <!-- search -->
-
+ 
       <div class="list list-inset">
         <label class="item item-input">
           <i class="icon ion-ios-search placeholder-icon"></i>
-          <input type="text" placeholder="Search orders">
+          <input type="text" placeholder="{{'searchOrdersLabel' | translate }}" ng-model="searchOrders">
         </label>
+
       </div>
+
+<label class = "item item-input item-select">
+   <div class = "input-label">
+      {{'sortby' | translate}} : 
+   </div>
+  
+   <select class="form-control" ng-model="sortiranje">
+        <option value="operacija" selected="selected">{{"naziv" | translate}}</option>
+        <option value="-vreme">{{'vreme' | translate}}</option>
+   </select>
+</label>
+
 
 
     <!-- lista -->
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="order in orders" type="item-text-wrap" href="#/tab/orders/{{order.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="order in orders | filter:searchOrders | orderBy:sortiranje" type="item-text-wrap" href="#/app/orders/{{order.id}}">
 
-        <h2 ><b>Operacija: </b>{{order.operacija}}</h2>
-        <p ><b>Vreme:</b> {{order.kultura}}</p>
+        <h2 ><b>{{'operationLabel' | translate}}: </b>{{order.operacija}}</h2>
+        <p ><b>{{'timeLabel' | translate}}:</b> {{order.vreme}}</p>
 
         <i class="icon ion-chevron-right ion-ios-arrow-left"></i>
 
@@ -25,6 +39,18 @@
         <ion-option-button class="button-balanced" ng-click="edit(order)" style="width: 164px; height: 100px">Edit  </ion-option-button>
 
       </ion-item>
+       <!--  <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="order in documents | filter:searchOrders | orderBy:sortiranje" type="item-text-wrap" href="#/tab/orders/{{order.id}}">
+
+        <h2 ><b>{{'operationLabel' | translate}}: </b>{{order.title}}</h2>
+        <p ><b>{{'timeLabel' | translate}}:</b> {{order.keywords}}</p>
+
+        <i class="icon ion-chevron-right ion-ios-arrow-left"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(order)" style="width: 164px; height: 100px">Delete</ion-option-button>
+
+        <ion-option-button class="button-balanced" ng-click="edit(order)" style="width: 164px; height: 100px">Edit  </ion-option-button>
+
+      </ion-item> -->
     </ion-list>
   </ion-content>
 </ion-view>

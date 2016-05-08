@@ -1,0 +1,10 @@
+{ 
+  "orders" : [{
+    "id": 0,
+    "operacija": "Setva uskorednim sejalicama",
+    "kultura": "Semenska tvrda psenica",
+    "input":"Seme",
+    "cena":"30000",
+    "vreme":"14/7/2016"
+  }]
+}

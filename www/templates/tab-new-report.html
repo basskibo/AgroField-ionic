@@ -1,0 +1,35 @@
+<ion-view cache-view="false" view-title="New field report" >
+  <ion-content class="padding">
+
+    <onezone-datepicker datepicker-object="onezoneDatepicker">
+      <button class="button button-block button-outline button-positive show-onezone-datepicker">
+        Date of visit: {{onezoneDatepicker.date | date:'dd MMMM yyyy'}}
+      </button>
+    </onezone-datepicker>
+
+   
+    <div class="inputi">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Region</span>
+        <input type="text" placeholder="Region" ng-model="report.katOpst">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Plot</span>
+        <input type="text" placeholder="Plot" ng-model="report.parcela">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Type of activity</span>
+        <input type="text" placeholder="Type of activity" ng-model="report.vrstaAktivnosti">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Description</span>
+        <input type="text" placeholder="Comment" ng-model="report.opis">
+      </label>
+    </div>
+
+    <button type="submit" class="button button-block button-balanced" ng-click="createReport(report)">
+      {{'saveLabel' | translate}}
+    </button>
+
+  </ion-content>
+</ion-view>

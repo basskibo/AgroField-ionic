@@ -1,0 +1,47 @@
+<ion-view view-title="{{'podesavanja' | translate}}">
+  <ion-content>
+    <ion-list>
+      <div class="list">
+
+          <ion-item class="item-divider">{{'lang' | translate}}</ion-item>
+          <ion-list>
+          <ion-radio ng-model="choice" ng-value="'en'" ng-click="changeLanguage('en')">{{'en' | translate}}</ion-radio>
+          <ion-radio ng-model="choice" ng-value="'rs'" ng-click="changeLanguage('rs')">{{'rs' | translate}}</ion-radio>
+        </ion-list>
+      </div>
+      <ion-item class="item-divider">{{'mera' | translate}}</ion-item>
+      <ion-radio ng-model="settings.units" ng-value="'si'">{{'cel' | translate}}</ion-radio>
+      <ion-radio ng-model="settings.units" ng-value="'us'">{{'far' | translate}}</ion-radio>
+
+<!--       <ion-item class="item-divider">{{'favorit' | translate}}</ion-item>
+        <button class="button button-small" ng-click="canDelete = !canDelete">{{canDelete ? 'Done' : 'Edit'}}</button></div>
+    </ion-list>
+    <ion-list show-delete="canDelete">
+      <ion-item ng-repeat="location in locations">
+        <ion-delete-button class="ion-minus-circled" ng-click="remove($index)"></ion-delete-button>
+        {{location.city}}
+      </ion-item>
+    </ion-list> -->
+
+    <p class="padding">Weather data powered by <a href="https://developer.forecast.io/docs/v2">Forecast.io</a></p>
+    
+    <ion-item class="item-divider">{{'podesavanja' | translate}}</ion-item>
+    <ion-list>
+      <ion-item class="item-toggle" ng-click="notificationOff()">
+
+     <i class="icon ion-earth"></i>
+     {{'notificationsLabel' | translate }}
+     <label class="toggle toggle-balanced">
+        <input type="checkbox" ng-click="notificationOn()">
+          <div class="track">
+              <div class="handle"></div>
+          </div>
+     </label>
+      </ion-item>
+
+
+
+      
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,14 +1,9 @@
 <ion-view view-title="{{params.city}}">
-  <ion-nav-buttons side="left">
-    <button class="button button-clear" menu-toggle="left"><span class="icon ion-navicon"></span></button>
-  </ion-nav-buttons>
+
   <ion-nav-buttons side="right">
     <button class="button button-icon" ng-click="showOptions()"><span class="icon ion-more"></span></button>
   </ion-nav-buttons>
   <ion-content>
-    <ion-scroll direction="y" paging="true" ng-style="{width: getWidth(), height: getHeight()}">
-      <div ng-style="{height: getTotalHeight()}">
-        <div class="scroll-page center" ng-style="{width: getWidth(), height: getHeight()}">
           <div class="bar bar-dark">
             <h1 class="title">Current Conditions</h1>
           </div>
@@ -19,7 +14,6 @@
             <p>High: {{forecast.daily.data[0].temperatureMax | number:0}}&deg; Low: {{forecast.daily.data[0].temperatureMin | number:0}}&deg; Feels Like: {{forecast.currently.apparentTemperature | number:0}}&deg;</p>
             <p>Wind: {{forecast.currently.windSpeed | number:0}} <span class="icon wind-icon ion-ios7-arrow-thin-up" ng-style="{transform: 'rotate(' + forecast.currently.windBearing + 'deg)'}"></span></p>
           </div>
-        </div>
         <div class="scroll-page" ng-style="{width: getWidth(), height: getHeight()}">
           <div class="bar bar-dark">
             <h1 class="title">Daily Forecast</h1>
@@ -45,8 +39,6 @@
             <div class="item">Humidity: {{forecast.currently.humidity * 100}}%</div>
           </div>
         </div>
-      </div>
-    </ion-scroll>
   </ion-content>
 
   

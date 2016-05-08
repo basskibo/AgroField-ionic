@@ -1,0 +1,47 @@
+<ion-view view-title="{{'listaR' | translate}}" hide-back-button="true">
+  <ion-content>
+    <ion-list>
+
+    <!-- search -->
+ 
+      <div class="list list-inset">
+        <label class="item item-input">
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input type="text" placeholder="{{'searchOrders1Label' | translate }}" ng-model="searchReports">
+        </label>
+
+      </div>
+
+<label class = "item item-input item-select">
+   <div class = "input-label">
+      {{'sortby' | translate}} : 
+   </div>
+  
+   <select class="form-control" ng-model="sortiranje">
+        <option value="vrstaAktivnosti" selected="selected">{{"naziv" | translate}}</option>
+        <option value="-datum">{{'vreme' | translate}}</option>
+   </select>
+</label>
+    <!-- lista -->
+ <!--      <ion-item class="item-remove-animate item-avatar item-icon-right"
+        ng-repeat="report in beleska" type="item-text-wrap" href="#/tab/beleska/{{report.id}}">
+ -->
+   <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="report in reports | filter:searchReports | orderBy:sortiranje" type="item-text-wrap" href="#/app/reports/{{report.id}}">
+        <p><b>{{'tipAktivnosti' | translate}} : </b>{{report.vrstaAktivnosti}}</p>
+        <p><b>{{'datumPosete' | translate}} :</b> {{report.datum}}</p>
+       <!--  <p>Region: {{report.katOpst}}</p>
+        <p>Plot: {{report.parcela}}</p>
+        <p><b>Type of activity: <b>{{report.vrstaAktivnosti}}</p> -->
+
+        <i class="icon ion-chevron-right ion-ios-arrow-left"></i>
+
+          <ion-option-button class="button-assertive" ng-click="remove(report)"
+           style="width: 164px; height: 100px">Delete</ion-option-button>
+
+          <ion-option-button class="button-balanced" ng-click="edit(report)"
+           style="width: 164px; height: 100px">Edit  </ion-option-button>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
