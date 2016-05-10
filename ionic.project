@@ -9,6 +9,10 @@
     {
       "path": "/api/forecast",
       "proxyUrl": "https://api.forecast.io/forecast/603119ee586ccb7b3df8277e7ab9857d/"
+    },
+      {
+      "path": "/api",
+      "proxyUrl": "http://agrolife.greensoft.co/api"
     }
   ],
   "watchPatterns": [

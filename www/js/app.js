@@ -7,6 +7,14 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','pascalprecht.translate'])
 
+.constant('ApiEndpoint', {
+  url: 'http://localhost:3000/api'
+  //url:'http://greensoft.agrolife.co/api'
+})
+// For the real endpoint, we'd use this
+// .constant('ApiEndpoint', {
+//  url: 'http://cors.api.com/api'
+// })
 
 
 .run(function($ionicPlatform,DB) {

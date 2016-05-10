@@ -1,5 +1,25 @@
 angular.module('starter.services', ['starter.config'])
 
+
+//NOTE: We are including the constant `ApiEndpoint` to be used here.
+.factory('Api', function($http, ApiEndpoint) {
+  console.log('ApiEndpoint', ApiEndpoint)
+
+  var getApiData = function() {
+    return $http.get(ApiEndpoint.url + '/tasks')
+      .then(function(data) {
+        console.log('Got some data: ', data);
+        return data;
+      });
+  };
+
+  return {
+    getApiData: getApiData
+  };
+})
+
+
+
 .factory('WorkingOrders', function() {
   // Might use a resource here that returns a JSON array
 
