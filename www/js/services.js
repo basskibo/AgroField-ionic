@@ -6,7 +6,7 @@ angular.module('starter.services', ['starter.config'])
   console.log('ApiEndpoint', ApiEndpoint)
 
   var getApiData = function() {
-    return $http.get(ApiEndpoint.url + '/tasks')
+    return $http.get(ApiEndpoint.url + '/login')
       .then(function(data) {
         console.log('Got some data: ', data);
         return data;

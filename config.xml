@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <widget id="com.ionicframework.agrofield723254" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>AgroField</name>
+  <name>AgroLife</name>
   <description>
         This is application for agrolife    </description>
   <author email="jagetic.bojan@gmail.com" href="http://example.com.com/">
