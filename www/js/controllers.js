@@ -261,16 +261,17 @@ $scope.onezoneDatepicker = {
                 $scope.user.farm= 'demo';
 
         $scope.user.username= 'demo';
-                $scope.user.password= 'demo';
+        $scope.user.password= 'demo';
       console.log($scope.user);
       // calling our submit function.
         $scope.signIn = function() {
         // Posting data to php file
         $http({
           method  : 'POST',
-          url     : 'http://agrolife.greensoft.co/login',
+          url     : 'http://agrolife.greensoft.co',
           data    : $scope.user, //forms user object
-          headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+          headers : {'Content-Type': 'application/x-www-form-urlencoded ; charset=UTF-8 '
+              } 
          })
           .success(function(data) {
             if (data.errors) {

@@ -1,5 +1,5 @@
 {
-  "name": "AgroField",
+  "name": "AgroLife",
   "app_id": "",
   "gulpStartupTasks": [
     "sass",
@@ -12,7 +12,7 @@
     },
       {
       "path": "/login",
-      "proxyUrl": "http://agrolife.greensoft.co/"
+      "proxyUrl": "http://agrolife.greensoft.co"
     }
   ],
   "watchPatterns": [

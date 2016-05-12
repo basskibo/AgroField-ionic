@@ -12,10 +12,21 @@
       <span class="input-label">{{'cultureLabel' | translate}}</span>
       <input type="text" placeholder="{{'cultureLabel' | translate}}"  ng-model="order.kultura">
     </label>
-    <label class="item item-input item-floating-label">
+    <!-- <label class="item item-input item-floating-label">
       <span class="input-label">{{'inputLabel' | translate}}</span>
       <input type="text" placeholder="{{'inputLabel' | translate}}"  ng-model="order.input">
+    </label> -->
+    <label class = "item item-input item-select">
+     <div class = "input-label">
+        {{'inputLabel' | translate}} : 
+     </div>
+    
+     <select class="form-control" ng-model="sortiranje">
+          <option value="operacija" selected="selected">{{"naziv" | translate}}</option>
+          <option value="-vreme">{{'vreme' | translate}}</option>
+     </select>
     </label>
+
     <label class="item item-input item-floating-label">
       <span class="input-label">{{'priceLabel' | translate}}</span>
       <input type="text" placeholder="{{'priceLabel' | translate}}"  ng-model="order.cena">

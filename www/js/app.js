@@ -8,8 +8,8 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','pascalprecht.translate'])
 
 .constant('ApiEndpoint', {
-  url: 'http://192.168.1.14:8100/#/login'
-  //url:'http://greensoft.agrolife.co/api'
+  //url: 'http://192.168.1.14:8100'
+  url:'http://greensoft.agrolife.co'
 })
 // For the real endpoint, we'd use this
 // .constant('ApiEndpoint', {
