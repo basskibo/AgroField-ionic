@@ -5,8 +5,9 @@
 </head>
 <body id="loginImg">
 <ion-view view-title="{{'loginTitle' | translate }}">
-  <ion-content>
+<ion-content>
 
+<form name="loginForm">
   <div class="login">
     <label class="item item-input item-floating-label">
       <span class="input-label">{{'organisationLabel' | translate }}</span>
@@ -23,13 +24,14 @@
 
   </div>
           <div class="padding">
-            <button class="button button-block button-balanced" ng-click="signIn(user)">
+            <button class="button button-block button-balanced" ng-click="signIn()">
               {{'loginBtn' | translate}}
             </button>
             <p class="text-center">
               <a href="#">{{'forgotpasswordLabel' | translate }}</a>
             </p>
           </div>
+</form>
   </ion-content>
 </ion-view>
 </body>

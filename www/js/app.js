@@ -162,8 +162,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
 
 
   });
-  $translateProvider.preferredLanguage('en');
-  $translateProvider.fallbackLanguage('en');
+  $translateProvider.preferredLanguage('rs');
+  $translateProvider.fallbackLanguage('rs');
 
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -210,6 +210,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     views: {
       'menuContent': {
         templateUrl: 'templates/tab-new-order.html',
+                  cache: false,
+
         controller: 'DashCtrl'
 
       }
@@ -417,7 +419,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
   // });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/app/orders');
 
 })
 

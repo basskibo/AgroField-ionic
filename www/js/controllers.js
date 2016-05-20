@@ -135,7 +135,7 @@ $scope.onezoneDatepicker = {
     })
        
      //$ionicHistory.clearHistory();
-    //$window.location.reload(false);
+    //$window.location.reload(true);
 
 
     $state.go('app.reports');
@@ -193,25 +193,48 @@ $scope.onezoneDatepicker = {
 
 
 .controller('LoginCtrl', function($scope, $state,$http,WorkingOrders,$ionicPopup) {
-    $scope.signIn = function(user){
-        if(user.farm == "MMOA"&& user.username == "admin" && user.password== '1243!' ){
-           var successPoput = $ionicPopup.alert({
-              title:'Welcome ' + user.username,
-              template:'You are now logged in'
-           });
-           $state.go('app.orders');
+  //   $scope.signIn = function(user){
+  //       if(user.farm == "MMOA"&& user.username == "admin" && user.password== '1243!' ){
+  //          var successPoput = $ionicPopup.alert({
+  //             title:'Welcome ' + user.username,
+  //             template:'You are now logged in'
+  //          });
+  //          $state.go('app.orders');
 
-        }else{
-            var alertPopup = $ionicPopup.alert({
-              title:'Wrong user',
-              template:'Please try again'
-            });
-          
+  //       }else{
+  //           var alertPopup = $ionicPopup.alert({
+  //             title:'Wrong user',
+  //             template:'Please try again'
+  //           });
+  //       }
+  // }
 
-          
-        }
-
-  }
+   // create a blank object to handle form data.
+        $scope.user = {};
+        $scope.user.username= 'demo';
+                $scope.user.password= 'demo';
+        $scope.user.farm= 'demo';
+      console.log($scope.user);
+      // calling our submit function.
+        $scope.signIn = function() {
+        // Posting data to php file
+        $http({
+          method  : 'POST',
+          url     : 'http://agrolife.greensoft.co/login',
+          data    : $scope.user, //forms user object
+          headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+         })
+          .success(function(data) {
+            if (data.errors) {
+              // Showing errors.
+              $scope.errorName = data.errors.name;
+              $scope.errorUserName = data.errors.username;
+              $scope.errorEmail = data.errors.email;
+            } else {
+              $scope.message = data.message;
+            }
+          });
+        };
 })
 
   // $http.post('localhost:8000/login',{params:{farm:'MMOA'  , username:'admin' , password:"1243!"}}).success(function(response){
