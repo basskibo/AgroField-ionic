@@ -3717,7 +3717,7 @@ address {
   line-height: 1.42857; }
 
 a {
-  color: #387ef5; }
+  color: #54D200; }
 
 a.subdued {
   padding-right: 10px;
@@ -3937,11 +3937,11 @@ a.subdued {
       background-image: linear-gradient(180deg, #ddd, #ddd 50%, transparent 50%); }
   .bar.bar-stable {
     border-color: #b2b2b2;
-    background-color: #33cd5f;
+    background-color: #54D200;
     background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
     color: #444; }
     .bar.bar-stable .title {
-      color: #444; }
+      color: #fff; }
     .bar.bar-stable.bar-footer {
       background-image: linear-gradient(180deg, #b2b2b2, #b2b2b2 50%, transparent 50%); }
   .bar.bar-positive {
@@ -4025,7 +4025,9 @@ a.subdued {
     font-weight: 500;
     line-height: 44px; }
     .bar .title.title-left {
-      text-align: left; }
+      text-align: left;
+      left: 50px;
+       }
     .bar .title.title-right {
       text-align: right; }
   .bar .title a {
@@ -4104,7 +4106,10 @@ a.subdued {
 
 .platform-android .bar .title {
   font-size: 19px;
-  line-height: 44px; }
+  line-height: 44px; 
+  text-align: center;
+  right: 50px;
+}
 
 .bar-light .button {
   border-color: transparent;
@@ -5949,13 +5954,15 @@ a.item {
 .item-complex,
 a.item.item-complex,
 button.item.item-complex {
-  padding: 0; }
+  padding: 0;
+  height: 40px;
+   }
 
 .item-complex .item-content,
 .item-radio .item-content {
   position: relative;
   z-index: 2;
-  padding: 16px 49px 16px 16px;
+  padding: 8px 49px 16px 16px;
   border: none;
   background-color: #fff; }
 
