@@ -210,7 +210,7 @@ angular.module('starter.services', ['starter.config'])
 
             var query = 'CREATE TABLE IF NOT EXISTS ' + table.name + ' (' + columns.join(',') + ')';
             var queryi = "INSERT INTO orders VALUES ('51','Operacija','12/4/2014')";
-            console.log(queryi);
+            //console.log(queryi);
             self.query(queryi);
             self.query(query);
             //console.log('Table ' + table.name + ' initialized');

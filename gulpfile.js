@@ -59,8 +59,8 @@ gulp.task('git-check', function(done) {
 
 gulp.task('add-proxy', function() {
   return replace({
-    regex: "http://agrolife.greensoft.co",
-    replacement: "http://192.168.1.14:8100/",
+    regex: "http://agrolife.greensoft.co:3000",
+    replacement: "http://192.168.1.16:8100/",
     paths: replaceFiles,
     recursive: false,
     silent: false,
@@ -69,8 +69,8 @@ gulp.task('add-proxy', function() {
 
 gulp.task('remove-proxy', function() {
   return replace({
-    regex: "http://192.168.1.14:8100/",
-    replacement: "http://agrolife.greensoft.co",
+    regex: "http://192.168.1.16:8100/",
+    replacement: "http://agrolife.greensoft.co:3000",
     paths: replaceFiles,
     recursive: false,
     silent: false,

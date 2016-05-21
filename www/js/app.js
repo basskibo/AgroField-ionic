@@ -5,11 +5,11 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','pascalprecht.translate'])
+angular.module('starter', ['ionic','ngCookies', 'starter.controllers', 'starter.services','pascalprecht.translate'])
 
 .constant('ApiEndpoint', {
   //url: 'http://192.168.1.14:8100'
-  url:'http://greensoft.agrolife.co'
+  url:'http://greensoft.agrolife.co:3000'
 })
 // For the real endpoint, we'd use this
 // .constant('ApiEndpoint', {
@@ -61,6 +61,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     listOfOrdersLabel: 'List of work orders',
     searchOrdersLabel: 'Search orders',
     searchOrders1Label: 'Search reports',
+    chooseLabel: 'Choose',
 
     timeLabel: 'Time',
     notificationsLabel: 'Notifications',
@@ -120,6 +121,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     saveLabel: 'Sačuvaj',
     orderLabel: 'Radni Nalozi',
     orderAll: 'Svi nalozi',
+    chooseLabel: 'Izaberi',
 
     newOrderLabel: 'Novi radni nalog',
     settingsLabel: 'Podešavanja',
@@ -145,21 +147,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     newReportLabel:'Nova beleška',
     reportLabel: 'Beleška',
     reportAll: 'Sve beleške',
-    "prognoza": "Vremenska Prognoza",
-    "katOpst" : "Katastarska opstina",
-    "vrstaAktivnosti": "Vrsta aktivnosti",
-    "parcela" : "Parcela",
-    "opis" : "Opis",
-    "listaR" : "Lista terenskih beleški",
-    "sortby" : "Sortiraj po",
-    "vreme" : "Vremenu",
-    "naziv" : "Nazivu",
-    "menu" : "Meni",
-    "tipAktivnosti" : "Tip aktivnosti",
-    "datumPosete" : "Datum posete",
-    "en" : "Engleski",
-    "rs" : "Srpski",
-    "lang" : "Izaberite jezik",
+    prognoza: "Vremenska Prognoza",
+    katOpst : "Katastarska opstina",
+    vrstaAktivnosti: "Vrsta aktivnosti",
+    parcela : "Parcela",
+    opis : "Opis",
+    listaR : "Lista terenskih beleški",
+    sortby : "Sortiraj po",
+    vreme : "Vremenu",
+    naziv : "Nazivu",
+    menu : "Meni",
+    tipAktivnosti : "Tip aktivnosti",
+    datumPosete : "Datum posete",
+    en : "Engleski",
+    rs : "Srpski",
+    lang : "Izaberite jezik",
     "mera" : "Jedinična mera",
     "cel" : "Celzijus",
     "far" : "Farenhajt",
@@ -439,7 +441,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
   // });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/orders');
+  $urlRouterProvider.otherwise('/app/newOrder');
 
 })
 

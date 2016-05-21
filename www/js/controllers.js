@@ -1,57 +1,98 @@
-angular.module('starter.controllers', ['ionic', 'onezone-datepicker','pascalprecht.translate','starter.services'])
+angular.module('starter.controllers', ['ionic', 'onezone-datepicker','pascalprecht.translate','starter.services','ionic-modal-select'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout,$http) {
 
-
-
-    // $http.get('/json/orders.json').success(function(data) {
-    //     $scope.orders=data.orders;
-    // });
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  // // Form data for the login modal
-  // $scope.loginData = {};
-
-  // // Create the login modal that we will use later
-  // $ionicModal.fromTemplateUrl('templates/login.html', {
-  //   scope: $scope
-  // }).then(function(modal) {
-  //   $scope.modal = modal;
-  // });
-
-  // // Triggered in the login modal to close it
-  // $scope.closeLogin = function() {
-  //   $scope.modal.hide();
-  // };
-
-  // // Open the login modal
-  // $scope.login = function() {
-  //   $scope.modal.show();
-  // };
-
-  
 })
 
 
-// .controller('DocumentCtrl', function($scope, Document) {
-//     $scope.documents = [];
-//     $scope.document = null;
-//     // Get all the documents
-//     Document.all().then(function(documents){
-//         $scope.documents = documents;
-//     });
-//     // Get one document, example with id = 2
-//     Document.getById(2).then(function(document) {
-//         $scope.document = document;
-//     });
-// })
 
 .controller('DashCtrl', function($scope, $ionicModal,$http,$state,$http,WorkingOrders) {
+$scope.operacija  = [];
+$scope.kultura = [];
+$scope.input = [];
+
+  $scope.operacija.push('Berba - kukuruza');
+  $scope.operacija.push('Berba - soje');
+  $scope.operacija.push('Drljanje');
+  $scope.operacija.push('Kombajniranje - pšenice');
+  $scope.operacija.push('Kombajniranje - kukuruza');
+  $scope.operacija.push('Kultivacija - soje');
+  $scope.operacija.push('Međuredno kultiviranje - soje');
+  $scope.operacija.push('Oranje - šećerne repe');
+  $scope.operacija.push('Međuredno kultiviranje - kukuruza');
+  $scope.operacija.push('Oranje - soje');
+  $scope.operacija.push('Oranje - šećerne repe');
+  $scope.operacija.push('Podrivanje');
+  $scope.operacija.push('Predsetvena priprema germinator - šećerna repa');
+  $scope.operacija.push('Predsetvena priprema germinator - soja');
+  $scope.operacija.push('Prevoz veštaka - kukuruz');
+  $scope.operacija.push('Prevoz vode - šećerna repa');
+  $scope.operacija.push('Rastur veštaka - kukuruz');
+  $scope.operacija.push('Razbijanje pokorice');
+  $scope.operacija.push('Setva - soje');
+  $scope.operacija.push('Uzgrtanje razi unutar skladista-farma');
+  $scope.operacija.push('Oranje do 35 cm');
+  $scope.operacija.push('Podrivanje zemljišta');
+  $scope.operacija.push('Utovar stajnjaka teleskopskim manipulatorom');
+  $scope.operacija.push('Rad germinatorom');
+  $scope.operacija.push('Kosidba lucerke i trave');
+  $scope.operacija.push('Rad grabuljama - sunce');
+  $scope.operacija.push('Transport traktorskim prikolicama');
+  $scope.operacija.push('Mašinsko prokopavanje kanala za odbranu od repine pipe');
+  $scope.operacija.push('ORANJE 25-30 cm VII');
+  $scope.operacija.push('ORANJE 25-30 cm VI');
+  $scope.operacija.push('ORANJE 25-30 cm III');
+  $scope.operacija.push('ORANJE 20-25 cm III');
+  $scope.operacija.push('ORANJE preko 30 cm III');
+  $scope.operacija.push('ORANJE preko 30 cm VII');
+  $scope.operacija.push('ORANJE preko 30 cm VI');
+  $scope.operacija.push('ORANJE preko 30 cm V');
+  $scope.operacija.push('RAD SA KIVONOM');
+  $scope.operacija.push('RAD SA KENTAUROM');
+  $scope.operacija.push('RAD SA ROTOFREZOM I put - bankovanje');
+  $scope.operacija.push('KOPANJE KANALA ZA PIPE');
+  $scope.operacija.push('RAZORAVANJE LUCERIŠTA ');
+  $scope.operacija.push('GARENJE TANJIRAČOM Tara, 3,5 m');
+  $scope.operacija.push('TANJIRANJE ORANJA Adut 3 m');
+
+
+  
+  $scope.kultura.push('Žitarice');
+  $scope.kultura.push('Industrijsko bilje');
+  $scope.kultura.push('Krmno bilje');
+  $scope.kultura.push('Aromatično i lekovito bilje');
+  $scope.kultura.push('Povrće');
+  $scope.kultura.push('Voće i grožđe');
+  $scope.kultura.push('Sadni materijal i horti kultura');
+  $scope.kultura.push('Neobrađeno zemljište');
+
+  $scope.input.push('1,1-dichloro-2,2-bis(4-ethylphenyl)ethane (F)');
+  $scope.input.push('1,2-dibromoethane (ethylene dibromide) (F)');
+  $scope.input.push('1,2-dichloroethane (ethylene dichloride) (F)');
+  $scope.input.push('1,4-Diaminobutane (aka Putrescine) (++)');
+  $scope.input.push('1-Decanol (++)');
+  $scope.input.push('2,4,5-T (sum of 2,4,5-T, its salts and esters, expressed as 2,4,5-T) (F)');
+  $scope.input.push('2,4-D (sum of 2,4-D, its salts, its esters and its conjugates, expressed as 2,4-D)');
+  $scope.input.push('1-Naphthylacetamide');  
+  $scope.input.push('Abamectin (sum of avermectin B1a, avermectin B1b and delta-8,9 isomer of avermectin B1a, expressed as avermectin B1a) (F) (R)');
+  $scope.input.push('8-hydroxyquinoline (sum of 8-hydroxyquinoline and its salts, expressed as 8-hydroxyquinoline)');
+  $scope.input.push('Acetic acid (++)');
+  $scope.input.push('Begonia Cascade Yellow  p029 3/1');
+  $scope.input.push('Begonia Cascade Scharlet   p030 3/1');
+  $scope.input.push('Gloxinia Defiance  p052 1/1');
+  $scope.input.push('Ns Suncokret 70 000 zrna Sumo 1 PR');
+  $scope.input.push('Bacillomix specijal  100ml');
+  $scope.input.push('NS kukuruz 5083+sonido');
+  $scope.input.push('KWS krmni sirak Sole');
+  $scope.input.push('Cordus75 WG  400gr');
+  $scope.input.push('Cleranda+dash(10l cleranda+5l dash)');
+  $scope.input.push('Semenski ječam Vannesa 25/1');
+  $scope.input.push('UREA  50/1');
+  $scope.input.push('Valagro Plantafol 1/1kg 30-10-10      (#12)');
+  $scope.input.push('Envidor 100ml');
+  $scope.input.push('Funguran 10/1');
+  $scope.input.push('START SPREJ');
+  $scope.input.push('AGROVISK MHT 15-40');
 
 
 $scope.onezoneDatepicker = {
@@ -73,20 +114,25 @@ $scope.onezoneDatepicker = {
     hideSetButton:true,
     callback: function(value){
         // your code
+        //console.log('callback');
     }
 };
 
-    $scope.createOrder = function(order){
+    $scope.createOrder = function(order,callback){
       $scope.orders = WorkingOrders.all();
+      var godina = $scope.onezoneDatepicker.date.getFullYear();
+      //console.log(godina);
 
-      console.log(order.operacija + " "+ order.kultura + " " + order.cena + " "+order.input ); 
+      var mesec = $scope.onezoneDatepicker.date.getMonth();
+      var dan = $scope.onezoneDatepicker.date.getDate();
+      var datum = godina + '/' + mesec + "/" + dan;
+      //console.log(order.operacija + " "+ order.kultura + " " + order.cena + " "+order.input ); 
     $scope.orders.push({
       operacija: order.operacija,
       kultura: order.kultura,
       cena: order.cena,
       input: order.input,
-      vreme : "14/15/2014"
-
+      vreme: datum
     })
        
     $state.go('app.orders');
@@ -230,7 +276,7 @@ $scope.onezoneDatepicker = {
 
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, WorkingOrders) {
-  $scope.order = WorkingOrders.get($stateParams.orderId);
+  $scope.order = WorkingOrders.get($stateParams.orderId),$scope.user;
 })
 
 .controller('ReportDetailCtrl', function($scope, $stateParams, Reports) {
@@ -239,14 +285,14 @@ $scope.onezoneDatepicker = {
 
 
 
-.controller('LoginCtrl', function($scope, $state,$http,WorkingOrders,$ionicPopup) {
+.controller('LoginCtrl', function($scope,$cookies, $state,$http,WorkingOrders,$ionicPopup) {
+
   //   $scope.signIn = function(user){
   //       if(user.farm == "MMOA"&& user.username == "admin" && user.password== '1243!' ){
   //          var successPoput = $ionicPopup.alert({
   //             title:'Welcome ' + user.username,
   //             template:'You are now logged in'
   //          });
-  //          $state.go('app.orders');
 
   //       }else{
   //           var alertPopup = $ionicPopup.alert({
@@ -257,35 +303,54 @@ $scope.onezoneDatepicker = {
   // }
 
    // create a blank object to handle form data.
-        $scope.user = {};
-                $scope.user.farm= 'demo';
+        
 
-        $scope.user.username= 'demo';
-        $scope.user.password= 'demo';
-      console.log($scope.user);
+        $scope.user = {};
+        $scope.korisnik ={};
+         $scope.user.farm= 'SuperAdmin';
+
+         $scope.user.username= 'Bojan';
+         $scope.user.password= '1243!';
+      // console.log($scope.user);
       // calling our submit function.
         $scope.signIn = function() {
+
+        console.log($scope.user);     
+
         // Posting data to php file
         $http({
           method  : 'POST',
-          url     : 'http://agrolife.greensoft.co',
-          data    : $scope.user, //forms user object
-          headers : {'Content-Type': 'application/x-www-form-urlencoded ; charset=UTF-8 '
-              } 
+          url     : 'http://agrolife.greensoft.co:3000/login',
+          data    : $scope.user //forms user object
          })
           .success(function(data) {
-            if (data.errors) {
+            console.log(data);
+             $scope.message = data.message;
+          
+            if (data.success) {
               // Showing errors.
-              $scope.errorName = data.errors.name;
-              $scope.errorUserName = data.errors.username;
-              $scope.errorEmail = data.errors.email;
+                 var alertPopup = $ionicPopup.alert({
+                    title:'Welcome '  + $scope.user.username,
+                    template:'Hellooo'
+              });
+              $state.go('app.orders');
+              console.log('cookies:'+ JSON.stringify($cookies.getAll()));
+                            console.log('cookies:'+ JSON.stringify($cookies.getAll()));
+
+              $http({
+                method:'POST',
+                url: 'http://agrolife.greensoft.co:3000/materijal/read'
+              })
+
             } else {
 
-              $scope.message = data.message;
-               var alertPopup = $ionicPopup.alert({
+              var alertPopup = $ionicPopup.alert({
               title:'Wrong user',
               template:'Please try again'
             });
+
+              $scope.message = data.message;
+          
             }
           });
         };
@@ -320,6 +385,8 @@ $scope.onezoneDatepicker = {
     var lng = $translate.use();
     var title ;
     console.log(lng);
+            console.log($scope.user);     
+
     if(lng == 'rs'){
       lng = "Jezik promenjen na Srpski";
       title = "Jezik";

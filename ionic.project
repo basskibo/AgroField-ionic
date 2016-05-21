@@ -3,7 +3,8 @@
   "app_id": "",
   "gulpStartupTasks": [
     "sass",
-    "watch"
+    "watch",
+    "remove-proxy"
   ],
   "proxies": [
     {
@@ -12,7 +13,7 @@
     },
       {
       "path": "/login",
-      "proxyUrl": "http://agrolife.greensoft.co"
+      "proxyUrl": "http://agrolife.greensoft.co:3000"
     }
   ],
   "watchPatterns": [
