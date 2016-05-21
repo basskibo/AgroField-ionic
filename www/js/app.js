@@ -63,6 +63,11 @@ angular.module('starter', ['ionic','ngCookies', 'starter.controllers', 'starter.
     searchOrders1Label: 'Search reports',
     chooseLabel: 'Choose',
 
+    newReport: 'New field report',
+    regionLabel : 'Region',
+    plotLabel:'Plot',
+    activityLabel: 'Activity',
+
     timeLabel: 'Time',
     notificationsLabel: 'Notifications',
     showOnMapLabel:'Show on map',
@@ -90,7 +95,7 @@ angular.module('starter', ['ionic','ngCookies', 'starter.controllers', 'starter.
     "sortby" : "Sort by",
     "vreme" : "Time",
     "naziv" : "Name",
-    "menu" : "Menu",
+    "menu" : "AgroLife",
     "tipAktivnosti" : "Type of activity",
     "datumPosete" : "Date of visit",
     "en" : "English",
@@ -156,7 +161,7 @@ angular.module('starter', ['ionic','ngCookies', 'starter.controllers', 'starter.
     sortby : "Sortiraj po",
     vreme : "Vremenu",
     naziv : "Nazivu",
-    menu : "Meni",
+    menu : "AgroLife",
     tipAktivnosti : "Tip aktivnosti",
     datumPosete : "Datum posete",
     en : "Engleski",
@@ -441,7 +446,7 @@ angular.module('starter', ['ionic','ngCookies', 'starter.controllers', 'starter.
   // });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/newOrder');
+  $urlRouterProvider.otherwise('/app/newReport');
 
 })
 

@@ -1,4 +1,4 @@
-<ion-view cache-view="false" view-title="New field report" >
+<!-- <ion-view cache-view="false" view-title="New field report" >
   <ion-content class="padding">
 
     <onezone-datepicker datepicker-object="onezoneDatepicker">
@@ -33,3 +33,85 @@
 
   </ion-content>
 </ion-view>
+ -->
+
+
+  <ion-view cache-view="false" view-title="{{'newReport' | translate}}" >
+  <ion-content class="padding">
+
+
+         <div class="item" style="color:green">
+          {{'regionLabel' | translate }}: {{report.katOpst}}
+        </div>
+        <div class="item item-body">
+          <button class="button button-balanced" modal-select="" ng-model="report.katOpst" options="katOpst" modal-title="Izaberite region" header-footer-class="bar-positive" has-search="true" sub-header-class="bar-positive">
+          {{'chooseLabel' | translate}}
+
+            <div class="option">
+              {{option}}
+            </div>
+          </button>
+        </div>
+       
+        <!-- plot,activity,description -->
+
+
+
+
+        <div class="item" style="color:green">
+          {{'plotLabel' | translate}}: {{report.plot}}
+        </div>
+        <div class="item item-body">
+          <button class="button button-balanced" modal-select="" ng-model="report.plot" options="plot" modal-title="Izaberite plot" header-footer-class="bar-positive" has-search="true" value="plot" sub-header-class="bar-positive">
+            {{'chooseLabel' | translate}}
+            <div class="option">
+              {{option}}
+            </div>
+          </button>
+        </div>
+       
+
+
+        <div class="item" style="color:green">
+          {{'activityLabel' | translate}}: {{report.activity}}
+        </div>
+        <div class="item item-body">
+          <button class="button button-balanced" modal-select="" ng-model="report.activity" options="activity" modal-title="Izaberite activity" header-footer-class="bar-positive" has-search="true" value="activity" sub-header-class="bar-positive">
+            {{'chooseLabel' | translate}}
+
+            <div class="option">
+              {{option}}
+            </div>
+          </button>
+        </div>
+
+
+    
+
+  <onezone-datepicker datepicker-object="onezoneDatepicker" ng-model="report.vreme">
+    <button class="button button-block button-outline button-positive show-onezone-datepicker"  >
+        {{'dateLabel' | translate}}: {{onezoneDatepicker.date | date:'dd MMMM yyyy'}}
+    </button>
+</onezone-datepicker>
+
+  <button type="submit" class="button button-block button-balanced" ng-click="createReport(report)">
+    {{'saveLabel' | translate}}
+</button>
+
+</form>
+
+
+
+
+
+
+
+
+            </ion-content>
+          </form>
+        </ion-modal-view>
+  </script>
+    </div>
+  </ion-content>
+</ion-view>
+ 

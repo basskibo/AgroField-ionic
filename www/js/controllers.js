@@ -143,6 +143,27 @@ $scope.onezoneDatepicker = {
 
 .controller('NewReportCtrl', function($scope, $ionicModal,$http,$state,$http,Reports,$ionicHistory,$window  ) {
 
+$scope.katOpst  = [];
+$scope.plot = [];
+$scope.activity = [];
+
+
+$scope.katOpst.push('Srbija');
+$scope.katOpst.push('Mauricijus');
+$scope.katOpst.push('Neoplanta');
+$scope.katOpst.push('Adminski');
+
+$scope.plot.push('1');
+$scope.plot.push('2');
+$scope.plot.push('3');
+$scope.plot.push('4');
+
+
+$scope.activity.push('1');
+$scope.activity.push('2');
+$scope.activity.push('3');
+$scope.activity.push('4');
+
 
 $scope.onezoneDatepicker = {
     date: new Date(), // MANDATORY
@@ -170,19 +191,20 @@ $scope.onezoneDatepicker = {
 
     $scope.createReport = function(report){
       $scope.reports = Reports.all();
+      var godina = $scope.onezoneDatepicker.date.getFullYear();
+      //console.log(godina);
 
+      var mesec = $scope.onezoneDatepicker.date.getMonth();
+      var dan = $scope.onezoneDatepicker.date.getDate();
+      var datum = godina + '/' + mesec + "/" + dan;
     $scope.reports.push({
-      vrstaAktivnosti: report.vrstaAktivnosti,
-      katOpst: report.katOpst,
-      parcela: report.parcela,
-      opis: report.opis,
-      datum : "14/15/2014"
+      vrstaAktivnosti: report.katOpst,
+      katOpst: report.activity,
+      parcela: report.plot,
+      opis: report.description,
+      datum :datum
 
     })
-       
-     //$ionicHistory.clearHistory();
-    //$window.location.reload(false);
-
 
     $state.go('app.reports');
 
@@ -335,12 +357,12 @@ $scope.onezoneDatepicker = {
               });
               $state.go('app.orders');
               console.log('cookies:'+ JSON.stringify($cookies.getAll()));
-                            console.log('cookies:'+ JSON.stringify($cookies.getAll()));
+              console.log('cookies:'+ JSON.stringify($cookies.getAll()));
 
-              $http({
-                method:'POST',
-                url: 'http://agrolife.greensoft.co:3000/materijal/read'
-              })
+              // $http({
+              //   method:'POST',
+              //   url: 'http://agrolife.greensoft.co:3000/materijal/read'
+              // })
 
             } else {
 
