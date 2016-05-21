@@ -198,8 +198,8 @@ $scope.onezoneDatepicker = {
       var dan = $scope.onezoneDatepicker.date.getDate();
       var datum = godina + '/' + mesec + "/" + dan;
     $scope.reports.push({
-      vrstaAktivnosti: report.katOpst,
-      katOpst: report.activity,
+      //vrstaAktivnosti: report.katOpst,
+      vrstaAktivnosti: report.activity,
       parcela: report.plot,
       opis: report.description,
       datum :datum

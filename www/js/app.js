@@ -66,7 +66,7 @@ angular.module('starter', ['ionic','ngCookies', 'starter.controllers', 'starter.
     newReport: 'New field report',
     regionLabel : 'Region',
     plotLabel:'Plot',
-    activityLabel: 'Activity',
+    activityLabel: 'Type of Activity',
 
     timeLabel: 'Time',
     notificationsLabel: 'Notifications',

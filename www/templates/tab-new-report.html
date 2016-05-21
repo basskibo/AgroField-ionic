@@ -40,7 +40,7 @@
   <ion-content class="padding">
 
 
-         <div class="item" style="color:green">
+    <!--      <div class="item" style="color:green">
           {{'regionLabel' | translate }}: {{report.katOpst}}
         </div>
         <div class="item item-body">
@@ -51,9 +51,8 @@
               {{option}}
             </div>
           </button>
-        </div>
+        </div> -->
        
-        <!-- plot,activity,description -->
 
 
 
@@ -84,7 +83,12 @@
             </div>
           </button>
         </div>
+      
 
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Description</span>
+        <input type="text" placeholder="Comment" ng-model="report.opis">
+      </label>
 
     
 
