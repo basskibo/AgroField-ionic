@@ -356,7 +356,7 @@ $scope.onezoneDatepicker = {
               });
               $state.go('app.orders');
               console.log('cookies:'+ JSON.stringify($cookies.getAll()));
-              console.log('cookies:'+ JSON.stringify($cookies.getAll()));
+              console.log('cookies:'+ JSON.stringify($cookies));
 
               // $http({
               //   method:'POST',

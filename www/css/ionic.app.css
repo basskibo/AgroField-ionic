@@ -785,7 +785,11 @@ $dark:                            green !default; //value
   text-rendering: auto;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale; 
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  }
 
 .ion-alert:before {
   content: ""; }
@@ -4141,8 +4145,11 @@ a.subdued {
     border-color: transparent;
     background: none;
     box-shadow: none;
-    color: #444;
-    font-size: 17px; }
+    color: #fff;
+    font-size: 17px;
+    position: relative;
+    bottom: 10px;
+     }
   .bar-stable .button.button-icon {
     border-color: transparent;
     background: none; }
@@ -6572,7 +6579,8 @@ button.item.item-button-right {
   margin-bottom: 20px; }
 
 .list:last-child {
-  margin-bottom: 0px; }
+  margin-bottom: -21px;
+  background: #f7f7f7 }
   .list:last-child.card {
     margin-bottom: 40px; }
 
@@ -7952,6 +7960,18 @@ input:checked + .checkbox-icon:before {
   border-right: 0;
   content: ' ';
   opacity: 0; }
+
+.asd{
+  position: relative;
+  left: 22%;
+  max-width: 150px;
+}
+
+.kibo{
+  padding-top: 35px;
+  background: #f7f7f7;
+
+}
 
 .platform-android .checkbox-platform input:before,
 .platform-android .checkbox-platform .checkbox-icon:before,
