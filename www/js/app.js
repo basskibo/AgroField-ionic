@@ -275,15 +275,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
   //   }
   // })
 
-    .state('app.weather', {
-      url: '/weather/:city/:lat/:lng',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/weather.html',
-          controller: 'WeatherController'
-        }
-      }
-    })
+    // .state('app.weather', {
+    //   url: '/weather/:city/:lat/:lng',
+    //   views: {
+    //     'menuContent': {
+    //       templateUrl: 'templates/weather.html',
+    //       controller: 'WeatherController'
+    //     }
+    //   }
+    // })
   // .state('weather', {
   //     url: '/weather/:city/:lat/:lng',
   //     controller: 'WeatherController',
@@ -411,15 +411,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
   //   }
   // });
    ///////////////////////////////////////////////
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/tab-settings.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    });
+  //   .state('app.playlists', {
+  //     url: '/playlists',
+  //     views: {
+  //       'menuContent': {
+  //         templateUrl: 'templates/tab-settings.html',
+  //         controller: 'PlaylistsCtrl'
+  //       }
+  //     }
+  //   });
   // Each tab has its own nav history stack:
 
 
