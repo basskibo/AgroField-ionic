@@ -27,8 +27,9 @@
 
 
     <!-- lista -->
+    
       <ion-item style="padding-left:0px" class="item-remove-animate item-avatar item-icon-right" ng-repeat="order in orders | filter:searchOrders | orderBy:sortiranje" type="item-text-wrap" href="#/app/orders/{{order.id}}">
-
+      
         <h2 ><b>{{'operationLabel' | translate}}: </b>{{order.operacija}}</h2>
         <p ><b>{{'kulturaLabel' | translate}}:</b> {{order.kultura}}</p>
         <p ><b>{{'timeLabel' | translate}}:</b> {{order.vreme}}</p>

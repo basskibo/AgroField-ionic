@@ -6266,7 +6266,9 @@ button.item.item-button-right {
 .item-avatar .item-content,
 .item-avatar-left,
 .item-avatar-left .item-content {
-  min-height: 72px; }
+  min-height: 72px;
+  border-width: 1px;
+  border-color: #000 }
   .item-avatar > img:first-child,
   .item-avatar .item-image,
   .item-avatar .item-content > img:first-child,
@@ -6579,7 +6581,7 @@ button.item.item-button-right {
   margin-bottom: 20px; }
 
 .list:last-child {
-  margin-bottom: -21px;
+  margin-bottom: -22px;
   background: #f7f7f7 }
   .list:last-child.card {
     margin-bottom: 40px; }
@@ -8156,8 +8158,8 @@ input:checked + .checkbox-icon:after {
 
 .item-toggle .toggle {
   position: absolute;
-  top: 10px;
-  right: 16px;
+  top: 20px;
+  right: 20px;
   z-index: 3; }
 
 .toggle input:disabled + .track {
