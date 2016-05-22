@@ -240,7 +240,6 @@ $scope.onezoneDatepicker = {
     }
 };
 
-  console.log('Edit');
 
 
 })
@@ -307,7 +306,7 @@ $scope.onezoneDatepicker = {
 
 
 
-.controller('LoginCtrl', function($scope,$cookies, $state,$http,WorkingOrders,$ionicPopup) {
+.controller('LoginCtrl', function($scope, $state,$http,WorkingOrders,$ionicPopup) {
 
   //   $scope.signIn = function(user){
   //       if(user.farm == "MMOA"&& user.username == "admin" && user.password== '1243!' ){
@@ -365,10 +364,11 @@ $scope.onezoneDatepicker = {
               // })
 
             } else {
+              $scope.message = data.message;
 
               var alertPopup = $ionicPopup.alert({
               title:'Wrong user',
-              template:'Please try again'
+              template:$scope.message
             });
 
               $scope.message = data.message;
@@ -426,18 +426,18 @@ $scope.onezoneDatepicker = {
 
 })
 
-.controller('WeatherSearchCtrl',function ($scope, $http){
+// .controller('WeatherSearchCtrl',function ($scope, $http){
 
-  $scope.model = {term: ''};
+//   $scope.model = {term: ''};
 
-  $scope.search = function () {
-    $http.get('https://maps.googleapis.com/maps/api/geocode/json', {params: {address: $scope.model.term}}).success(function (response) {
-      $scope.results = response.results;
-    });
-  };
+//   $scope.search = function () {
+//     $http.get('https://maps.googleapis.com/maps/api/geocode/json', {params: {address: $scope.model.term}}).success(function (response) {
+//       $scope.results = response.results;
+//     });
+//   };
 
 
-})
+// })
 
 .controller('SettingsController', function ($scope, Settings, Locations) {
   $scope.settings = Settings;

@@ -3,8 +3,7 @@
   "app_id": "",
   "gulpStartupTasks": [
     "sass",
-    "watch",
-    "remove-proxy"
+    "watch"
   ],
   "proxies": [
     {

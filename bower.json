@@ -8,6 +8,7 @@
     "ionic-datepicker": "^1.1.0",
     "onezone-datepicker": "*",
     "moment-timezone": "~0.2.5",
-    "suncalc": "~1.6.0"
+    "suncalc": "~1.6.0",
+    "ionic-modal-select": "*"
   }
 }
