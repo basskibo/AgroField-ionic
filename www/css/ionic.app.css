@@ -5397,6 +5397,20 @@ ion-tabs.tabs-color-active-dark .tab-item {
 .popover .bar-header {
   border-radius: 2px; }
 
+  .ion-ios-list{
+    padding: 5px;
+    position: relative;
+    top: 2px;
+  }
+
+  .wo{
+    position: relative;
+    bottom: 20px;
+    padding: 0px;
+    margin: -10px;
+    left: 20%;
+  }
+
 .popover .scroll-content {
   z-index: 1;
   margin: 2px 0; }
@@ -8173,6 +8187,8 @@ input:checked + .checkbox-icon:after {
 
 .toggle-small input:checked + .track {
   background: rgba(0, 150, 137, 0.5); }
+
+
 
 .toggle-small .handle {
   top: 2px;
