@@ -308,30 +308,16 @@ $scope.onezoneDatepicker = {
 
 .controller('LoginCtrl', function($scope, $state,$http,WorkingOrders,$ionicPopup) {
 
-  //   $scope.signIn = function(user){
-  //       if(user.farm == "MMOA"&& user.username == "admin" && user.password== '1243!' ){
-  //          var successPoput = $ionicPopup.alert({
-  //             title:'Welcome ' + user.username,
-  //             template:'You are now logged in'
-  //          });
 
-  //       }else{
-  //           var alertPopup = $ionicPopup.alert({
-  //             title:'Wrong user',
-  //             template:'Please try again'
-  //           });
-  //       }
-  // }
 
-   // create a blank object to handle form data.
         
 
         $scope.user = {};
         $scope.korisnik ={};
-         $scope.user.farm= 'SuperAdmin';
+         // $scope.user.farm= 'SuperAdmin';
 
-         $scope.user.username= 'Bojan';
-         $scope.user.password= '1243!';
+         // $scope.user.username= 'Bojan';
+         // $scope.user.password= '1243!';
       // console.log($scope.user);
       // calling our submit function.
         $scope.signIn = function() {
