@@ -306,7 +306,7 @@ $scope.onezoneDatepicker = {
 
 
 
-.controller('LoginCtrl', function($scope, $state,$http,WorkingOrders,$ionicPopup) {
+.controller('LoginCtrl', function($scope,$cookies, $state,$http,WorkingOrders,$ionicPopup) {
 
 
 
@@ -327,7 +327,7 @@ $scope.onezoneDatepicker = {
         // Posting data to php file
         $http({
           method  : 'POST',
-          withCredentials: true,
+         // withCredentials: true,
           url     : 'http://agrolife.greensoft.co:3000/login',
           data    : $scope.user //forms user object
          })
@@ -342,7 +342,7 @@ $scope.onezoneDatepicker = {
                     template:'Hellooo'
               });
               $state.go('app.orders');
-              // console.log('cookies:'+ JSON.stringify($cookies.getAll()));
+               console.log('cookies:'+ JSON.stringify($cookies.getAll()));
               // console.log('cookies:'+ JSON.stringify($cookies));
 
               // $http({

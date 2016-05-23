@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','pascalprecht.translate'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','pascalprecht.translate','ngCookies'])
 
 .constant('ApiEndpoint', {
   //url: 'http://192.168.1.14:8100'
@@ -53,11 +53,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     priceLabel: 'Price',
     dateLabel: 'Date',
     saveLabel: 'Save',
-    orderLabel: 'Working Orders',
+    orderLabel: 'Working orders',
     orderAll: 'All Orders',
     newOrderLabel: 'New work order',
     settingsLabel: 'Settings',
-    logOutLabel: 'Log Out',
+    settingsChangeLabel: 'Change settings',
+
+    logOutLabel: 'Log out',
     listOfOrdersLabel: 'List of work orders',
     searchOrdersLabel: 'Search orders',
     searchOrders1Label: 'Search reports',
