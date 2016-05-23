@@ -3501,8 +3501,9 @@ ion-infinite-scroll {
 
 .overflow-scroll {
   
-
-  
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
   top: 0;
   right: 0;
   bottom: 0;
