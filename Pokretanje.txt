@@ -1,1 +1,2 @@
 u cmd ukucas ionic serve --lab
+za android: ionic run android --debug
