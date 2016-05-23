@@ -7390,7 +7390,9 @@ ion-slides {
 
 .overflow-scroll > .scroll {
   -webkit-overflow-scrolling: touch;
-  width: 100%; }
+  width: 100%; 
+  background: #F7F7F7;
+}
   .overflow-scroll > .scroll.overscroll {
     position: fixed;
     right: 0;
