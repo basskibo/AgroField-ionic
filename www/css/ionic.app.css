@@ -5411,6 +5411,12 @@ ion-tabs.tabs-color-active-dark .tab-item {
     left: 20%;
   }
 
+  .ion-document-text{
+    padding: 5px;
+    position: relative;
+    top: 2px;
+  }
+
 .popover .scroll-content {
   z-index: 1;
   margin: 2px 0; }
