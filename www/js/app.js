@@ -138,7 +138,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     listOfOrdersLabel:'Lista radnih naloga',
     searchOrdersLabel: 'Pretraži naloge',
     searchOrders1Label: 'Pretraži beleške',
-
+    settingsChangeLabel: 'Promena Podešavanja',
     timeLabel:'Vreme',
     notificationsLabel: 'Obaveštenja',
     showOnMapLabel:'Prikaži na mapi',
@@ -184,8 +184,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
 
 
   });
-  $translateProvider.preferredLanguage('en');
-  $translateProvider.fallbackLanguage('en');
+  $translateProvider.preferredLanguage('rs');
+  $translateProvider.fallbackLanguage('rs');
 
 
   // Ionic uses AngularUI Router which uses the concept of states

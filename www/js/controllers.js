@@ -327,7 +327,7 @@ $scope.onezoneDatepicker = {
         // Posting data to php file
         $http({
           method  : 'POST',
-          //withCredentials: true,
+          withCredentials: false,
           url     : 'http://agrolife.greensoft.co:3000/login',
           data    : $scope.user
          })
@@ -347,14 +347,15 @@ $scope.onezoneDatepicker = {
               $state.go('app.orders');
                 //var favoriteCookie = $cookies.get('connect.sid');
 
-              // console.log('cookies:'+ JSON.stringify($cookies.getAll()));
+              console.log('cookies:'+ JSON.stringify($cookies.getAll()));
               // console.log('cookies:'+ JSON.stringify(favoriteCookie));
 
-              // $http({
-              //   method:'POST',
-              //   url: 'http://agrolife.greensoft.co:3000/materijal/read',
-              //   data: $scope.user
-              // })
+              $http({
+                method:'POST',
+                withCredentials: false,
+                url: 'http://agrolife.greensoft.co:3000/materijal/read',
+                data: $scope.user
+              })
 
             } else {
               $scope.message = data.message;

@@ -5557,7 +5557,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
     max-width: 100%;
     max-height: 90%;
     border-radius: 0px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #F7F7F7;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -7402,7 +7402,6 @@ ion-slides {
 .overflow-scroll > .scroll {
   -webkit-overflow-scrolling: touch;
   width: 100%; 
-  background: #F7F7F7;
 }
   .overflow-scroll > .scroll.overscroll {
     position: fixed;
