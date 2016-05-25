@@ -7218,6 +7218,16 @@ button.swiper-pagination-bullet {
   -ms-touch-action: none;
   background: rgba(0, 0, 0, 0.1); }
 
+.loglogo{
+    max-width: 80%;
+    position: relative;
+    left: 10%;
+}
+
+.log{
+  
+}
+
 .swiper-container-horizontal > .swiper-scrollbar {
   position: absolute;
   left: 1%;
