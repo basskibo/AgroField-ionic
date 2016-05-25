@@ -1,0 +1,31 @@
+{
+  "name": "ionic-durationpicker",
+  "version": "0.1.0",
+  "authors": [
+    "Khaled Shaaban <kshaaban@outlook.com>"
+  ],
+  "description": "A duration picker component for hybrid apps developed with ionic framework.",
+  "main": "./dist/ionic-durationpicker.min.js",
+  "keywords": [
+    "ionic-durationpicker",
+    "durationpicker",
+    "duration",
+    "picker",
+    "ionic"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kshaaban-/ionic-durationpicker.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ionic": "^1.0.0"
+  }
+}

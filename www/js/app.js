@@ -8,8 +8,8 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','pascalprecht.translate','ngCookies'])
 
 .constant('ApiEndpoint', {
-  //url: 'http://192.168.1.14:8100'
-  url:'http://greensoft.agrolife.co:3000'
+ // url: 'http://localhost:3000/'
+  url:'http://agrolife.greensoft.co:3000'
 })
 // For the real endpoint, we'd use this
 // .constant('ApiEndpoint', {
@@ -35,7 +35,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
 //   });
 // })
 
-
+.config(['$httpProvider', function($httpProvider) {
+  $httpProvider.defaults.withCredentials = true;
+}])
 
 
   
@@ -247,50 +249,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     }
   })
 
-  // .state('tab.newWorkingOrder', {
-  //   url: '/newWorkingOrder',
-  //   views: {
-  //     'tab-newWorkingOrder': {
-  //       templateUrl: 'templates/tab-new-order.html',
-  //       controller: 'DashCtrl'
-  //     }
-  //   }
-  // })
-
-
- // .state('app.weather-search', {
- //      url: '/weather-search',
- //      views: {
- //        'menuContent': {
- //          templateUrl: 'templates/weather-search.html',
- //          controller: 'WeatherSearchCtrl'
- //        }
- //      }
- //    })
-  //  .state('tab.weather-search', {
-  //   url: '/weather-search',
-  //   views: {
-  //     'tab-weather-search': {
-  //       templateUrl: 'templates/weather-search.html',
-  //       controller: 'WeatherSearchCtrl'
-  //     }
-  //   }
-  // })
-
-    // .state('app.weather', {
-    //   url: '/weather/:city/:lat/:lng',
-    //   views: {
-    //     'menuContent': {
-    //       templateUrl: 'templates/weather.html',
-    //       controller: 'WeatherController'
-    //     }
-    //   }
-    // })
-  // .state('weather', {
-  //     url: '/weather/:city/:lat/:lng',
-  //     controller: 'WeatherController',
-  //     templateUrl: 'templates/weather.html'
-  //   })
   .state('app.orders', {
       url: '/orders',
       views: {
@@ -303,15 +261,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     })
 
 
-  // .state('tab.orders', {
-  //     url: '/orders',
-  //     views: {
-  //       'tab-orders': {
-  //         templateUrl: 'templates/tab-orders.html',
-  //         controller: 'ChatsCtrl'
-  //       }
-  //     }
-  //   })
+
 
 
     .state('app.reports', {
@@ -323,15 +273,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
         }
       }
     })
-   // .state('tab.reports', {
-   //    url: '/reports',
-   //    views: {
-   //      'tab-reports': {
-   //        templateUrl: 'templates/tab-report.html',
-   //        controller: 'ReportsCtrl'
-   //      }
-   //    }
-   //  })
+
 
     .state('app.newReport', {
       url: '/newReport',
@@ -344,15 +286,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
         }
       }
     })
-  //  .state('tab.newReport', {
-  //   url: '/newReport',
-  //   views: {
-  //     'tab-newReport': {
-  //       templateUrl: 'templates/tab-new-report.html',
-  //       controller: 'DashCtrl'
-  //     }
-  //   }
-  // })
+
 
 
     .state('app.report-detail', {
@@ -364,15 +298,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
         }
       }
     })
-    // .state('tab.report-detail', {
-    //   url: '/reports/:reportId',
-    //   views: {
-    //     'tab-reports': {
-    //       templateUrl: 'templates/tab-detailR.html',
-    //       controller: 'ReportDetailCtrl'
-    //     }
-    //   }
-    // })
+
 
 
   .state('app.order-detail', {
@@ -384,15 +310,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
         }
       }
     })
-    // .state('tab.order-detail', {
-    //   url: '/orders/:orderId',
-    //   views: {
-    //     'tab-orders': {
-    //       templateUrl: 'templates/tab-detail.html',
-    //       controller: 'ChatDetailCtrl'
-    //     }
-    //   }
-    // })
+
    .state('app.settings', {
         url: '/settings',
         views: {
@@ -403,52 +321,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
         }
       })
 
-  //     .state('tab.account', {
-  //   url: '/account',
-  //   views: {
-  //     'tab-account': {
-  //       templateUrl: 'templates/tab-settings.html',
-  //       controller: 'SettingsCtrl'
-  //     }
-  //   }
-  // });
-   ///////////////////////////////////////////////
-  //   .state('app.playlists', {
-  //     url: '/playlists',
-  //     views: {
-  //       'menuContent': {
-  //         templateUrl: 'templates/tab-settings.html',
-  //         controller: 'PlaylistsCtrl'
-  //       }
-  //     }
-  //   });
-  // Each tab has its own nav history stack:
 
-
-
-  //  .state('tab.weather-search', {
-  //   url: '/weather-search',
-  //   views: {
-  //     'tab-weather-search': {
-  //       templateUrl: 'templates/weather-search.html',
-  //       controller: 'WeatherSearchCtrl'
-  //     }
-  //   }
-  // });
  
 
-  // .state('tab.account', {
-  //   url: '/account',
-  //   views: {
-  //     'tab-account': {
-  //       templateUrl: 'templates/tab-settings.html',
-  //       controller: 'SettingsCtrl'
-  //     }
-  //   }
-  // });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/app/orders');
 
 })
 

@@ -1,0 +1,30 @@
+.idp-control {
+  min-width: 52px;
+  min-height: 37px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.idp-control-arrow {
+  width: 100%;
+}
+
+.idp-control-arrow > .icon::before {
+  margin-top: 6px;
+  vertical-align: middle;
+}
+
+.idp-unit-box {
+  border: 1px solid #dddddd;
+}
+
+.idp-unit-separator {
+  padding-top: 44px !important;
+  font-weight: bold;
+  text-align: center;
+}
+
+.idp-dir-rtl {
+  direction: rtl !important;
+}

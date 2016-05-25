@@ -1,0 +1,5 @@
+<ion-item ng-class="getItemClasses()">
+  <i ng-if="idpLabelIcon" class="icon {{idpLabelIcon}}"></i>
+  <div ng-bind-html="idpLabel"></div>
+  <button class="button" type="button" ng-class="getInputButtonType()" ng-click="showPopup()">{{prettyFormatDuration()}}</button>
+</ion-item>

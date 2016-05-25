@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ionic', 'onezone-datepicker','pascalprecht.translate','starter.services','ionic-modal-select'])
+angular.module('starter.controllers', ['ionic', 'onezone-datepicker','ionic-durationpicker','pascalprecht.translate','starter.services','ionic-modal-select'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout,$http) {
 
@@ -314,27 +314,29 @@ $scope.onezoneDatepicker = {
 
         $scope.user = {};
         $scope.korisnik ={};
-          $scope.user.farm= 'SuperAdmin';
+        $scope.user.farm= 'SuperAdmin';
 
-         // $scope.user.username= 'Bojan';
-         // $scope.user.password= '1243!';
+         $scope.user.username= 'Bojan';
+         $scope.user.password= '1243!';
       // console.log($scope.user);
       // calling our submit function.
         $scope.signIn = function() {
 
-        console.log($scope.user);     
+        //console.log($scope.user);     
 
         // Posting data to php file
         $http({
           method  : 'POST',
           //withCredentials: true,
           url     : 'http://agrolife.greensoft.co:3000/login',
-          data    : $scope.user,
-          user : $scope.user //forms user object
+          data    : $scope.user
          })
           .success(function(data) {
             console.log(data);
              $scope.message = data.message;
+            // $cookies['kolacic']='kolacic';
+             // console.log($cookies);
+
           
             if (data.success) {
               // Showing errors.
@@ -343,16 +345,16 @@ $scope.onezoneDatepicker = {
                     template:'Hellooo'
               });
               $state.go('app.orders');
-                var favoriteCookie = $cookies.get('connect.sid');
+                //var favoriteCookie = $cookies.get('connect.sid');
 
-               console.log('cookies:'+ JSON.stringify($cookies.getAll()));
-              console.log('cookies:'+ JSON.stringify(favoriteCookie));
+              // console.log('cookies:'+ JSON.stringify($cookies.getAll()));
+              // console.log('cookies:'+ JSON.stringify(favoriteCookie));
 
-              $http({
-                method:'POST',
-                url: 'http://agrolife.greensoft.co:3000/materijal/read',
-                data: $scope.user
-              })
+              // $http({
+              //   method:'POST',
+              //   url: 'http://agrolife.greensoft.co:3000/materijal/read',
+              //   data: $scope.user
+              // })
 
             } else {
               $scope.message = data.message;
