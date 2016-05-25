@@ -54,6 +54,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     cultureLabel: 'Culture',
     priceLabel: 'Price',
     dateLabel: 'Date',
+    datePocetkaLabel: 'Date ',
+    datePlaniranLabel: 'Date',
+    dateZavrsetkaLabel: 'Date',
+
     saveLabel: 'Save',
     orderLabel: 'Working orders',
     orderAll: 'All Orders',
@@ -125,13 +129,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     operationLabel: 'Operacija',
     inputLabel: 'Input',
     cultureLabel: 'Kultura',
-    priceLabel: 'Cena',
+    priceLabel: 'Ukupan trošak',
+    priceLabel2: 'Ukupan prihod',
     dateLabel: 'Datum',
+     datePocetkaLabel: 'Datum početka ',
+    datePlaniranLabel: 'Datum planiran',
+    dateZavrsetkaLabel: 'Datum završetka',
     saveLabel: 'Sačuvaj',
     orderLabel: 'Radni Nalozi',
     orderAll: 'Svi nalozi',
     chooseLabel: 'Izaberi',
-
+    materijalLabel : 'Materijal',
     newOrderLabel: 'Novi radni nalog',
     settingsLabel: 'Podešavanja',
     logOutLabel:'Odjavi se',
@@ -326,7 +334,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/orders');
+  $urlRouterProvider.otherwise('/app/newOrder');
 
 })
 

@@ -1,80 +1,11 @@
  <ion-view cache-view="false" view-title="{{'newOrder' | translate}}" >
-  <ion-content class="padding">
 
 
+  <ion-content>
 
-  <!-- <div class="inputi">
-     <label class="item item-input item-floating-label">
-      <span class="input-label">{{'operationLabel' | translate }}</span>
-      <input type="text" placeholder="{{'operationLabel' | translate }}" ng-model="order.operacija">
-    </label>
-    <label class="item item-input item-floating-label">
-      <span class="input-label">{{'cultureLabel' | translate}}</span>
-      <input type="text" placeholder="{{'cultureLabel' | translate}}"  ng-model="order.kultura">
-    </label>
-    <label class="item item-input item-floating-label">
-      <span class="input-label">{{'inputLabel' | translate}}</span>
-      <input type="text" placeholder="{{'inputLabel' | translate}}"  ng-model="order.input">
-    </label>
-    <label class = "item item-input item-select">
-     <div class = "input-label">
-        {{'inputLabel' | translate}} : 
-     </div>
-    
-     <select class="form-control" ng-model="sortiranje">
-          <option value="operacija" selected="selected">{{"naziv" | translate}}</option>
-          <option value="-vreme">{{'vreme' | translate}}</option>
-     </select>
-    </label>
-
-    <label class="item item-input item-floating-label">
-      <span class="input-label">{{'priceLabel' | translate}}</span>
-      <input type="text" placeholder="{{'priceLabel' | translate}}"  ng-model="order.cena">
-    </label> 
-
-<label class = "item item-input item-select">
-   <div class = "input-label">
-      {{'operationLabel' | translate}} : 
-   </div>
-   <select class="form-control" ng-model="order.operacija">
-        <option value="Setva uskorednim sejalicama" selected="selected">Setva uskorednim sejalicama</option>
-        <option value="Razrivanje zemljišta čizel plugom">Razrivanje zemljišta čizel plugom</option>
-        <option value="Izvoz i rasturanje osoke">  Izvoz i rasturanje osoke</option>
-   </select>
-</label>
-
-<label class = "item item-input item-select">
-   <div class = "input-label">
-      {{'cultureLabel' | translate}} : 
-   </div>
-   <select class="form-control" ng-model="order.kultura">
-        <option value="Semenska tvrda psenica" selected="selected">Semenska tvrda psenica</option>
-        <option value="Merkantilni usev šećerne repe">Merkantilni usev šećerne repe</option>
-        <option value="Merkantilni ozimi stočni ječam">  Merkantilni ozimi stočni ječam</option>
-   </select>
-</label>
-
-<label class = "item item-input item-select">
-   <div class = "input-label">
-      {{'inputLabel' | translate}} : 
-   </div>
-   <select class="form-control" ng-model="order.input">
-        <option value="Seme" selected="selected">Seme</option>
-        <option value="Osoka">Osoka</option>
-        <option value="Gorivo">Gorivo</option>
-   </select>
-</label>
-
-<label class="item item-input item-floating-label">
-      <span class="input-label">{{'priceLabel' | translate}}</span>
-      <input type="text" placeholder="{{'priceLabel' | translate}}"  ng-model="order.cena">
-    </label> 
-
-
-
-  </div> -->
- 
-
+        <div class="item item-divider">
+            Podaci o radnom nalogu
+        </div>
          <div class="item" style="color:green">
           {{'operationLabel' | translate }}: {{order.operacija}}
         </div>
@@ -120,24 +51,92 @@
           </button>
         </div>
 
+ <div class="item item-divider">
+    Radno vreme
+  </div>
            <ionic-durationpicker idp-label="Početak" idp-label-icon="ion-clock" idp-output="durations.first">
       </ionic-durationpicker>
          <ionic-durationpicker idp-label="Kraj" idp-label-icon="ion-clock" idp-output="durations.first">
       </ionic-durationpicker>
 
-
+ <div class="item item-divider">
+    Troškovi
+  </div>
     <label class="item item-input item-floating-label">
       <span class="input-label">{{'priceLabel' | translate}}</span>
-      <input type="text" placeholder="{{'priceLabel' | translate}}"  ng-model="order.cena">
+      <input type="number" placeholder="{{'priceLabel' | translate}}"  ng-model="order.cena">
     </label> 
+     <label class="item item-input item-floating-label">
+      <span class="input-label">{{'priceLabel2' | translate}}</span>
+      <input type="number" placeholder="{{'priceLabel2' | translate}}"  ng-model="order.cena2">
+    </label> 
+
+
+ <div class="item item-divider">
+    Datumi
+  </div>
 
   <onezone-datepicker datepicker-object="onezoneDatepicker" ng-model="order.vreme">
     <button class="button button-block button-outline button-positive show-onezone-datepicker"  >
-        {{'dateLabel' | translate}}: {{onezoneDatepicker.date | date:'dd MMMM yyyy'}}
+        {{'datePocetkaLabel' | translate}}: {{onezoneDatepicker.date | date:'dd MMMM yyyy'}}
     </button>
-</onezone-datepicker>
+  </onezone-datepicker>
 
-  <button type="submit" class="button button-block button-balanced" ng-click="createOrder(order)">
+  <onezone-datepicker datepicker-object="onezoneDatepicker" ng-model="order.vreme">
+    <button class="button button-block button-outline button-positive show-onezone-datepicker"  >
+        {{'datePlaniranLabel' | translate}}: {{onezoneDatepicker.date | date:'dd MMMM yyyy'}}
+    </button>
+  </onezone-datepicker>
+
+  <onezone-datepicker datepicker-object="onezoneDatepicker" ng-model="order.vreme">
+    <button class="button button-block button-outline button-positive show-onezone-datepicker"  >
+        {{'dateZavrsetkaLabel' | translate}}: {{onezoneDatepicker.date | date:'dd MMMM yyyy'}}
+    </button>
+  </onezone-datepicker>
+
+
+   <div class="item item-divider">
+    Materijali
+  </div>
+
+<div class="item" style="color:green">
+          {{'materijalLabel' | translate }}: {{order.materijal}}
+        </div>
+        <div class="item item-body">
+          <button class="button button-balanced" modal-select="" ng-model="order.materijal" options="materijal" modal-title="Izaberite materijal" header-footer-class="bar-positive" has-search="true" sub-header-class="bar-positive">
+          {{'chooseLabel' | translate}}
+
+            <div class="option">
+              {{option}}
+            </div>
+          </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <button type="submit" class="button button-block button-energized" ng-click="createOrder(order)">
     {{'saveLabel' | translate}}
 </button>
 
@@ -150,7 +149,6 @@
 
 
 
-            </ion-content>
           </form>
         </ion-modal-view>
   </script>
