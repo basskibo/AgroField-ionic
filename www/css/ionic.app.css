@@ -7225,7 +7225,8 @@ button.swiper-pagination-bullet {
 }
 
 .log{
-  
+    padding-bottom: 110px;
+    padding-top: 110px;
 }
 
 .swiper-container-horizontal > .swiper-scrollbar {
