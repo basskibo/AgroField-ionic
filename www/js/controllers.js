@@ -324,10 +324,7 @@ $scope.onezoneDatepicker = {
 
         $scope.user = {};
         $scope.korisnik ={};
-        $scope.user.farm= 'SuperAdmin';
-
-         $scope.user.username= 'Bojan';
-         $scope.user.password= '1243!';
+   
       // console.log($scope.user);
       // calling our submit function.
         $scope.signIn = function() {

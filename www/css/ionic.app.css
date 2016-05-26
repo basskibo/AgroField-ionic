@@ -5685,7 +5685,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
  * --------------------------------------------------
  */
 .item {
-  border-color: #ddd;
+  
   background-color: #fff;
   color: #444;
   position: relative;
@@ -5693,8 +5693,8 @@ ion-tabs.tabs-color-active-dark .tab-item {
   display: block;
   margin: -1px;
   padding: 16px;
-  border-width: 1px;
-  border-style: solid;
+  
+  
   font-size: 16px; }
   .item h2 {
     margin: 0 0 2px 0;
@@ -7221,14 +7221,14 @@ button.swiper-pagination-bullet {
   background: rgba(0, 0, 0, 0.1); }
 
 .loglogo{
-    max-width: 80%;
+    max-width: 100%;
     position: relative;
-    left: 10%;
+    
 }
 
 .log{
-    padding-bottom: 110px;
-    padding-top: 110px;
+    
+   
 }
 
 .swiper-container-horizontal > .swiper-scrollbar {
@@ -7521,7 +7521,10 @@ ion-slides {
  * --------------------------------------------------
  */
 form {
-  margin: 0 0 1.42857; }
+  margin: 0 0 1.42857;
+  position: relative;
+  bottom: 40%;
+   }
 
 legend {
   display: block;
@@ -7665,7 +7668,7 @@ textarea {
   padding: 7px 10px 7px 0px;
   max-width: 200px;
   width: 35%;
-  color: #0D0D0D;
+  color: #fff;
   font-size: 16px; }
 
 .placeholder-icon {
@@ -7707,7 +7710,10 @@ textarea {
 .item-floating-label {
   display: block;
   background-color: transparent;
-  box-shadow: none; }
+  box-shadow: none; 
+    position: relative;
+    bottom: 35px;
+  }
   .item-floating-label .input-label {
     position: relative;
     padding: 5px 0 0 0;
@@ -7740,7 +7746,7 @@ input[type="color"] {
   padding-top: 2px;
   padding-left: 0;
   height: 34px;
-  color: #111;
+  color: #fff;
   vertical-align: middle;
   font-size: 14px;
   line-height: 16px; }
@@ -7789,7 +7795,11 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"] {
-  border: 0; }
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom-color: #fff;
+    border-bottom-width: 2px; }
 
 input[type="radio"],
 input[type="checkbox"] {
