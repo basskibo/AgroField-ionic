@@ -58,6 +58,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     datePlaniranLabel: 'Date',
     dateZavrsetkaLabel: 'Date',
     tableLabel : 'Table',
+    prikljucnaLabel: 'Priključne mašine',
+    radniciLabel: 'Radnici',
     saveLabel: 'Save',
     orderLabel: 'Working orders',
     orderAll: 'All Orders',
@@ -141,7 +143,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     datePlaniranLabel: 'Datum planiran',
     dateZavrsetkaLabel: 'Datum završetka',
     tableLabel : 'Table',
-
+    prikljucnaLabel: 'Priključne mašine',
+    radniciLabel: 'Radnici',
+    podaciRNLabel : 'Podaci o radnom nalogu',
+    
 
 
     saveLabel: 'Sačuvaj',

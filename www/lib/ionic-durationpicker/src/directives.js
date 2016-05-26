@@ -45,10 +45,10 @@
             var config = {
                 rtl: scope.idpConfig.rtl ? scope.idpConfig.rtl : false,
                 inputButtonType: scope.idpConfig.inputButtonType ? scope.idpConfig.inputButtonType : 'button-outline button-positive',
-                format: scope.idpConfig.format ? scope.idpConfig.format : 'MM:SS',
+                format: scope.idpConfig.format ? scope.idpConfig.format : 'HH:MM',
                 secondsStep: scope.idpConfig.secondsStep ? scope.idpConfig.secondsStep : 1,
                 minutesStep: scope.idpConfig.minutesStep ? scope.idpConfig.minutesStep : 1,
-                popupTitle: scope.idpConfig.popupTitle ? scope.idpConfig.popupTitle : 'Duration Picker',
+                popupTitle: scope.idpConfig.popupTitle ? scope.idpConfig.popupTitle : 'Radno vreme',
                 popupSubTitle: scope.idpConfig.popupSubTitle ? scope.idpConfig.popupSubTitle : 'Enter duration',
                 popupSaveLabel: scope.idpConfig.popupSaveLabel ? scope.idpConfig.popupSaveLabel : 'Save',
                 popupSaveButtonType: scope.idpConfig.popupSaveButtonType ? scope.idpConfig.popupSaveButtonType : 'button-positive',
@@ -83,14 +83,14 @@
             function _increment(unit) {
                 var step = config[(unit + 'Step')];
                 scope.popupDuration[unit] = parseInt(scope.popupDuration[unit]);
-                scope.popupDuration[unit] = (scope.popupDuration[unit] + step) % 60;
+                scope.popupDuration[unit] = (scope.popupDuration[unit] + step) % 24;
                 scope.popupDuration[unit] = __prettyFormatUnit(scope.popupDuration[unit]);
             }
 
             function _decrement(unit) {
                 var step = config[(unit + 'Step')];
                 scope.popupDuration[unit] = parseInt(scope.popupDuration[unit]);
-                scope.popupDuration[unit] = (scope.popupDuration[unit] + (60 - step)) % 60;
+                scope.popupDuration[unit] = (scope.popupDuration[unit] + (24 - step)) % 24;
                 scope.popupDuration[unit] = __prettyFormatUnit(scope.popupDuration[unit]);
             }
 
@@ -111,7 +111,7 @@
             function _showPopup() {
                 var templateFileName;
                 switch (config.format) {
-                    case 'MM:SS':
+                    case 'HH:MM':
                         templateFileName = 'popup-minutes-seconds.html';
                         break;
                     default:

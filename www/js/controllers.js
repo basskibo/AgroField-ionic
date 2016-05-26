@@ -1,8 +1,10 @@
-angular.module('starter.controllers', ['ionic', 'onezone-datepicker','ionic-multiselect','ionic-durationpicker','pascalprecht.translate','starter.services','ionic-modal-select'])
+angular.module('starter.controllers', ['ionic', 'onezone-datepicker','ion-datetime-picker','ionic-multiselect','pascalprecht.translate','starter.services','ionic-modal-select'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout,$http) {
 
 })
+
+
 
 
 
@@ -95,6 +97,8 @@ $scope.input = [];
   $scope.input.push('AGROVISK MHT 15-40');
 
 
+ 
+
 $scope.onezoneDatepicker = {
     date: new Date(), // MANDATORY
     mondayFirst: false,
@@ -122,6 +126,7 @@ $scope.onezoneDatepicker = {
   $scope.pogonske_masine = [{ value: "Item 1"}, { value: "Item 2"}, { value: "Item 3"}];
   $scope.table = [{ value: "Tabla 1"}, { value: "tbl 2"}, { value: "tablica 3"}];
   $scope.prikljucne_masine = [{ value: "Masina 1"}, { value: "IMSvtem 2"}, { value: "sva 3"}];
+  $scope.radnici = [{ value: "Pera 1"}, { value: "MArko 2"}, { value: "sva 3"}];
 
   $scope.onValueChanged = function(value){
   }
