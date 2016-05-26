@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ionic', 'onezone-datepicker','ionic-durationpicker','pascalprecht.translate','starter.services','ionic-modal-select'])
+angular.module('starter.controllers', ['ionic', 'onezone-datepicker','ionic-multiselect','ionic-durationpicker','pascalprecht.translate','starter.services','ionic-modal-select'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout,$http) {
 
@@ -98,7 +98,7 @@ $scope.input = [];
 $scope.onezoneDatepicker = {
     date: new Date(), // MANDATORY
     mondayFirst: false,
-    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    months: ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Jun', 'Jul', 'Avgust', 'Septembar', 'Octobar', 'Novembar', 'Decembar'],
     daysOfTheWeek: ['Ned', 'Pon', 'Uto', 'Sre', 'Čet', 'Pet', 'Sub'],     
     startDate: new Date(),
     disablePastDays: false,
@@ -117,6 +117,16 @@ $scope.onezoneDatepicker = {
         //console.log('callback');
     }
 };
+
+
+  $scope.pogonske_masine = [{ value: "Item 1"}, { value: "Item 2"}, { value: "Item 3"}];
+  $scope.table = [{ value: "Tabla 1"}, { value: "tbl 2"}, { value: "tablica 3"}];
+  $scope.prikljucne_masine = [{ value: "Masina 1"}, { value: "IMSvtem 2"}, { value: "sva 3"}];
+
+  $scope.onValueChanged = function(value){
+  }
+
+
 
     $scope.createOrder = function(order,callback){
       $scope.orders = WorkingOrders.all();

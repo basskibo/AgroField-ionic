@@ -7,7 +7,7 @@
             Podaci o radnom nalogu
         </div>
          <div class="item" style="color:green">
-          {{'operationLabel' | translate }}: {{order.operacija}}
+          {{'operationILabel' | translate }}: {{order.operacija}}
         </div>
         <div class="item item-body">
           <button class="button button-balanced" modal-select="" ng-model="order.operacija" options="operacija" modal-title="Izaberite operaciju" header-footer-class="bar-positive" has-search="true" sub-header-class="bar-positive">
@@ -25,7 +25,7 @@
 
 
         <div class="item" style="color:green">
-          {{'cultureLabel' | translate}}: {{order.kultura}}
+          {{'cultureILabel' | translate}}: {{order.kultura}}
         </div>
         <div class="item item-body">
           <button class="button button-balanced" modal-select="" ng-model="order.kultura" options="kultura" modal-title="Izaberite operaciju" header-footer-class="bar-positive" has-search="true" value="kultura" sub-header-class="bar-positive">
@@ -39,7 +39,7 @@
 
 
         <div class="item" style="color:green">
-          {{'inputLabel' | translate}}: {{order.input}}
+          {{'inputILabel' | translate}}: {{order.input}}
         </div>
         <div class="item item-body">
           <button class="button button-balanced" modal-select="" ng-model="order.input" options="input" modal-title="Izaberite operaciju" header-footer-class="bar-positive" has-search="true" value="kultura" sub-header-class="bar-positive">
@@ -99,7 +99,7 @@
     Materijali
   </div>
 
-<div class="item" style="color:green">
+        <div class="item" style="color:green">
           {{'materijalLabel' | translate }}: {{order.materijal}}
         </div>
         <div class="item item-body">
@@ -110,7 +110,76 @@
               {{option}}
             </div>
           </button>
-</div>
+        </div>
+
+
+        <div class="item item-divider">
+          {{'pogonskeLabel' | translate}}
+        </div>
+
+
+        <multiselect
+          header-text="Izaberite pogonske mašine"
+          items="pogonske_masine"
+          text-property="value"
+          value-property="value"
+          is-translate="true"
+          text="Izaberite pogonske mašine"
+          modal-template-url="lib/ionic-multiselect/dist/templates/modal-template.html"
+          template-url="lib/ionic-multiselect/dist/templates/item-template.html"
+          value-changed="onValueChanged(value)">
+        </multiselect>
+
+
+
+        <div class="item item-divider">
+          {{'tableLabel' | translate}}
+        </div>
+
+        <multiselect
+          header-text="Izaberite table"
+          items="table"
+          text-property="value"
+          value-property="value"
+          is-translate="true"
+          text="Izaberite table"
+          modal-template-url="lib/ionic-multiselect/dist/templates/modal-template.html"
+          template-url="lib/ionic-multiselect/dist/templates/item-template.html"
+          value-changed="onValueChanged(value)">
+        </multiselect>
+
+
+        <div class="item item-divider">
+          {{'prikljucnaLabel' | translate}}
+        </div>
+
+        <multiselect
+          header-text="Izaberite table"
+          items="table"
+          text-property="value"
+          value-property="value"
+          is-translate="true"
+          text="Izaberite table"
+          modal-template-url="lib/ionic-multiselect/dist/templates/modal-template.html"
+          template-url="lib/ionic-multiselect/dist/templates/item-template.html"
+          value-changed="onValueChanged(value)">
+        </multiselect>
+
+        <div class="item item-divider">
+          {{'radniciLabel' | translate}}
+        </div>
+
+        <multiselect
+          header-text="Izaberite table"
+          items="table"
+          text-property="value"
+          value-property="value"
+          is-translate="true"
+          text="Izaberite table"
+          modal-template-url="lib/ionic-multiselect/dist/templates/modal-template.html"
+          template-url="lib/ionic-multiselect/dist/templates/item-template.html"
+          value-changed="onValueChanged(value)">
+        </multiselect>
 
 
 
@@ -125,18 +194,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-  <button type="submit" class="button button-block button-energized" ng-click="createOrder(order)">
+  <button type="submit" class="button button-block button-positive" ng-click="createOrder(order)">
     {{'saveLabel' | translate}}
 </button>
 
