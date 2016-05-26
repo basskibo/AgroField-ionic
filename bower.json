@@ -11,6 +11,8 @@
     "suncalc": "~1.6.0",
     "ionic-modal-select": "*",
     "ionic-durationpicker": "^0.1.2",
-    "ionic-multiselect": "^0.1.0"
+    "ionic-multiselect": "^0.1.0",
+    "ionic-timepicker": "^0.5.1",
+    "ion-datetime-picker": "^0.2.1"
   }
 }

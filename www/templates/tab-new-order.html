@@ -4,7 +4,7 @@
   <ion-content>
 
         <div class="item item-divider">
-            Podaci o radnom nalogu
+            {{'podaciRNLabel' | translate}}
         </div>
          <div class="item" style="color:green">
           {{'operationILabel' | translate }}: {{order.operacija}}
@@ -54,10 +54,23 @@
  <div class="item item-divider">
     Radno vreme
   </div>
-           <ionic-durationpicker idp-label="Početak" idp-label-icon="ion-clock" idp-output="durations.first">
-      </ionic-durationpicker>
-         <ionic-durationpicker idp-label="Kraj" idp-label-icon="ion-clock" idp-output="durations.first">
-      </ionic-durationpicker>
+
+            <div class="item item-icon-left" ion-datetime-picker time ng-model="order.pocetak">
+                <i class="icon ion-ios-clock positive"></i>
+                Početak:
+                <strong>{{order.pocetak| date: "H:mm"}}</strong>
+            </div>
+          
+            <div class="item item-icon-left" ion-datetime-picker time ng-model="order.kraj">
+                <i class="icon ion-ios-clock positive"></i>
+                Kraj:
+                <strong>{{order.kraj| date: "H:mm"}}</strong>
+            </div>
+           
+   
+
+
+
 
  <div class="item item-divider">
     Troškovi
@@ -154,12 +167,12 @@
         </div>
 
         <multiselect
-          header-text="Izaberite table"
-          items="table"
+          header-text="Izaberite priključne mašine"
+          items="prikljucne_masine"
           text-property="value"
           value-property="value"
           is-translate="true"
-          text="Izaberite table"
+          text="Izaberite priključne mašine"
           modal-template-url="lib/ionic-multiselect/dist/templates/modal-template.html"
           template-url="lib/ionic-multiselect/dist/templates/item-template.html"
           value-changed="onValueChanged(value)">
@@ -170,12 +183,12 @@
         </div>
 
         <multiselect
-          header-text="Izaberite table"
-          items="table"
+          header-text="Izaberite radnike-izvršioce"
+          items="radnici"
           text-property="value"
           value-property="value"
           is-translate="true"
-          text="Izaberite table"
+          text="Izaberite radnike-izvršioce"
           modal-template-url="lib/ionic-multiselect/dist/templates/modal-template.html"
           template-url="lib/ionic-multiselect/dist/templates/item-template.html"
           value-changed="onValueChanged(value)">
@@ -184,7 +197,7 @@
 
 
 
-
+     
 
 
 
