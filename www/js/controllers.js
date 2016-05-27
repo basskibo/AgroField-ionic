@@ -163,11 +163,14 @@ $scope.onezoneDatepicker = {
       var datum = godina + '/' + mesec + "/" + dan;
       //console.log(order.operacija + " "+ order.kultura + " " + order.cena + " "+order.input ); 
     $scope.orders.push({
-      operacija: order.operacija,
-      kultura: order.kultura,
+      operacija: order.operacija.naziv,
+      kultura: order.kultura.naziv,
       cena: order.cena,
       input: order.input,
-      vreme: datum
+      vreme: datum,
+      pocetak : order.pocetak,
+      kraj: order.kraj,
+
     })
        
     $state.go('app.orders');
@@ -342,7 +345,7 @@ $scope.onezoneDatepicker = {
 
 
 
-.controller('LoginCtrl', function($scope,$cookies, $state,$http,WorkingOrders,$ionicPopup) {
+.controller('LoginCtrl', function($scope, $state,$http,WorkingOrders,$ionicPopup) {
 
 
 
@@ -383,7 +386,7 @@ $scope.onezoneDatepicker = {
               $state.go('app.orders');
                 //var favoriteCookie = $cookies.get('connect.sid');
 
-              console.log('cookies:'+ JSON.stringify($cookies.getAll()));
+              //console.log('cookies:'+ JSON.stringify($cookies.getAll()));
               // console.log('cookies:'+ JSON.stringify(favoriteCookie));
 
               // $http({
@@ -442,9 +445,12 @@ $scope.onezoneDatepicker = {
     if(lng == 'rs'){
       lng = "Jezik promenjen na Srpski";
       title = "Jezik";
-    }else{
+    }else if(lng=='en'){
       lng= "Language changed to English";
       title = 'Language';
+    }else{
+      lng= "تغيير اللغة إلى العربية";
+      title = 'لغة';
     }
    var alertPopup = $ionicPopup.alert({
               title:title,

@@ -1,4 +1,4 @@
-<ion-view view-title="{{'podesavanja' | translate}}">
+<ion-view view-title="{{'settingsLabel' | translate}}">
   <ion-content>
     <ion-list>
       <div class="list">
@@ -7,6 +7,7 @@
           <ion-list>
           <ion-radio ng-model="choice" ng-value="'en'" ng-click="changeLanguage('en')">{{'en' | translate}}</ion-radio>
           <ion-radio ng-model="choice" ng-value="'rs'" ng-click="changeLanguage('rs')">{{'rs' | translate}}</ion-radio>
+          <ion-radio ng-model="choice" ng-value="'ar'" ng-click="changeLanguage('ar')">{{'ar' | translate}}</ion-radio>
         </ion-list>
       </div>
 <!--       <ion-item class="item-divider">{{'mera' | translate}}</ion-item>

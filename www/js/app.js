@@ -116,8 +116,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     "far" : "Imperial (Fahrenheit)",
     "favorit" : "Favorites",
     "podesavanja":"Settings",
-    "editOrder" : "Edit Working Order"
-
+    "editOrder" : "Edit Working Order",
+    ar: 'Arab'
 
 
   });
@@ -130,7 +130,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     forgotpasswordLabel: 'Zaboravili ste sifru?',
     operationLabel: 'Operacija',
     inputLabel: 'Input',
-    cultureLabel: 'Kultura',
+    kulturaLabel: 'Kultura',
     operationILabel: 'Izabrana operacija',
     inputILabel: 'Izabran input',
     cultureILabel: 'Izabrana kultura',
@@ -198,7 +198,29 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
     "far" : "Farenhajt",
     "favorit" : "Favorit",
     "podesavanja" : "Podešavanja",
-    "editOrder" : "Izmena radnog naloga"
+    "editOrder" : "Izmena radnog naloga",
+    ar: 'Arapski'
+
+
+
+
+
+  });
+
+    $translateProvider.translations('ar',{
+
+    loginTitle:'تسجيل الدخول',
+    usernameLabel:'اسم المستخدم',
+    organisationLabel: 'منظمة',
+    passwordLabel:'كلمه السر',
+    loginBtn: 'تسجيل الدخول',
+    en : "الإنجليزية",
+    rs : "صربي",
+    ar: 'صربي',
+    settingsLabel: 'إعدادات',
+    logOutLabel:'خروج',
+    notificationsLabel: 'الإشعارات',
+    lang: 'تسجيل الدخول'
 
 
 
