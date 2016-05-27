@@ -20,6 +20,7 @@ angular.module('starter.services', ['starter.config'])
 
 
 
+
 .factory('WorkingOrders', function() {
   // Might use a resource here that returns a JSON array
 
@@ -31,73 +32,75 @@ angular.module('starter.services', ['starter.config'])
     input:'Seme',
     cena:'30000',
     vreme:'14/7/2016'
-  },
-  {
-     id: 1,
-     operacija: 'Setva uskorednim sejalicama',
-     kultura: 'Semenska tvrda psenica',
-     input:'Seme',
-     cena:'90000',
+  }
+  // ,
+  // {
+  //    id: 1,
+  //    operacija: 'Setva uskorednim sejalicama',
+  //    kultura: 'Semenska tvrda psenica',
+  //    input:'Seme',
+  //    cena:'90000',
 
-     vreme:'15/10/2015'
-   },
-   {
-     id: 2,
-     operacija: 'Razrivanje zemljišta čizel plugom',
-     kultura: 'Merkantilni usev šećerne repe',
-     input:'Gorivo',
-     cena:"42000",
-     vreme:'14/4/2016'
-   },
-   {
-     id: 3,
-     operacija: 'Izvoz i rasturanje osoke',
-     kultura: 'Merkantilni ozimi stočni ječam',
-     input:'Osoka',
-     vreme:'11/9/2015'
-   },
-   {
-     id: 4,
-     operacija: 'Međuredno kultiviranje',
-     kultura: 'Malina',
-     input:'Gorivo',
-     vreme:'14/7/2016'
-   },
-   {
-     id: 5,
-     operacija: 'Tarupiranje posle žetve',
-     kultura: 'Merkantilna tvrda pšenica – jara',
-     input:'Gorivo',
-     vreme:'21/8/2016'
-   },
-    {
-     id: 6,
-     operacija: 'Tarupiranje posle žetve',
-     kultura: 'Merkantilna tvrda pšenica – jara',
-     input:'Gorivo',
-     vreme:'21/8/2016'
-   },
-    {
-     id: 7,
-     operacija: 'Tarupiranje posle žetve',
-     kultura: 'Merkantilna tvrda pšenica – jara',
-     input:'Gorivo',
-     vreme:'21/8/2016'
-   },
-    {
-     id: 8,
-     operacija: 'Tarupiranje posle žetve',
-     kultura: 'Merkantilna tvrda pšenica – jara',
-     input:'Gorivo',
-     vreme:'21/8/2016'
-   },
-    {
-     id: 9,
-     operacija: 'Tarupiranje posle žetve',
-     kultura: 'Merkantilna tvrda pšenica – jara',
-     input:'Gorivo',
-     vreme:'21/8/2016'
-   }];
+  //    vreme:'15/10/2015'
+  //  },
+  //  {
+  //    id: 2,
+  //    operacija: 'Razrivanje zemljišta čizel plugom',
+  //    kultura: 'Merkantilni usev šećerne repe',
+  //    input:'Gorivo',
+  //    cena:"42000",
+  //    vreme:'14/4/2016'
+  //  },
+  //  {
+  //    id: 3,
+  //    operacija: 'Izvoz i rasturanje osoke',
+  //    kultura: 'Merkantilni ozimi stočni ječam',
+  //    input:'Osoka',
+  //    vreme:'11/9/2015'
+  //  },
+  //  {
+  //    id: 4,
+  //    operacija: 'Međuredno kultiviranje',
+  //    kultura: 'Malina',
+  //    input:'Gorivo',
+  //    vreme:'14/7/2016'
+  //  },
+  //  {
+  //    id: 5,
+  //    operacija: 'Tarupiranje posle žetve',
+  //    kultura: 'Merkantilna tvrda pšenica – jara',
+  //    input:'Gorivo',
+  //    vreme:'21/8/2016'
+  //  },
+  //   {
+  //    id: 6,
+  //    operacija: 'Tarupiranje posle žetve',
+  //    kultura: 'Merkantilna tvrda pšenica – jara',
+  //    input:'Gorivo',
+  //    vreme:'21/8/2016'
+  //  },
+  //   {
+  //    id: 7,
+  //    operacija: 'Tarupiranje posle žetve',
+  //    kultura: 'Merkantilna tvrda pšenica – jara',
+  //    input:'Gorivo',
+  //    vreme:'21/8/2016'
+  //  },
+  //   {
+  //    id: 8,
+  //    operacija: 'Tarupiranje posle žetve',
+  //    kultura: 'Merkantilna tvrda pšenica – jara',
+  //    input:'Gorivo',
+  //    vreme:'21/8/2016'
+  //  },
+  //   {
+  //    id: 9,
+  //    operacija: 'Tarupiranje posle žetve',
+  //    kultura: 'Merkantilna tvrda pšenica – jara',
+  //    input:'Gorivo',
+  //    vreme:'21/8/2016'
+  //  }
+   ];
 
 
 

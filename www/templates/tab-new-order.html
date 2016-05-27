@@ -6,15 +6,15 @@
         <div class="item item-divider">
             {{'podaciRNLabel' | translate}}
         </div>
-         <div class="item" style="color:green">
-          {{'operationILabel' | translate }}: {{order.operacija}}
+         <div class="item" style="color:green" required>
+          {{'operationILabel' | translate }}: {{order.operacija.naziv}}
         </div>
         <div class="item item-body">
           <button class="button button-balanced" modal-select="" ng-model="order.operacija" options="operacija" modal-title="Izaberite operaciju" header-footer-class="bar-positive" has-search="true" sub-header-class="bar-positive">
           {{'chooseLabel' | translate}}
 
             <div class="option">
-              {{option}}
+              {{option.naziv}}
             </div>
           </button>
         </div>
@@ -25,31 +25,21 @@
 
 
         <div class="item" style="color:green">
-          {{'cultureILabel' | translate}}: {{order.kultura}}
+          {{'cultureILabel' | translate}}: {{order.kultura.naziv}}
         </div>
         <div class="item item-body">
-          <button class="button button-balanced" modal-select="" ng-model="order.kultura" options="kultura" modal-title="Izaberite operaciju" header-footer-class="bar-positive" has-search="true" value="kultura" sub-header-class="bar-positive">
+          <button class="button button-balanced" modal-select=""  ng-model="order.kultura" options="kultura" modal-title="Izaberite operaciju" header-footer-class="bar-positive" has-search="true" value="kultura" sub-header-class="bar-positive">
             {{'chooseLabel' | translate}}
             <div class="option">
-              {{option}}
+              {{option.naziv}}
             </div>
+            
           </button>
         </div>
        
 
 
-        <div class="item" style="color:green">
-          {{'inputILabel' | translate}}: {{order.input}}
-        </div>
-        <div class="item item-body">
-          <button class="button button-balanced" modal-select="" ng-model="order.input" options="input" modal-title="Izaberite operaciju" header-footer-class="bar-positive" has-search="true" value="kultura" sub-header-class="bar-positive">
-            {{'chooseLabel' | translate}}
-
-            <div class="option">
-              {{option}}
-            </div>
-          </button>
-        </div>
+        
 
  <div class="item item-divider">
     Radno vreme
@@ -113,14 +103,14 @@
   </div>
 
         <div class="item" style="color:green">
-          {{'materijalLabel' | translate }}: {{order.materijal}}
+          {{'materijalLabel' | translate }}: {{order.materijal.naziv}}
         </div>
         <div class="item item-body">
           <button class="button button-balanced" modal-select="" ng-model="order.materijal" options="materijal" modal-title="Izaberite materijal" header-footer-class="bar-positive" has-search="true" sub-header-class="bar-positive">
           {{'chooseLabel' | translate}}
 
             <div class="option">
-              {{option}}
+              {{option.naziv}}
             </div>
           </button>
         </div>
@@ -134,8 +124,8 @@
         <multiselect
           header-text="Izaberite pogonske mašine"
           items="pogonske_masine"
-          text-property="value"
-          value-property="value"
+          text-property="naziv"
+          value-property="naziv"
           is-translate="true"
           text="Izaberite pogonske mašine"
           modal-template-url="lib/ionic-multiselect/dist/templates/modal-template.html"
@@ -145,21 +135,21 @@
 
 
 
-        <div class="item item-divider">
+     <!--    <div class="item item-divider">
           {{'tableLabel' | translate}}
         </div>
 
         <multiselect
           header-text="Izaberite table"
           items="table"
-          text-property="value"
-          value-property="value"
+          text-property="naziv"
+          value-property="id"
           is-translate="true"
           text="Izaberite table"
           modal-template-url="lib/ionic-multiselect/dist/templates/modal-template.html"
           template-url="lib/ionic-multiselect/dist/templates/item-template.html"
           value-changed="onValueChanged(value)">
-        </multiselect>
+        </multiselect> -->
 
 
         <div class="item item-divider">
@@ -169,8 +159,8 @@
         <multiselect
           header-text="Izaberite priključne mašine"
           items="prikljucne_masine"
-          text-property="value"
-          value-property="value"
+          text-property="naziv"
+          value-property="naziv"
           is-translate="true"
           text="Izaberite priključne mašine"
           modal-template-url="lib/ionic-multiselect/dist/templates/modal-template.html"
@@ -185,9 +175,9 @@
         <multiselect
           header-text="Izaberite radnike-izvršioce"
           items="radnici"
-          text-property="value"
-          value-property="value"
-          is-translate="true"
+          text-property="prezime"
+          text-property2="ime"
+          value-property="id"
           text="Izaberite radnike-izvršioce"
           modal-template-url="lib/ionic-multiselect/dist/templates/modal-template.html"
           template-url="lib/ionic-multiselect/dist/templates/item-template.html"

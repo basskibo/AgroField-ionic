@@ -110,6 +110,7 @@ angular.module("ionic-multiselect", [])
         // Data binding properties
         scope.checkedProperty = attrs.checkedProperty || "checked";
         scope.textProperty = attrs.textProperty || "text";
+        scope.textProperty2 = attrs.textProperty2 || "text";
         scope.valueProperty = attrs.valueProperty || "id";
         //Translate properties
         scope.isTranslate = (attrs.isTranslate === "true") || false;
@@ -153,6 +154,14 @@ angular.module("ionic-multiselect", [])
         */
         scope.getItemText = function(item) {
           return scope.textProperty ? item[scope.textProperty] : item;
+
+
+        };
+
+           scope.getItemText2 = function(item) {
+          return scope.textProperty2 ? item[scope.textProperty2] : item;
+                   
+
         };
 
         /**
@@ -184,8 +193,13 @@ angular.module("ionic-multiselect", [])
                   //if is translate
                   if(scope.isTranslate){
                     text += (text.length ? "^" : "") + scope.getItemValue(item);
+                  }else if (scope.textProperty2){
+                    text += (text.length ? "^" : "") +scope.getItemText2(item)  +" "+ scope.getItemText(item);
+               
+
                   }else{
                     text += (text.length ? "^" : "") + scope.getItemText(item);
+
                   }
                   break;
                 }

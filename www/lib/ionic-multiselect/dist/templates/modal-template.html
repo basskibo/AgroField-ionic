@@ -23,7 +23,8 @@
           {{ item | translateItem:this }}
         </div>
         <div ng-if="!isTranslate">
-          {{ $eval('item.' + textProperty) }} 
+          {{ $eval('item.' + textProperty) }}           {{ $eval('item.' + textProperty2) }} 
+
         </div>
       </ion-item>
     </div>

@@ -12,89 +12,37 @@ angular.module('starter.controllers', ['ionic', 'onezone-datepicker','ion-dateti
 $scope.operacija  = [];
 $scope.kultura = [];
 $scope.input = [];
-
-  $scope.operacija.push('Berba - kukuruza');
-  $scope.operacija.push('Berba - soje');
-  $scope.operacija.push('Drljanje');
-  $scope.operacija.push('Kombajniranje - pšenice');
-  $scope.operacija.push('Kombajniranje - kukuruza');
-  $scope.operacija.push('Kultivacija - soje');
-  $scope.operacija.push('Međuredno kultiviranje - soje');
-  $scope.operacija.push('Oranje - šećerne repe');
-  $scope.operacija.push('Međuredno kultiviranje - kukuruza');
-  $scope.operacija.push('Oranje - soje');
-  $scope.operacija.push('Oranje - šećerne repe');
-  $scope.operacija.push('Podrivanje');
-  $scope.operacija.push('Predsetvena priprema germinator - šećerna repa');
-  $scope.operacija.push('Predsetvena priprema germinator - soja');
-  $scope.operacija.push('Prevoz veštaka - kukuruz');
-  $scope.operacija.push('Prevoz vode - šećerna repa');
-  $scope.operacija.push('Rastur veštaka - kukuruz');
-  $scope.operacija.push('Razbijanje pokorice');
-  $scope.operacija.push('Setva - soje');
-  $scope.operacija.push('Uzgrtanje razi unutar skladista-farma');
-  $scope.operacija.push('Oranje do 35 cm');
-  $scope.operacija.push('Podrivanje zemljišta');
-  $scope.operacija.push('Utovar stajnjaka teleskopskim manipulatorom');
-  $scope.operacija.push('Rad germinatorom');
-  $scope.operacija.push('Kosidba lucerke i trave');
-  $scope.operacija.push('Rad grabuljama - sunce');
-  $scope.operacija.push('Transport traktorskim prikolicama');
-  $scope.operacija.push('Mašinsko prokopavanje kanala za odbranu od repine pipe');
-  $scope.operacija.push('ORANJE 25-30 cm VII');
-  $scope.operacija.push('ORANJE 25-30 cm VI');
-  $scope.operacija.push('ORANJE 25-30 cm III');
-  $scope.operacija.push('ORANJE 20-25 cm III');
-  $scope.operacija.push('ORANJE preko 30 cm III');
-  $scope.operacija.push('ORANJE preko 30 cm VII');
-  $scope.operacija.push('ORANJE preko 30 cm VI');
-  $scope.operacija.push('ORANJE preko 30 cm V');
-  $scope.operacija.push('RAD SA KIVONOM');
-  $scope.operacija.push('RAD SA KENTAUROM');
-  $scope.operacija.push('RAD SA ROTOFREZOM I put - bankovanje');
-  $scope.operacija.push('KOPANJE KANALA ZA PIPE');
-  $scope.operacija.push('RAZORAVANJE LUCERIŠTA ');
-  $scope.operacija.push('GARENJE TANJIRAČOM Tara, 3,5 m');
-  $scope.operacija.push('TANJIRANJE ORANJA Adut 3 m');
+$scope.materijal= [];
 
 
-  
-  $scope.kultura.push('Žitarice');
-  $scope.kultura.push('Industrijsko bilje');
-  $scope.kultura.push('Krmno bilje');
-  $scope.kultura.push('Aromatično i lekovito bilje');
-  $scope.kultura.push('Povrće');
-  $scope.kultura.push('Voće i grožđe');
-  $scope.kultura.push('Sadni materijal i horti kultura');
-  $scope.kultura.push('Neobrađeno zemljište');
 
-  $scope.input.push('1,1-dichloro-2,2-bis(4-ethylphenyl)ethane (F)');
-  $scope.input.push('1,2-dibromoethane (ethylene dibromide) (F)');
-  $scope.input.push('1,2-dichloroethane (ethylene dichloride) (F)');
-  $scope.input.push('1,4-Diaminobutane (aka Putrescine) (++)');
-  $scope.input.push('1-Decanol (++)');
-  $scope.input.push('2,4,5-T (sum of 2,4,5-T, its salts and esters, expressed as 2,4,5-T) (F)');
-  $scope.input.push('2,4-D (sum of 2,4-D, its salts, its esters and its conjugates, expressed as 2,4-D)');
-  $scope.input.push('1-Naphthylacetamide');  
-  $scope.input.push('Abamectin (sum of avermectin B1a, avermectin B1b and delta-8,9 isomer of avermectin B1a, expressed as avermectin B1a) (F) (R)');
-  $scope.input.push('8-hydroxyquinoline (sum of 8-hydroxyquinoline and its salts, expressed as 8-hydroxyquinoline)');
-  $scope.input.push('Acetic acid (++)');
-  $scope.input.push('Begonia Cascade Yellow  p029 3/1');
-  $scope.input.push('Begonia Cascade Scharlet   p030 3/1');
-  $scope.input.push('Gloxinia Defiance  p052 1/1');
-  $scope.input.push('Ns Suncokret 70 000 zrna Sumo 1 PR');
-  $scope.input.push('Bacillomix specijal  100ml');
-  $scope.input.push('NS kukuruz 5083+sonido');
-  $scope.input.push('KWS krmni sirak Sole');
-  $scope.input.push('Cordus75 WG  400gr');
-  $scope.input.push('Cleranda+dash(10l cleranda+5l dash)');
-  $scope.input.push('Semenski ječam Vannesa 25/1');
-  $scope.input.push('UREA  50/1');
-  $scope.input.push('Valagro Plantafol 1/1kg 30-10-10      (#12)');
-  $scope.input.push('Envidor 100ml');
-  $scope.input.push('Funguran 10/1');
-  $scope.input.push('START SPREJ');
-  $scope.input.push('AGROVISK MHT 15-40');
+  // $scope.input.push('1,1-dichloro-2,2-bis(4-ethylphenyl)ethane (F)');
+  // $scope.input.push('1,2-dibromoethane (ethylene dibromide) (F)');
+  // $scope.input.push('1,2-dichloroethane (ethylene dichloride) (F)');
+  // $scope.input.push('1,4-Diaminobutane (aka Putrescine) (++)');
+  // $scope.input.push('1-Decanol (++)');
+  // $scope.input.push('2,4,5-T (sum of 2,4,5-T, its salts and esters, expressed as 2,4,5-T) (F)');
+  // $scope.input.push('2,4-D (sum of 2,4-D, its salts, its esters and its conjugates, expressed as 2,4-D)');
+  // $scope.input.push('1-Naphthylacetamide');  
+  // $scope.input.push('Abamectin (sum of avermectin B1a, avermectin B1b and delta-8,9 isomer of avermectin B1a, expressed as avermectin B1a) (F) (R)');
+  // $scope.input.push('8-hydroxyquinoline (sum of 8-hydroxyquinoline and its salts, expressed as 8-hydroxyquinoline)');
+  // $scope.input.push('Acetic acid (++)');
+  // $scope.input.push('Begonia Cascade Yellow  p029 3/1');
+  // $scope.input.push('Begonia Cascade Scharlet   p030 3/1');
+  // $scope.input.push('Gloxinia Defiance  p052 1/1');
+  // $scope.input.push('Ns Suncokret 70 000 zrna Sumo 1 PR');
+  // $scope.input.push('Bacillomix specijal  100ml');
+  // $scope.input.push('NS kukuruz 5083+sonido');
+  // $scope.input.push('KWS krmni sirak Sole');
+  // $scope.input.push('Cordus75 WG  400gr');
+  // $scope.input.push('Cleranda+dash(10l cleranda+5l dash)');
+  // $scope.input.push('Semenski ječam Vannesa 25/1');
+  // $scope.input.push('UREA  50/1');
+  // $scope.input.push('Valagro Plantafol 1/1kg 30-10-10      (#12)');
+  // $scope.input.push('Envidor 100ml');
+  // $scope.input.push('Funguran 10/1');
+  // $scope.input.push('START SPREJ');
+  // $scope.input.push('AGROVISK MHT 15-40');
 
 
  
@@ -122,11 +70,83 @@ $scope.onezoneDatepicker = {
     }
 };
 
+ // Kultura.get().then(function (msg) {
+ //        $scope.msg = msg;
+ //        console.log('get u kontroleru');
+ //    });
+    var url = "";
+      if(ionic.Platform.isAndroid()){
+            $http.get('/android_asset/www/json/kultura.json').success(function(data) {
+          $scope.kultura = data;
+   });
+  $http.get('/android_asset/www/json/materijal.json').success(function(data) {
+          $scope.materijal = data;
+   });
 
-  $scope.pogonske_masine = [{ value: "Item 1"}, { value: "Item 2"}, { value: "Item 3"}];
-  $scope.table = [{ value: "Tabla 1"}, { value: "tbl 2"}, { value: "tablica 3"}];
-  $scope.prikljucne_masine = [{ value: "Masina 1"}, { value: "IMSvtem 2"}, { value: "sva 3"}];
-  $scope.radnici = [{ value: "Pera 1"}, { value: "MArko 2"}, { value: "sva 3"}];
+  $http.get('/android_asset/www/json/radnik.json').success(function(data) {
+          $scope.radnici = data;
+   });
+
+  $http.get('/android_asset/www/json/pogonska_masina.json').success(function(data) {
+          $scope.pogonske_masine  = data;
+   });
+
+  $http.get('/android_asset/www/json/prikljucna_masina.json').success(function(data) {
+          $scope.prikljucne_masine = data;
+   });
+
+  $http.get('/android_asset/www/json/radna_operacija.json').success(function(data) {
+          $scope.operacija = data;
+   });
+
+
+
+    }else{
+      $http.get('/json/kultura.json').success(function(data) {
+              $scope.kultura = data;
+       });
+
+       $http.get('/json/materijal.json').success(function(data) {
+              $scope.materijal = data;
+       });
+
+      $http.get('/json/radnik.json').success(function(data) {
+              $scope.radnici = data;
+       });
+
+      $http.get('/json/pogonska_masina.json').success(function(data) {
+              $scope.pogonske_masine  = data;
+       });
+
+      $http.get('/json/prikljucna_masina.json').success(function(data) {
+              $scope.prikljucne_masine = data;
+       });
+
+      $http.get('/json/radna_operacija.json').success(function(data) {
+              $scope.operacija = data;
+       });
+
+    }
+
+   
+// //za kulturu
+//   var mydata = JSON.parse(data);
+//   for(var i = 0 ; i < mydata.length ; i++){
+//     //console.log(mydata[i].naziv);
+//     $scope.kultura.push(mydata[i].naziv);
+// }
+
+//za materijal
+//   var materijal = JSON.parse(data);
+//   for(var i = 0 ; i < materijal.length ; i++){
+//     console.log(materijal[i].naziv);
+//     $scope.operacija.push(materijal[i].naziv);
+// }
+
+  // $scope.pogonske_masine = [{ value: "Item 1"}, { value: "Item 2"}, { value: "Item 3"}];
+  // $scope.table = [{ value: "Tabla 1"}, { value: "tbl 2"}, { value: "tablica 3"}];
+  // $scope.prikljucne_masine = [{ value: "Masina 1"}, { value: "IMSvtem 2"}, { value: "sva 3"}];
+  //$scope.radnici = [{ value: "Pera 1"}, { value: "MArko 2"}, { value: "sva 3"}];
 
   $scope.onValueChanged = function(value){
   }
@@ -267,7 +287,8 @@ $scope.onezoneDatepicker = {
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-  $scope.zaEdit = [];
+
+
 
   $scope.sortiranje = "-vreme";
   $scope.orders = WorkingOrders.all();
@@ -329,7 +350,10 @@ $scope.onezoneDatepicker = {
 
         $scope.user = {};
         $scope.korisnik ={};
-   
+        $scope.user.farm= 'SuperAdmin';
+
+         $scope.user.username= 'Bojan';
+         $scope.user.password= '1243!';
       // console.log($scope.user);
       // calling our submit function.
         $scope.signIn = function() {
@@ -362,12 +386,12 @@ $scope.onezoneDatepicker = {
               console.log('cookies:'+ JSON.stringify($cookies.getAll()));
               // console.log('cookies:'+ JSON.stringify(favoriteCookie));
 
-              $http({
-                method:'POST',
-                withCredentials: false,
-                url: 'http://agrolife.greensoft.co:3000/materijal/read',
-                data: $scope.user
-              })
+              // $http({
+              //   method:'POST',
+              //   withCredentials: false,
+              //   url: 'http://agrolife.greensoft.co:3000/materijal/read',
+              //   data: $scope.user
+              // })
 
             } else {
               $scope.message = data.message;
