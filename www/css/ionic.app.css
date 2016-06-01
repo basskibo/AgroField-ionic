@@ -3110,7 +3110,9 @@ a {
  */
 b,
 strong {
-  font-weight: bold; }
+  font-weight: bold; 
+  padding-left: 10px;
+}
 
 /**
  * Address styling not present in Safari 5 and Chrome.
@@ -3682,6 +3684,16 @@ h3 small, .h3 small,
 h4 small, .h4 small {
   font-size: 14px; }
 
+.operacija{
+    border-bottom-width: 2px;
+    border-color: #696969;
+    border-style: solid;
+}
+
+.pregled{
+  padding-top: 5px;
+}
+
 dl {
   margin-bottom: 20px; }
 
@@ -3949,7 +3961,7 @@ a.subdued {
     .bar.bar-stable.bar-footer {
       background-image: linear-gradient(180deg, #b2b2b2, #b2b2b2 50%, transparent 50%); }
   .bar.bar-positive {
-    border-color: #fff;
+    border-color: transparent;
     background-color: #4cbd00;
     background-image: linear-gradient(0deg, #fff, #fff 50%, transparent 50%);
     color: #fff; }
@@ -5960,7 +5972,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color:#000 !important;
+  color:#000;
   margin-bottom: 10px;}
 
 a.item {
@@ -6389,10 +6401,10 @@ button.item.item-button-right {
   padding-top: 8px;
   padding-bottom: 8px;
   min-height: 30px;
-  background-color: #fed142;
-  color: #222;
+  background-color: #4cbd00;
+  color: #fff;
   font-weight: 500;
-  margin-top: 20px; }
+  margin-top: 5px; }
 
 .platform-ios .item-divider-platform,
 .item-divider-ios {
@@ -6570,7 +6582,7 @@ button.item.item-button-right {
  */
 .item-options {
   position: absolute;
-  top: 0;
+  top: 11%;
   right: 0;
   z-index: 1;
   height: 100%; }
@@ -7803,7 +7815,7 @@ input[type="color"] {
     border-top: 0;
     border-left: 0;
     border-right: 0;
-    border-bottom-color: #fff;
+    border-bottom-color: transparent;
     border-bottom-width: 2px; }
 
 
