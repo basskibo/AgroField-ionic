@@ -7223,7 +7223,7 @@ button.swiper-pagination-bullet {
 .loglogo{
     max-width: 100%;
     position: relative;
-    top: 6px;
+    top: 5px;
 }
 
 .log{
@@ -7528,7 +7528,7 @@ ion-slides {
 form {
   margin: 0 0 1.42857;
   position: relative;
-  bottom: 340px;
+  bottom: 365px;
    }
 
 legend {
@@ -9515,6 +9515,12 @@ a.button {
  */
 .padding {
   padding: 10px; }
+
+.dno{
+  padding: 10px;
+  position: relative;
+  bottom: 10px;
+}
 
 .padding-top,
 .padding-vertical {
