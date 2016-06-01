@@ -7223,12 +7223,17 @@ button.swiper-pagination-bullet {
 .loglogo{
     max-width: 100%;
     position: relative;
-    
+    top: 6px;
 }
 
 .log{
     
    
+}
+
+.fp{
+  text-align: center;
+  color:white;
 }
 
 .swiper-container-horizontal > .swiper-scrollbar {
@@ -7523,7 +7528,7 @@ ion-slides {
 form {
   margin: 0 0 1.42857;
   position: relative;
-  bottom: 240px;
+  bottom: 340px;
    }
 
 legend {
@@ -7668,7 +7673,7 @@ textarea {
   padding: 7px 10px 7px 0px;
   max-width: 200px;
   width: 35%;
-  color: #fff;
+  color: #000;
   font-size: 16px; }
 
 .placeholder-icon {
@@ -7746,7 +7751,7 @@ input[type="color"] {
   padding-top: 2px;
   padding-left: 0;
   height: 34px;
-  color: #fff;
+  color: #000;
   vertical-align: middle;
   font-size: 14px;
   line-height: 16px; }
@@ -7781,8 +7786,8 @@ textarea {
   height: auto; }
 
 textarea,
-input[type="text"],
-input[type="password"],
+
+
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="date"],
@@ -7800,6 +7805,47 @@ input[type="color"] {
     border-right: 0;
     border-bottom-color: #fff;
     border-bottom-width: 2px; }
+
+
+input[type="text"],
+input[type="password"]{
+   border-color: #fff;
+   background: white;
+   border-radius: 5px;
+   border-style: solid;
+ }
+.sifra{
+    border-color: #4cbd00;
+    background: white;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 0;
+    margin: 0;
+    width: 95%;
+}
+
+.korime{
+    border-color: #4cbd00;
+    background: white;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 0;
+    margin: 0;
+    width: 95%;
+}
+
+.organ{
+    border-color: #4cbd00;
+    background: white;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 0;
+    margin: 0;
+    width: 95%;
+}
 
 input[type="radio"],
 input[type="checkbox"] {
@@ -8791,7 +8837,7 @@ progress {
     .button.button-balanced.button-icon {
       border-color: transparent;
       background: none; }
-    .button.button-balanced.button-outline {
+    .button.  .button-outline {
       border-color: #4cbd00;
       background: transparent;
       color: #4cbd00; }
@@ -8806,6 +8852,32 @@ progress {
     .button.button-energized:hover {
       color: #fff;
       text-decoration: none; }
+
+      .logdugme{
+        border-color: transparent;
+    background-color: transparent;
+    color: #fff;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-color: transparent;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0 12px;
+    min-width: 52px;
+    min-height: 47px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    vertical-align: top;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    line-height: 42px;
+    cursor: pointer;
+      }
+
     .button.button-energized.active, .button.button-energized.activated {
       background-color: #e6b500; }
     .button.button-energized.button-clear {

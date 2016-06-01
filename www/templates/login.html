@@ -11,25 +11,26 @@
   <div class="login">
     <label class="item item-input item-floating-label">
       <span class="input-label">{{'organisationLabel' | translate }}</span>
-      <input type="text" ng-model='user.farm' placeholder="{{'organisationLabel' | translate }}" name="farm">
+      <div class="organ"><input type="text" ng-model='user.farm' placeholder="{{'organisationLabel' | translate }}" name="farm"></div>
     </label>
     <label class="item item-input item-floating-label">
       <span class="input-label">{{"usernameLabel" | translate }}</span>
-      <input type="text" placeholder="{{'usernameLabel' | translate }}" ng-model='user.username'  name="username">
+      <div class="korime"><input type="text" placeholder="{{'usernameLabel' | translate }}" ng-model='user.username'  name="username"></div>
     </label>
     <label class="item item-input item-floating-label">
       <span class="input-label">{{"passwordLabel" | translate }}</span>
-      <input type="password" placeholder="{{'passwordLabel' | translate }}" ng-model='user.password' name="password">
+      <div class="sifra"><input type="password" placeholder="{{'passwordLabel' | translate }}" ng-model='user.password' name="password"></div>
     </label>
 
   </div>
           <div class="padding">
-            <button class="button button-block button-balanced" ng-click="signIn(user)">
+            <button class="logdugme" ng-click="signIn(user)">
               {{'loginBtn' | translate}}
             </button>
             <p class="text-center">
-              <a href="#">{{'forgotpasswordLabel' | translate }}</a>
+              <a class="fp" href="#">{{'forgotpasswordLabel' | translate }}</a>
             </p>
+
           </div>
           </form>
   </ion-content>
