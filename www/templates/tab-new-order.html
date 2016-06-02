@@ -6,7 +6,7 @@
         <div class="item item-divider">
             {{'podaciRNLabel' | translate}}
         </div>
-         <div class="item" style="color:green" required>
+         <div class="item" style="color:#000" required>
           {{'operationILabel' | translate }}: {{order.operacija.naziv}}
         </div>
         <div class="item item-body">
@@ -24,7 +24,7 @@
 
 
 
-        <div class="item" style="color:green">
+        <div class="item" style="color:#000">
           {{'cultureILabel' | translate}}: {{order.kultura.naziv}}
         </div>
         <div class="item item-body">
@@ -79,19 +79,19 @@
     Datumi
   </div>
 
-  <onezone-datepicker datepicker-object="onezoneDatepicker" ng-model="order.vreme">
+  <onezone-datepicker datepicker-object="onezoneDatepicker" ng-model="order.vremePocetka">
     <button class="button button-block button-outline button-positive show-onezone-datepicker"  >
         {{'datePocetkaLabel' | translate}}: {{onezoneDatepicker.date | date:'dd MMMM yyyy'}}
     </button>
   </onezone-datepicker>
 
-  <onezone-datepicker datepicker-object="onezoneDatepicker" ng-model="order.vreme">
+  <onezone-datepicker datepicker-object="onezoneDatepicker" ng-model="order.vreme2">
     <button class="button button-block button-outline button-positive show-onezone-datepicker"  >
         {{'datePlaniranLabel' | translate}}: {{onezoneDatepicker.date | date:'dd MMMM yyyy'}}
     </button>
   </onezone-datepicker>
 
-  <onezone-datepicker datepicker-object="onezoneDatepicker" ng-model="order.vreme">
+  <onezone-datepicker datepicker-object="onezoneDatepicker" ng-model="order.vremeZavrsetka">
     <button class="button button-block button-outline button-positive show-onezone-datepicker"  >
         {{'dateZavrsetkaLabel' | translate}}: {{onezoneDatepicker.date | date:'dd MMMM yyyy'}}
     </button>
@@ -102,7 +102,7 @@
     Materijali
   </div>
 
-        <div class="item" style="color:green">
+        <div class="item" style="color:#000">
           {{'materijalLabel' | translate }}: {{order.materijal.naziv}}
         </div>
         <div class="item item-body">

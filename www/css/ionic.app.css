@@ -5981,6 +5981,8 @@ a.item {
   a.item:hover, a.item:focus {
     text-decoration: none; }
 
+  .item-ng-binding
+
 /**
  * Complex Items
  * --------------------------------------------------
@@ -6174,6 +6176,11 @@ a.item-content {
 .item-icon-left {
   padding-left: 54px; }
   .item-icon-left .icon {
+    left: 11px; }
+
+.item-icon-left1 {
+  padding-left: 54px; }
+  .item-icon-left .icon1 {
     left: 11px; }
 
 .item-complex.item-icon-left {
@@ -6404,7 +6411,8 @@ button.item.item-button-right {
   background-color: #4cbd00;
   color: #fff;
   font-weight: 500;
-  margin-top: 5px; }
+  margin-top: 5px;
+  text-align: center; }
 
 .platform-ios .item-divider-platform,
 .item-divider-ios {
