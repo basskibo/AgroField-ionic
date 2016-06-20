@@ -6,14 +6,20 @@
 -->
 <ion-view view-title="{{order.operacija}}" hide-back-button="true">
   <ion-content class="pregled">
-    <div class="operacija"><h5 ><b>Operacija: </b>{{order.operacija}}</h5></div>  
-    <div class="operacija"><h5 ><b>Kultura:</b> {{order.kultura}}</h5></div>
-    <div class="operacija"><h5><b>Input: </b>{{order.input}}</h5></div>
-    <div class="operacija"><h5><b>Ukupna cena: </b>{{order.cena}}</h5></div>
+    <div class="operacija"><h5 ><b>Operacija : </b>{{order.operacija}}</h5></div>  
+    <div class="operacija"><h5 ><b>Kultura : </b> {{order.kultura}}</h5></div>
+    <div class="operacija"><h5><b>Materijal : </b>{{order.materijal}}</h5></div>
+    <div class="operacija"><h5><b>Ukupan trošak : </b>{{order.cena}}</h5></div>
+    <div class="operacija"><h5 ><b>Ukupan prihod : </b> {{order.cena2}}</h5></div>
 
-    <div class="operacija"><h5 ><b>Vreme:</b> {{order.vreme}}</h5></div>
-    <div class="operacija"><h5><b>Korisnik:</b> {{user.username}} </h5></div>
-    <!-- <button class="button icon-left ion-navigate button-positive">{{"showOnMapLabel" | translate}}</button> -->
+    <!-- radno vreme -->
+    <div class="operacija"><h5 ><b>Početak radnog vremena : </b> {{order.pocetak}}</h5></div>
+    <div class="operacija"><h5 ><b>Kraj radnog vremena : </b> {{order.kraj}}</h5></div>
+    
+    <!-- Datumi -->
+    <div class="operacija"><h5 ><b>Datum planiran : </b> {{order.vremePl}}</h5></div>
+    <div class="operacija"><h5 ><b>Datum početka : </b> {{order.vremePo}}</h5></div>
+    <div class="operacija"><h5 ><b>Datum završetka : </b> {{order.vremeKr}}</h5></div>
 
   </ion-content>
 </ion-view>

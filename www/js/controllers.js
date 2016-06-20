@@ -115,17 +115,38 @@ $scope.onezoneDatepicker = {
       var mesec = $scope.onezoneDatepicker.date.getMonth();
       var dan = $scope.onezoneDatepicker.date.getDate();
       var datum = godina + '/' + mesec + "/" + dan;
+
+
+      var p = order.pocetak.getHours();
+      var k = order.pocetak.getMinutes();
+      var p1 = order.kraj.getHours();
+      var k1 = order.kraj.getMinutes();
+      var po = p + ':' + k;
+      var kr = p1 + ':' + k1;
       //console.log(order.operacija + " "+ order.kultura + " " + order.cena + " "+order.input ); 
-    $scope.orders.push({
+    $scope.orders.unshift({
+      id: getRandomNum(),
       operacija: order.operacija.naziv,
       kultura: order.kultura.naziv,
       cena: order.cena,
-      input: order.input,
-      vreme: datum,
-      pocetak : order.pocetak,
-      kraj: order.kraj,
+      cena2: order.cena2,
+      vremePo: datum,
+      vremePl: datum,
+      vremeKr: datum,
+      pocetak : po,
+      kraj: kr,
+      materijal: order.materijal.naziv,
+      pogonske_masine: order.pogonske_masine,
+
 
     })
+       
+    function getRandomNum(){
+      return Math.floor((Math.random()*6)+1);
+    };
+
+
+
        
     $state.go('app.orders');
 
@@ -221,7 +242,7 @@ $scope.onezoneDatepicker = {
 
 })
 
-.controller('ChatsCtrl', function($scope, WorkingOrders,$stateParams,$state) {
+.controller('ChatsCtrl', function($scope, WorkingOrders,$stateParams,$state,$ionicPopup) {
 
 
 
@@ -234,17 +255,20 @@ $scope.onezoneDatepicker = {
 
   };
   $scope.edit = function(order){
-    $scope.order = WorkingOrders.get($stateParams.orderId);
- 
+    // $scope.order = WorkingOrders.get($stateParams.orderId);
+       var alertPopup = $ionicPopup.alert({
+                    title:'DEMO ',
+                    template:'Ova funkcija nije omogućena u demo verziji'
+          });
 
-    $scope.zaEdit.push({
+    // $scope.zaEdit.push({
 
-      operacija: order.operacija,
-      vreme : order.vreme
-    })
-    console.log($scope.zaEdit[0]);
+    //   operacija: order.operacija,
+    //   vreme : order.vreme
+    // })
+    // console.log($scope.zaEdit[0]);
 
-    $state.go('app.editOrder',$scope.zaEdit[0]);
+    // $state.go('app.editOrder',$scope.zaEdit[0]);
   }
 })
 
@@ -283,14 +307,74 @@ $scope.onezoneDatepicker = {
 
         
 
+        // $scope.user = {};
+        // $scope.korisnik ={};
+        // $scope.user.farm= 'SuperAdmin';
+
+        //  $scope.user.username= 'Bojan';
+        //  $scope.user.password= '1243!';
+        // // console.log($scope.user);
+        // // calling our submit function.
+        // $scope.signIn = function() {
+
+        // //console.log($scope.user);     
+
+        // // Posting data to php file
+        // $http({
+        //   method  : 'POST',
+        //   withCredentials: false,
+        //   url     : 'http://agrolife.greensoft.co:3000/login',
+        //   data    : $scope.user
+        //  })
+        //   .success(function(data) {
+        //     console.log(data);
+        //      $scope.message = data.message;
+        //     // $cookies['kolacic']='kolacic';
+        //      // console.log($cookies);
+
+          
+        //     if (data.success) {
+        //       // Showing errors.
+        //          var alertPopup = $ionicPopup.alert({
+        //             title:'Welcome '  + $scope.user.username,
+        //             template:'Hellooo'
+        //       });
+        //       $state.go('app.orders');
+        //         //var favoriteCookie = $cookies.get('connect.sid');
+
+        //       //console.log('cookies:'+ JSON.stringify($cookies.getAll()));
+        //       // console.log('cookies:'+ JSON.stringify(favoriteCookie));
+
+        //       // $http({
+        //       //   method:'POST',
+        //       //   withCredentials: false,
+        //       //   url: 'http://agrolife.greensoft.co:3000/materijal/read',
+        //       //   data: $scope.user
+        //       // })
+
+        //     } else {
+        //       $scope.message = data.message;
+
+        //       var alertPopup = $ionicPopup.alert({
+        //       title:'Wrong user',
+        //       template:$scope.message
+        //     });
+
+        //       $scope.message = data.message;
+          
+        //     }
+        //   });
+        // };
+
+
         $scope.user = {};
         $scope.korisnik ={};
         $scope.user.farm= 'SuperAdmin';
 
          $scope.user.username= 'Bojan';
          $scope.user.password= '1243!';
-        // console.log($scope.user);
-        // calling our submit function.
+      // console.log($scope.user);
+      // calling our submit function.
         $scope.signIn = function() {
 
         //console.log($scope.user);     
@@ -298,7 +382,7 @@ $scope.onezoneDatepicker = {
         // Posting data to php file
         $http({
           method  : 'POST',
-          withCredentials: false,
+          withCredentials: true,
           url     : 'http://agrolife.greensoft.co:3000/login',
           data    : $scope.user
          })
@@ -312,8 +396,8 @@ $scope.onezoneDatepicker = {
             if (data.success) {
               // Showing errors.
                  var alertPopup = $ionicPopup.alert({
-                    title:'Welcome '  + $scope.user.username,
-                    template:'Hellooo'
+                    title:'Dobrodošli '  + $scope.user.username,
+                    template:'Ovo je DEMO verzija AgroLife mobilne aplikacije.'
               });
               $state.go('app.orders');
                 //var favoriteCookie = $cookies.get('connect.sid');
