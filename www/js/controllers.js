@@ -301,7 +301,7 @@ $scope.onezoneDatepicker = {
 
 
 
-.controller('LoginCtrl', function($scope, $state,$http,WorkingOrders,$ionicPopup) {
+.controller('LoginCtrl', function($scope, $state,$http,WorkingOrders,$ionicPopup,$cookies) {
 
 
 
@@ -389,8 +389,9 @@ $scope.onezoneDatepicker = {
           .success(function(data) {
             console.log(data);
              $scope.message = data.message;
-            // $cookies['kolacic']='kolacic';
-             // console.log($cookies);
+
+             $cookies['Cookie']='Cookie';
+              console.log('jedan: ' +$cookies);
 
           
             if (data.success) {
@@ -401,8 +402,8 @@ $scope.onezoneDatepicker = {
               });
               $state.go('app.orders');
                 //var favoriteCookie = $cookies.get('connect.sid');
-
-              //console.log('cookies:'+ JSON.stringify($cookies.getAll()));
+                $cookies.put('kljuc','1234',[]);
+              console.log('cookies:'+ JSON.stringify($cookies.getAll()));
               // console.log('cookies:'+ JSON.stringify(favoriteCookie));
 
               // $http({
