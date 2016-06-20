@@ -370,7 +370,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/newOrder');
+  $urlRouterProvider.otherwise('/login');
 
 })
 
@@ -379,16 +379,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','p
 
 //za prognozu
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
-})
+// .run(function($ionicPlatform) {
+//   $ionicPlatform.ready(function() {
+//     if(window.cordova && window.cordova.plugins.Keyboard) {
+//       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+//     }
+//     if(window.StatusBar) {
+//       StatusBar.styleDefault();
+//     }
+//   });
+// })
 
 .controller('LeftMenuController', function ($scope, Locations) {
   $scope.locations = Locations.data;

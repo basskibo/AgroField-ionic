@@ -16,34 +16,7 @@ $scope.materijal= [];
 
 
 
-  // $scope.input.push('1,1-dichloro-2,2-bis(4-ethylphenyl)ethane (F)');
-  // $scope.input.push('1,2-dibromoethane (ethylene dibromide) (F)');
-  // $scope.input.push('1,2-dichloroethane (ethylene dichloride) (F)');
-  // $scope.input.push('1,4-Diaminobutane (aka Putrescine) (++)');
-  // $scope.input.push('1-Decanol (++)');
-  // $scope.input.push('2,4,5-T (sum of 2,4,5-T, its salts and esters, expressed as 2,4,5-T) (F)');
-  // $scope.input.push('2,4-D (sum of 2,4-D, its salts, its esters and its conjugates, expressed as 2,4-D)');
-  // $scope.input.push('1-Naphthylacetamide');  
-  // $scope.input.push('Abamectin (sum of avermectin B1a, avermectin B1b and delta-8,9 isomer of avermectin B1a, expressed as avermectin B1a) (F) (R)');
-  // $scope.input.push('8-hydroxyquinoline (sum of 8-hydroxyquinoline and its salts, expressed as 8-hydroxyquinoline)');
-  // $scope.input.push('Acetic acid (++)');
-  // $scope.input.push('Begonia Cascade Yellow  p029 3/1');
-  // $scope.input.push('Begonia Cascade Scharlet   p030 3/1');
-  // $scope.input.push('Gloxinia Defiance  p052 1/1');
-  // $scope.input.push('Ns Suncokret 70 000 zrna Sumo 1 PR');
-  // $scope.input.push('Bacillomix specijal  100ml');
-  // $scope.input.push('NS kukuruz 5083+sonido');
-  // $scope.input.push('KWS krmni sirak Sole');
-  // $scope.input.push('Cordus75 WG  400gr');
-  // $scope.input.push('Cleranda+dash(10l cleranda+5l dash)');
-  // $scope.input.push('Semenski ječam Vannesa 25/1');
-  // $scope.input.push('UREA  50/1');
-  // $scope.input.push('Valagro Plantafol 1/1kg 30-10-10      (#12)');
-  // $scope.input.push('Envidor 100ml');
-  // $scope.input.push('Funguran 10/1');
-  // $scope.input.push('START SPREJ');
-  // $scope.input.push('AGROVISK MHT 15-40');
-
+  
 
  
 
@@ -128,25 +101,6 @@ $scope.onezoneDatepicker = {
 
     }
 
-   
-// //za kulturu
-//   var mydata = JSON.parse(data);
-//   for(var i = 0 ; i < mydata.length ; i++){
-//     //console.log(mydata[i].naziv);
-//     $scope.kultura.push(mydata[i].naziv);
-// }
-
-//za materijal
-//   var materijal = JSON.parse(data);
-//   for(var i = 0 ; i < materijal.length ; i++){
-//     console.log(materijal[i].naziv);
-//     $scope.operacija.push(materijal[i].naziv);
-// }
-
-  // $scope.pogonske_masine = [{ value: "Item 1"}, { value: "Item 2"}, { value: "Item 3"}];
-  // $scope.table = [{ value: "Tabla 1"}, { value: "tbl 2"}, { value: "tablica 3"}];
-  // $scope.prikljucne_masine = [{ value: "Masina 1"}, { value: "IMSvtem 2"}, { value: "sva 3"}];
-  //$scope.radnici = [{ value: "Pera 1"}, { value: "MArko 2"}, { value: "sva 3"}];
 
   $scope.onValueChanged = function(value){
   }
@@ -186,21 +140,6 @@ $scope.plot = [];
 $scope.activity = [];
 
 
-$scope.katOpst.push('Srbija');
-$scope.katOpst.push('Mauricijus');
-$scope.katOpst.push('Neoplanta');
-$scope.katOpst.push('Adminski');
-
-$scope.plot.push('1');
-$scope.plot.push('2');
-$scope.plot.push('3');
-$scope.plot.push('4');
-
-
-$scope.activity.push('1');
-$scope.activity.push('2');
-$scope.activity.push('3');
-$scope.activity.push('4');
 
 
 $scope.onezoneDatepicker = {
@@ -283,13 +222,7 @@ $scope.onezoneDatepicker = {
 })
 
 .controller('ChatsCtrl', function($scope, WorkingOrders,$stateParams,$state) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+
 
 
 
@@ -302,8 +235,7 @@ $scope.onezoneDatepicker = {
   };
   $scope.edit = function(order){
     $scope.order = WorkingOrders.get($stateParams.orderId);
-    console.log("o: " + order);
-    console.log("operacija: " +order.operacija);
+ 
 
     $scope.zaEdit.push({
 
@@ -357,8 +289,8 @@ $scope.onezoneDatepicker = {
 
          $scope.user.username= 'Bojan';
          $scope.user.password= '1243!';
-      // console.log($scope.user);
-      // calling our submit function.
+        // console.log($scope.user);
+        // calling our submit function.
         $scope.signIn = function() {
 
         //console.log($scope.user);     

@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.agrofield723254" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>AgroLife</name>
-  <description>
+  <description>&#xD;
         This is application for agrolife    </description>
-  <author email="jagetic.bojan@gmail.com" href="http://bojanjagetic.tk/">
-      Bojan Jagetic
+  <author email="jagetic.bojan@gmail.com" href="http://bojanjagetic.tk/">&#xD;
+      Bojan Jagetic&#xD;
     </author>
   <content src="index.html"/>
   <access origin="*"/>
-  <allow-navigation href="*" />
+<allow-navigation href="http://agrolife.greensoft.co/*" />
 
+  <allow-intent href="*"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
