@@ -18,20 +18,22 @@
     </ion-header-bar>
 
     <ion-content>
-    <ion-item>
-      <div class="ion-person" ></div>{{user.username}}
-    </ion-item>
       <ion-list>
          
-      <img class="ion-ios-list" src="img/11.png"></img> <div class="wo"> {{'orderLabel' |translate }} </div>
+       <div class="wo"> {{'orderLabel' |translate }} </div>
 
-        <ion-item menu-close href="#/app/orders">
+      
+        <ion-item menu-close class="svinalozi" href="#/app/orders">
+        <img class="slika" src="img/12.png"></img>
           {{'orderAll' |translate }}
         </ion-item>
-        <ion-item menu-close href="#/app/newOrder">
+      
+        
+        <ion-item menu-close class="noviradninalog" href="#/app/newOrder">
+        <img class="slika1" src="img/11.png"></img>
           {{'newOrderLabel' | translate}}
         </ion-item>
-        
+      
        
      <!--  <img class="ion-document-text" src="img/12.png"></img>
           <div class="wo"> {{'reportLabel' |translate }} </div>
@@ -45,18 +47,20 @@
     <!--     <ion-item menu-close href="#/app/weather-search">
          {{'prognoza' | translate }}
         </ion-item> -->
-          <img class="ion-document-text" src="img/13.png"></img>
+          
 
         <div class="wo"> {{'settingsLabel' |translate }} </div>
 
-         <ion-item menu-close href="#/app/settings">
+         <ion-item menu-close class="podesavanja" href="#/app/settings">
+         <img class="slika" src="img/13.png"></img>
           {{'settingsChangeLabel' | translate }}
         </ion-item>
-                      <img class="ion-document-text" src="img/14.png"></img>
+                      
 
         <div class="wo"> {{'logOutLabel' |translate }} </div>
 
-        <ion-item menu-close href="#/login">
+        <ion-item menu-close class="odjava" href="#/login">
+        <img class="slika" src="img/14.png"></img>
           {{'logOutLabel' | translate}}    
         </ion-item>
       </div>  

@@ -382,7 +382,7 @@ $scope.onezoneDatepicker = {
         // Posting data to php file
         $http({
           method  : 'POST',
-          withCredentials: true,
+          withCredentials: false,
           url     : 'http://agrolife.greensoft.co:3000/login',
           data    : $scope.user
          })
